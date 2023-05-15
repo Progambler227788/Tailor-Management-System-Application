@@ -1,6 +1,7 @@
 package com.example.tailoringmanagement
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import  androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity()
         }
         binding.btnCustomer.setOnClickListener {
             Toast.makeText(this, "Customer", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this,Customers::class.java))
         }
 
     }
