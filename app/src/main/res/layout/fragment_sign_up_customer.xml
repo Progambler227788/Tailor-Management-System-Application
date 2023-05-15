@@ -17,15 +17,17 @@
             android:layout_marginEnd="40sp"
             android:labelFor="@+id/inputName"
             android:text="@string/enter_your_full_name"
+            android:textColor="@color/blue_702"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/inputName"
-            android:autofillHints="username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="25sp"
+            android:autofillHints="username"
+            android:backgroundTint="@color/blue_701"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@string/cus_name"
@@ -41,15 +43,17 @@
             android:layout_marginEnd="40sp"
             android:labelFor="@+id/inputAge"
             android:text="@string/enter_your_age"
+            android:textColor="@color/blue_702"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/inputAge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:autofillHints="Age"
             android:layout_gravity="center"
             android:layout_marginTop="25sp"
+            android:autofillHints="Age"
+            android:backgroundTint="@color/blue_701"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@string/age"
@@ -63,8 +67,10 @@
             android:layout_marginStart="55sp"
             android:layout_marginTop="25sp"
             android:layout_marginEnd="40sp"
+            android:backgroundTint="@color/blue_701"
             android:labelFor="@+id/inputNumber"
             android:text="@string/enter_your_phone_number"
+            android:textColor="@color/blue_702"
             android:textSize="18sp" />
 
         <EditText
@@ -74,9 +80,10 @@
             android:layout_gravity="center"
             android:layout_marginStart="1dp"
             android:layout_marginTop="25sp"
+            android:autofillHints="phone"
+            android:backgroundTint="@color/blue_701"
             android:ems="10"
             android:inputType="phone"
-            android:autofillHints="phone"
             android:text="@string/phone_number"
             android:textSize="20sp" />
 
@@ -90,6 +97,7 @@
             android:layout_marginEnd="40sp"
             android:labelFor="@+id/inputEmail"
             android:text="@string/enter_your_email"
+            android:textColor="@color/blue_702"
             android:textSize="18sp" />
 
         <EditText
@@ -99,6 +107,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="25sp"
             android:autofillHints="emailAddress"
+            android:backgroundTint="@color/blue_701"
             android:ems="10"
             android:hint="@string/cus_name"
             android:inputType="textEmailAddress"
@@ -115,6 +124,7 @@
             android:layout_marginEnd="40sp"
             android:labelFor="@+id/inputPassword"
             android:text="@string/enter_your_password"
+            android:textColor="@color/blue_702"
             android:textSize="18sp" />
 
         <EditText
@@ -124,6 +134,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="25sp"
             android:autofillHints="password"
+            android:backgroundTint="@color/blue_701"
             android:ems="10"
             android:inputType="textPassword"
             android:textSize="20sp" />

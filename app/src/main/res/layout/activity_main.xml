@@ -14,6 +14,7 @@
         android:layout_marginTop="268dp"
         android:text="@string/ask"
         android:textSize="18sp"
+        android:textColor="@color/blue_702"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

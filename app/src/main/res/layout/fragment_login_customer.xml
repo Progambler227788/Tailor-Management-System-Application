@@ -5,51 +5,55 @@
          xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/emailTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="55sp"
-            android:layout_marginTop="25sp"
-            android:layout_marginEnd="40sp"
-            android:labelFor="@+id/inputEmail"
-            android:text="@string/enter_your_email"
-            android:textSize="18sp" />
+    <TextView
+        android:id="@+id/emailTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="55sp"
+        android:layout_marginTop="25sp"
+        android:layout_marginEnd="40sp"
+        android:labelFor="@+id/inputEmail"
+        android:text="@string/enter_your_email"
+        android:textColor="@color/blue_702"
+        android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/inputEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25sp"
-            android:autofillHints="emailAddress"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:text="@string/email_address"
-            android:textSize="20sp" />
+    <EditText
+        android:id="@+id/inputEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25sp"
+        android:autofillHints="emailAddress"
+        android:backgroundTint="@color/blue_701"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="@string/email_address"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/passwordTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="55sp"
-            android:layout_marginTop="25sp"
-            android:layout_marginEnd="40sp"
-            android:labelFor="@+id/inputPassword"
-            android:text="@string/enter_your_password"
-            android:textSize="18sp" />
+    <TextView
+        android:id="@+id/passwordTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="55sp"
+        android:layout_marginTop="25sp"
+        android:layout_marginEnd="40sp"
+        android:labelFor="@+id/inputPassword"
+        android:text="@string/enter_your_password"
+        android:textColor="@color/blue_702"
+        android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/inputPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25sp"
-            android:autofillHints="password"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:textSize="20sp" />
+    <EditText
+        android:id="@+id/inputPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25sp"
+        android:autofillHints="password"
+        android:backgroundTint="@color/blue_701"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textSize="20sp" />
     </LinearLayout>
 

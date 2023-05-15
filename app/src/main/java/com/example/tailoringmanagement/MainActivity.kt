@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity()
             Toast.makeText(this, "Tailor", Toast.LENGTH_SHORT).show()
         }
         binding.btnCustomer.setOnClickListener {
-            Toast.makeText(this, "Customer", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this,Customers::class.java))
         }
 
