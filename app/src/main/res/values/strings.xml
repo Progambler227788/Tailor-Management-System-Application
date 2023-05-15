@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Tailoring Management</string>
+    <string name="developer">T-Code</string>
+
+    <!-- Action Bar String Resources -->
+    <string name="action_bar_search">Search</string>
+    <string name="action_bar_setting">Setting</string>
+
+    <!-- Activity Main String Resources -->
+    <string name="ask">Are You a</string>
+    <string name="tailor">Tailor</string>
+    <string name="or">Or</string>
+    <string name="customer">Customer</string>
+    <string name="forgotten">Forget Username or Password?</string>
+    <string name="recover">Recover</string>
+
+</resources>
