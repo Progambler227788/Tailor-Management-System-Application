@@ -24,8 +24,6 @@ class MainActivity : AppCompatActivity()
         }
 
     }
-
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.home_menu, menu)
         return true
@@ -39,7 +37,6 @@ class MainActivity : AppCompatActivity()
                     .show()
                 return true
             }
-
             else -> {
                 return super.onOptionsItemSelected(item)
             }
