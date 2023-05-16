@@ -1,60 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginTailor">
 
     <TextView
-        android:id="@+id/emailTV"
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="55sp"
         android:layout_marginTop="25sp"
         android:layout_marginEnd="40sp"
-        android:labelFor="@+id/inputEmail"
-        android:text="@string/enter_your_email"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:text="@string/enter_username_or_email"
         android:textColor="@color/blue_702"
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/inputEmail"
+        android:id="@+id/editTextTailorLoginID"
+        android:autofillHints=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="25sp"
-        android:autofillHints="emailAddress"
         android:backgroundTint="@color/blue_701"
         android:ems="10"
-        android:hint="@string/email_address"
-        android:inputType="textEmailAddress"
-        android:textSize="20sp"
-        tools:ignore="LabelFor"/>
+        android:hint="@string/username_or_email"
+        android:inputType="text"
+        android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/passwordTV"
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="55sp"
         android:layout_marginTop="25sp"
         android:layout_marginEnd="40sp"
-        android:labelFor="@+id/inputPassword"
         android:text="@string/enter_your_password"
         android:textColor="@color/blue_702"
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/editTextTextPassword"
+        android:autofillHints=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="25sp"
-        android:autofillHints="password"
         android:backgroundTint="@color/blue_701"
         android:ems="10"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textSize="20sp" />
-    </LinearLayout>
 
+    <Button
+        android:id="@+id/btnEnterShop"
+        style="@style/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25sp"
+        android:text="@string/enter_shop"
+        android:textSize="20sp" />
+</LinearLayout>

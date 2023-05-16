@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity()
         setContentView(binding.root)
         
         binding.btnTailor.setOnClickListener {
-            Toast.makeText(this, "Tailor", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Tailors::class.java))
         }
         binding.btnCustomer.setOnClickListener {
             startActivity(Intent(this,Customers::class.java))

@@ -2,7 +2,8 @@
 <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,9 +31,10 @@
             android:autofillHints="username"
             android:backgroundTint="@color/blue_701"
             android:ems="10"
+            android:hint="@string/cus_name"
             android:inputType="textPersonName"
-            android:text="@string/cus_name"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="LabelFor"/>
 
         <TextView
             android:id="@+id/ageTV"
@@ -56,9 +58,10 @@
             android:autofillHints="Age"
             android:backgroundTint="@color/blue_701"
             android:ems="10"
+            android:hint="@string/age"
             android:inputType="textPersonName"
-            android:text="@string/age"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="LabelFor"/>
 
         <TextView
             android:id="@+id/numberTV"
@@ -84,8 +87,8 @@
             android:autofillHints="phone"
             android:backgroundTint="@color/blue_701"
             android:ems="10"
+            android:hint="@string/phone_number"
             android:inputType="phone"
-            android:text="@string/phone_number"
             android:textSize="20sp" />
 
         <TextView
@@ -110,9 +113,8 @@
             android:autofillHints="emailAddress"
             android:backgroundTint="@color/blue_701"
             android:ems="10"
-            android:hint="@string/cus_name"
+            android:hint="@string/email_address"
             android:inputType="textEmailAddress"
-            android:text="@string/email_address"
             android:textSize="20sp" />
 
         <TextView
@@ -151,8 +153,8 @@
             android:layout_marginEnd="1dp"
             android:text="@string/signup"
             android:textSize="20sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/SignUp"
-            app:layout_constraintEnd_toStartOf="@+id/SignUp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/SignUpCust"
+            app:layout_constraintEnd_toStartOf="@+id/SignUpCust"
             app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
 

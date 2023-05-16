@@ -7,7 +7,7 @@
     tools:context=".Customers">
 
     <Button
-        android:id="@+id/SignUp"
+        android:id="@+id/SignUpCust"
         style="@style/button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,11 +16,11 @@
         android:text="@string/signup"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Forgot"
-        app:layout_constraintStart_toEndOf="@+id/Login" />
+        app:layout_constraintEnd_toStartOf="@+id/ForgotCust"
+        app:layout_constraintStart_toEndOf="@+id/LoginCust" />
 
     <Button
-        android:id="@+id/Login"
+        android:id="@+id/LoginCust"
         style="@style/button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,12 +28,12 @@
         android:layout_marginEnd="1dp"
         android:text="@string/login"
         android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/SignUp"
-        app:layout_constraintEnd_toStartOf="@+id/SignUp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/SignUpCust"
+        app:layout_constraintEnd_toStartOf="@+id/SignUpCust"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/Forgot"
+        android:id="@+id/ForgotCust"
         style="@style/button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/SignUp" />
+        app:layout_constraintStart_toEndOf="@+id/SignUpCust" />
 
 
     <FrameLayout
@@ -54,7 +54,7 @@
         android:layout_marginTop="150dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/Forgot"
+        app:layout_constraintBottom_toTopOf="@+id/ForgotCust"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -66,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="124dp"
         android:layout_marginTop="4dp"
+        android:contentDescription="@string/tailor_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

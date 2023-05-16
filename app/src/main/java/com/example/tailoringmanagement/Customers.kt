@@ -12,11 +12,10 @@ class Customers : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCustomersBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Snackbar.make(binding.root,"Welcome Customer. Scroll to see other fields!! 😎",Snackbar.LENGTH_LONG).show()
-        binding.SignUp.setOnClickListener {
+        binding.SignUpCust.setOnClickListener {
             replaceFragment(SignUpCustomer())
         }
-        binding.Login.setOnClickListener {
+        binding.LoginCust.setOnClickListener {
             replaceFragment(LoginCustomer())
         }
 

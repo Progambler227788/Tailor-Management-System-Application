@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Main_Theme"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Tailors"
+            android:exported="false" />
         <activity
             android:name=".Customers"
             android:exported="false"
