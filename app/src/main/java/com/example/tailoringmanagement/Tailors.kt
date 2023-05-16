@@ -38,6 +38,10 @@ class Tailors : AppCompatActivity()
                 Log.i("Test", "Sign Up")
             }
         }
+        
+        binding.textViewRecoverAccount.setOnClickListener {
+            Toast.makeText(this, "Not Yet Implemented", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
