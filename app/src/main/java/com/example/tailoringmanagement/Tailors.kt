@@ -8,11 +8,13 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.tailoringmanagement.databinding.ActivityTailorsBinding
-import com.google.android.material.snackbar.Snackbar
+
 
 class Tailors : AppCompatActivity()
 {
     private lateinit var binding: ActivityTailorsBinding
+    private var signUpTailor: SignUpTailor? = null
+    private var loginTailor: LoginTailor? = null
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -20,8 +22,21 @@ class Tailors : AppCompatActivity()
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         replaceFragment(LoginTailor())
+
         binding.LoginTailor.setOnClickListener {
-            replaceFragment(LoginTailor())
+            if (loginTailor == null)
+                loginTailor = LoginTailor()
+            if (replaceFragment(loginTailor!!)) {
+                Log.i("Test", "Log In")
+            }
+        }
+
+        binding.SignupTailor.setOnClickListener {
+            if (signUpTailor == null)
+                signUpTailor = SignUpTailor()
+            if (replaceFragment(signUpTailor!!)) {
+                Log.i("Test", "Sign Up")
+            }
         }
     }
 
@@ -45,7 +60,11 @@ class Tailors : AppCompatActivity()
         }
     }
 
-    private fun replaceFragment (fragment : Fragment){
+    private fun replaceFragment (fragment : Fragment): Boolean
+    {
+        if (fragment.isVisible)
+            return true
         supportFragmentManager.beginTransaction().replace(binding.tailorFragmentFrame.id,fragment).commit()
+        return false
     }
 }

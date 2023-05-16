@@ -52,4 +52,15 @@
     <string name="password">Password</string>
     <string name="enter_shop">Enter Shop</string>
 
+    <!-- Fragment Sign Up Tailor String Resources -->
+    <string name="retype_password">Retype Password</string>
+    <string name="enter_shop_name">Enter your shop name:</string>
+    <string name="tailor_name">Your Name</string>
+    <string name="tailor_age">Your Age</string>
+    <string name="tailor_email">Your Email Address</string>
+    <string name="tailor_phone_number">Your Phone Number</string>
+    <string name="tailor_password">Create Password</string>
+    <string name="tailor_confirm_password">Confirm Password</string>
+    <string name="tailor_shop_name">Your Shop Name</string>
+
 </resources>
