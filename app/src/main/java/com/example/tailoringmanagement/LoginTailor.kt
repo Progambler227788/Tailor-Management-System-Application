@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.example.tailoringmanagement.databinding.FragmentLoginTailorBinding
 
 class LoginTailor : Fragment()
@@ -19,9 +18,6 @@ class LoginTailor : Fragment()
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentLoginTailorBinding.inflate(inflater, container, false)
-        binding.btnEnterShop.setOnClickListener {
-            Toast.makeText(requireActivity(), "Not Yet Implemented", Toast.LENGTH_SHORT).show()
-        }
         return binding.root
     }
 

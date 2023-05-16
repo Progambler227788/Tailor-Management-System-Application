@@ -43,7 +43,7 @@
 
     <!-- Activity Tailor String Resources -->
     <string name="tailor_image">Image Showing Tailor</string>
-    <string name="forget_your_account">Forget Your Email/Username?</string>
+    <string name="forget_your_account">Forget Your Email or Password?</string>
     <string name="recover_your_account">Recover Your Account.</string>
 
     <!-- Fragment Login Tailor String Resources -->
