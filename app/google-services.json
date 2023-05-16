@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "930732195504",
+    "project_id": "tailor-management-system-bb395",
+    "storage_bucket": "tailor-management-system-bb395.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930732195504:android:25d159e7fe27b79440c575",
+        "android_client_info": {
+          "package_name": "com.example.tailoringmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930732195504-9rvusqdhc656671kadqb8spou72pjk0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9xCyS8TwV3W10CmXlWZCnsC9syGLhxOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930732195504-9rvusqdhc656671kadqb8spou72pjk0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

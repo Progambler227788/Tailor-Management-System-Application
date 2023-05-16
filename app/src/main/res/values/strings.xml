@@ -22,9 +22,11 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="signup">SignUp</string>
+    <string name="signup">Sign Up</string>
+    <string name="sign_up_screen">Sign up screen</string>
     <string name="login">Login</string>
-    <string name="forgot">Forgot</string>
+    <string name="login_screen">Login_Screen</string>
+    <string name="forgot">Recover Account</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cus_name">Name</string>
