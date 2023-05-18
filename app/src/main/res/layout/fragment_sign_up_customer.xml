@@ -142,20 +142,6 @@
             android:inputType="textPassword"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/login"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="1dp"
-            android:text="@string/signup"
-            android:textSize="20sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/SignUpCust"
-            app:layout_constraintEnd_toStartOf="@+id/SignUpCust"
-            app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
 
 </ScrollView>
