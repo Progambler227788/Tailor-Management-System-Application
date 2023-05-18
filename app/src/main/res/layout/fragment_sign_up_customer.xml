@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -11,136 +10,82 @@
 
         <TextView
             android:id="@+id/nameTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="55sp"
-            android:layout_marginTop="25sp"
-            android:layout_marginEnd="40sp"
+            style="@style/text_view_login_signup"
             android:labelFor="@+id/inputName"
             android:text="@string/enter_your_full_name"
-            android:textColor="@color/blue_702"
-            android:textSize="18sp" />
+            />
 
         <EditText
             android:id="@+id/inputName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25sp"
-            android:autofillHints="username"
-            android:backgroundTint="@color/blue_701"
+            style="@style/edit_text_login_signup"
+            android:autofillHints="username or email"
             android:ems="10"
             android:hint="@string/cus_name"
             android:inputType="textPersonName"
-            android:textSize="20sp"
             tools:ignore="LabelFor"/>
 
         <TextView
             android:id="@+id/ageTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="55sp"
-            android:layout_marginTop="25sp"
-            android:layout_marginEnd="40sp"
+            style="@style/text_view_login_signup"
             android:labelFor="@+id/inputAge"
             android:text="@string/enter_your_age"
-            android:textColor="@color/blue_702"
-            android:textSize="18sp" />
+           />
 
         <EditText
             android:id="@+id/inputAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25sp"
-            android:autofillHints="Age"
-            android:backgroundTint="@color/blue_701"
+            style="@style/edit_text_login_signup"
+            android:autofillHints="Customer Age"
             android:ems="10"
             android:hint="@string/age"
-            android:inputType="textPersonName"
-            android:textSize="20sp"
-            tools:ignore="LabelFor"/>
+            android:inputType="number"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/numberTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="55sp"
-            android:layout_marginTop="25sp"
-            android:layout_marginEnd="40sp"
-            android:backgroundTint="@color/blue_701"
+            style="@style/text_view_login_signup"
             android:labelFor="@+id/inputNumber"
             android:text="@string/enter_your_phone_number"
-            android:textColor="@color/blue_702"
-            android:textSize="18sp" />
+           />
 
         <EditText
             android:id="@+id/inputPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="25sp"
+            style="@style/edit_text_login_signup"
             android:autofillHints="phone"
-            android:backgroundTint="@color/blue_701"
             android:ems="10"
             android:hint="@string/phone_number"
             android:inputType="phone"
-            android:textSize="20sp" />
+         />
 
         <TextView
             android:id="@+id/emailTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="55sp"
-            android:layout_marginTop="25sp"
-            android:layout_marginEnd="40sp"
+            style="@style/text_view_login_signup"
             android:labelFor="@+id/inputEmail"
             android:text="@string/enter_your_email"
-            android:textColor="@color/blue_702"
-            android:textSize="18sp" />
+             />
 
         <EditText
             android:id="@+id/inputEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25sp"
+            style="@style/edit_text_login_signup"
             android:autofillHints="emailAddress"
-            android:backgroundTint="@color/blue_701"
             android:ems="10"
             android:hint="@string/email_address"
             android:inputType="textEmailAddress"
-            android:textSize="20sp" />
+            />
 
         <TextView
             android:id="@+id/passwordTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="55sp"
-            android:layout_marginTop="25sp"
-            android:layout_marginEnd="40sp"
+            style="@style/text_view_login_signup"
             android:labelFor="@+id/inputPassword"
             android:text="@string/enter_your_password"
-            android:textColor="@color/blue_702"
-            android:textSize="18sp" />
+            />
 
         <EditText
             android:id="@+id/inputPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25sp"
+            style="@style/edit_text_login_signup"
             android:autofillHints="password"
-            android:backgroundTint="@color/blue_701"
             android:ems="10"
             android:inputType="textPassword"
-            android:textSize="20sp" />
+             />
 
     </LinearLayout>
 
