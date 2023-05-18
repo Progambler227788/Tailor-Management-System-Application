@@ -23,7 +23,10 @@ class MainActivity : AppCompatActivity()
         binding.btnCustomer.setOnClickListener {
             startActivity(Intent(this,Customers::class.java))
         }
-
+        binding.textViewAsGuest.setOnClickListener {
+            val intent = Intent(this, HomeScreenActivity::class.java)
+            startActivity(intent)
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.home_menu, menu)

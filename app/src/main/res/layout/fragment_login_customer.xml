@@ -16,7 +16,7 @@
         style="@style/edit_text_login_signup"
         android:autofillHints="emailAddress"
         android:ems="10"
-        android:hint="@string/email_address"
+        android:hint="@string/cust_email_address"
         android:inputType="textEmailAddress"
 
        />

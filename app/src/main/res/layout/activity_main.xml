@@ -52,9 +52,24 @@
         android:layout_marginTop="8dp"
         android:text="@string/or"
         android:textSize="18sp"
+        android:textColor="@color/blue_702"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_tailor" />
+
+    <TextView
+        android:id="@+id/textView_asGuest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Guest"
+        android:textSize="18sp"
+        android:textColor="@color/blue_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_customer"
+        app:layout_constraintVertical_bias="0.673" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

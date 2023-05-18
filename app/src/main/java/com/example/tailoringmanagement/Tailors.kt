@@ -7,36 +7,37 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import com.example.tailoringmanagement.databinding.ActivityTailorsBinding
 
 
 class Tailors : AppCompatActivity()
 {
     private lateinit var binding: ActivityTailorsBinding
-    private var signUpTailor: SignUpTailor? = null
-    private var loginTailor: LoginTailor? = null
+    private val loginTailor :  LoginTailor = LoginTailor()
+    private val signUpTailor : SignUpTailor = SignUpTailor()
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         binding = ActivityTailorsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        replaceFragment(LoginTailor())
+        replaceFragment(loginTailor)
 
         binding.LoginTailor.setOnClickListener {
-            if (loginTailor == null)
-                loginTailor = LoginTailor()
-            if (replaceFragment(loginTailor!!)) {
-                Log.i("Test", "Log In")
+            if(checkStateOfFragment(loginTailor)) {
+                Toast.makeText(this,"Logged in",Toast.LENGTH_SHORT).show()
+                Log.i("Customer", "Logged In")
             }
+            else  replaceFragment(loginTailor)
         }
 
         binding.SignupTailor.setOnClickListener {
-            if (signUpTailor == null)
-                signUpTailor = SignUpTailor()
-            if (replaceFragment(signUpTailor!!)) {
-                Log.i("Test", "Sign Up")
+            if(checkStateOfFragment(signUpTailor)) {
+                Toast.makeText(this,"Signed Up",Toast.LENGTH_SHORT).show()
+                Log.i("Customer", "Signed Up")
             }
+            else  replaceFragment(signUpTailor)
         }
         
         binding.textViewRecoverAccount.setOnClickListener {
@@ -64,11 +65,14 @@ class Tailors : AppCompatActivity()
         }
     }
 
-    private fun replaceFragment (fragment : Fragment): Boolean
+    private fun checkStateOfFragment(fragment : Fragment) : Boolean {
+
+
+        return (fragment.lifecycle.currentState == Lifecycle.State.RESUMED)
+    }
+
+    private fun replaceFragment (fragment : Fragment)
     {
-        if (fragment.isVisible)
-            return true
         supportFragmentManager.beginTransaction().replace(binding.tailorFragmentFrame.id,fragment).commit()
-        return false
     }
 }

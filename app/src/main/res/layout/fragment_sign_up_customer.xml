@@ -18,11 +18,12 @@
         <EditText
             android:id="@+id/inputName"
             style="@style/edit_text_login_signup"
+            android:layout_width="match_parent"
             android:autofillHints="username or email"
             android:ems="10"
             android:hint="@string/cus_name"
             android:inputType="textPersonName"
-            tools:ignore="LabelFor"/>
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/ageTV"
@@ -36,7 +37,7 @@
             style="@style/edit_text_login_signup"
             android:autofillHints="Customer Age"
             android:ems="10"
-            android:hint="@string/age"
+            android:hint="@string/cust_age"
             android:inputType="number"
             tools:ignore="LabelFor" />
 
@@ -52,7 +53,7 @@
             style="@style/edit_text_login_signup"
             android:autofillHints="phone"
             android:ems="10"
-            android:hint="@string/phone_number"
+            android:hint="@string/cust_phone_number"
             android:inputType="phone"
          />
 
@@ -68,7 +69,7 @@
             style="@style/edit_text_login_signup"
             android:autofillHints="emailAddress"
             android:ems="10"
-            android:hint="@string/email_address"
+            android:hint="@string/cust_email_address"
             android:inputType="textEmailAddress"
             />
 
@@ -83,6 +84,7 @@
             android:id="@+id/inputPassword"
             style="@style/edit_text_login_signup"
             android:autofillHints="password"
+            android:hint="@string/cust_password"
             android:ems="10"
             android:inputType="textPassword"
              />
