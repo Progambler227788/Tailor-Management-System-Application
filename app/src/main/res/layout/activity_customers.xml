@@ -6,58 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".Customers">
 
+
     <Button
         android:id="@+id/SignUpCust"
         style="@style/button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/signup"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ForgotCust"
-        app:layout_constraintStart_toEndOf="@+id/LoginCust" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/LoginCust"
         style="@style/button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="48dp"
         android:text="@string/login"
         android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/SignUpCust"
         app:layout_constraintEnd_toStartOf="@+id/SignUpCust"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/ForgotCust"
-        style="@style/button_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="64dp"
-        android:text="@string/forgot"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/SignUpCust" />
-
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentFrame" />
 
     <FrameLayout
         android:id="@+id/fragmentFrame"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="150dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/ForgotCust"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/SignUpCust"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
     </FrameLayout>
 
@@ -71,5 +57,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tailoring" />
+
+    <TextView
+        android:id="@+id/textViewRecoverAccountCust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:padding="2dp"
+        android:text="@string/recover_your_account"
+        android:textColor="@color/blue_702"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/SignUpCust"
+        app:layout_constraintTop_toBottomOf="@+id/SignUpCust"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="16dp"
+        android:padding="2dp"
+        android:text="@string/forget_your_account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewRecoverAccountCust"
+        app:layout_constraintTop_toBottomOf="@+id/LoginCust"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

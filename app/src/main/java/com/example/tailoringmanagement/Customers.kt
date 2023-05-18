@@ -39,6 +39,9 @@ class Customers : AppCompatActivity() {
             }
             else  replaceFragment(login)
         }
+        binding.textViewRecoverAccountCust.setOnClickListener {
+            Toast.makeText(this, "Not Yet Implemented", Toast.LENGTH_SHORT).show()
+        }
 
 
     }
