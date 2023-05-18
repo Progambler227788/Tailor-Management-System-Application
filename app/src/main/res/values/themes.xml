@@ -44,8 +44,8 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginTop">25sp</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/blue_701</item>
-        <item name="android:backgroundTint">@color/blue_701</item>
+        <item name="android:textColor">@color/blue_702</item>
+        <item name="android:backgroundTint">@color/blue_900</item>
     </style>
 
     <style name="Main_Theme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
