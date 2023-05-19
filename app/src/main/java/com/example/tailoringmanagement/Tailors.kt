@@ -27,7 +27,7 @@ class Tailors : AppCompatActivity()
         binding.LoginTailor.setOnClickListener {
             if(checkStateOfFragment(loginTailor)) {
                 Toast.makeText(this,"Logged in",Toast.LENGTH_SHORT).show()
-                Log.i("Customer", "Logged In")
+                Log.i("Tailor", "Logged In")
             }
             else  replaceFragment(loginTailor)
         }
@@ -35,7 +35,7 @@ class Tailors : AppCompatActivity()
         binding.SignupTailor.setOnClickListener {
             if(checkStateOfFragment(signUpTailor)) {
                 Toast.makeText(this,"Signed Up",Toast.LENGTH_SHORT).show()
-                Log.i("Customer", "Signed Up")
+                Log.i("Tailor", "Signed Up")
             }
             else  replaceFragment(signUpTailor)
         }
@@ -68,7 +68,7 @@ class Tailors : AppCompatActivity()
     private fun checkStateOfFragment(fragment : Fragment) : Boolean {
 
 
-        return (fragment.lifecycle.currentState == Lifecycle.State.RESUMED)
+        return fragment.lifecycle.currentState == Lifecycle.State.RESUMED
     }
 
     private fun replaceFragment (fragment : Fragment)
