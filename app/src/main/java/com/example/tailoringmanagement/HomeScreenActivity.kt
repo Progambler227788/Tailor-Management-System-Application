@@ -1,15 +1,11 @@
 package com.example.tailoringmanagement
 
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
@@ -21,6 +17,8 @@ class HomeScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        launchFragment(FragmentHome())
 
         setSupportActionBar(binding.drawerToolBar.toolBar)
         binding.drawerToolBar.toolBar.setTitle(R.string.app_name)
@@ -35,8 +33,7 @@ class HomeScreenActivity : AppCompatActivity() {
         binding.drawerLayout.addDrawerListener(toggle)
 
         binding.drawerNavView.setNavigationItemSelectedListener {
-            val id = it.itemId
-            when (id) {
+            when (it.itemId) {
                 R.id.drawerItemHome -> {
                     launchFragment(FragmentHome())
                 }
@@ -66,13 +63,13 @@ class HomeScreenActivity : AppCompatActivity() {
         builder.apply {
             setMessage("Sure to logout?")
             setTitle("Logout")
-            setNegativeButton("OK") {dialog, which->
-
-            }
-            setPositiveButton("OK") {dialog, which->
+            setNegativeButton("No", null)
+            setPositiveButton("Yes") {dialog, which->
                 logout()
             }
         }
+        val dialog = builder.create()
+        dialog.show()
     }
 
     private fun logout()
@@ -92,6 +89,6 @@ class HomeScreenActivity : AppCompatActivity() {
     }
 
     private fun launchFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().add(R.id.frameLayoutContainer, fragment).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayoutContainer, fragment).commit()
     }
 }
