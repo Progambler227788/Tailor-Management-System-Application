@@ -67,4 +67,20 @@
     <string name="tailor_confirm_password">Confirm Password</string>
     <string name="tailor_shop_name">Your Shop Name</string>
 
+    <!-- Drawer Menu String Resources -->
+    <string name="drawer_open">Open Drawer Navigation</string>
+    <string name="drawer_close">Close Drawer Navigation</string>
+
+    <!-- Drawer Menu String Resources -->
+    <string name="drawer_home">Home</string>
+    <string name="drawer_profile">Profile</string>
+    <string name="drawer_my_shop">My Shop</string>
+    <string name="drawer_settings">Settings</string>
+    <string name="drawer_report_bug">Report a Bug</string>
+    <string name="drawer_logout">Logout</string>
+
+    <!-- Drawer Header String Resources -->
+    <string name="drawer_header_user_name">Guest</string>
+    <string name="drawer_header_shop_name">Tailoring Shop</string>
+    <string name="drawer_header_email">guest@tcode.com</string>
 </resources>
