@@ -16,6 +16,7 @@ class Tailors : AppCompatActivity()
     private lateinit var binding: ActivityTailorsBinding
     private val loginTailor :  LoginTailor = LoginTailor()
     private val signUpTailor : SignUpTailor = SignUpTailor()
+    private val signUpCustomer : SignUpCustomer = SignUpCustomer()
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -33,12 +34,20 @@ class Tailors : AppCompatActivity()
             else  replaceFragment(loginTailor)
         }
 
-        binding.SignupTailor.setOnClickListener {
+        binding.SignUpTailor.setOnClickListener {
             if(checkStateOfFragment(signUpTailor)) {
                 Toast.makeText(this,"Signed Up",Toast.LENGTH_SHORT).show()
                 Log.i("Tailor", "Signed Up")
             }
             else  replaceFragment(signUpTailor)
+        }
+
+        binding.SignUpCustomer.setOnClickListener {
+            if(checkStateOfFragment(signUpCustomer)) {
+                Toast.makeText(this,"Signed Up",Toast.LENGTH_SHORT).show()
+                Log.i("Customer", "Signed Up")
+            }
+            else  replaceFragment(signUpCustomer)
         }
         
         binding.textViewRecoverAccount.setOnClickListener {

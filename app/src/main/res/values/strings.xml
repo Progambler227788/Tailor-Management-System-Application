@@ -88,4 +88,6 @@
     <string name="home_bottom_nav_cust">Customers</string>
     <string name="home_bottom_nav_order">orders</string>
     <string name="home_bottom_nav_workers">Workers</string>
+    <string name="sign_up_as_customer">Sign Up as Customer</string>
+    <string name="sign_up_as_tailor">Sign Up as Tailor</string>
 </resources>

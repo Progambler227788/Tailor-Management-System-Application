@@ -1,11 +1,8 @@
 package com.example.tailoringmanagement
-
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
@@ -17,8 +14,6 @@ class HomeScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        launchFragment(FragmentHome())
 
         setSupportActionBar(binding.drawerToolBar.toolBar)
         binding.drawerToolBar.toolBar.setTitle(R.string.app_name)
@@ -33,51 +28,30 @@ class HomeScreenActivity : AppCompatActivity() {
         binding.drawerLayout.addDrawerListener(toggle)
 
         binding.drawerNavView.setNavigationItemSelectedListener {
+
             when (it.itemId) {
                 R.id.drawerItemHome -> {
-                    launchFragment(FragmentHome())
+                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemProfile -> {
-                    launchFragment(FragmentProfile())
+                    Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemMyShop -> {
-                    launchFragment(FragmentMyShop())
+                    Toast.makeText(this, "My Shop", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemReportBug -> {
-                    launchFragment(FragmentReportBug())
+                    Toast.makeText(this, "Report a Bug", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemLogout -> {
-                    logoutUserDialog()
+                    Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
                 }
                 else -> {
-                    launchFragment(FragmentSettings())
+                    Toast.makeText(this, "setting", Toast.LENGTH_SHORT).show()
                 }
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             return@setNavigationItemSelectedListener true
         }
-    }
-
-    private fun logoutUserDialog() {
-        val builder = AlertDialog.Builder(this)
-        builder.apply {
-            setMessage("Sure to logout?")
-            setTitle("Logout")
-            setNegativeButton("No", null)
-            setPositiveButton("Yes") {dialog, which->
-                logout()
-            }
-        }
-        val dialog = builder.create()
-        dialog.show()
-    }
-
-    private fun logout()
-    {
-        //Logic Behind Logging out will be written here
-        Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
     }
 
     override fun onBackPressed() {
@@ -89,6 +63,6 @@ class HomeScreenActivity : AppCompatActivity() {
     }
 
     private fun launchFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.frameLayoutContainer, fragment).commit()
+        supportFragmentManager.beginTransaction().add(R.id.frameLayoutContainer, fragment).commit()
     }
 }

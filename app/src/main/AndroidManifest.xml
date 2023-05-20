@@ -16,15 +16,13 @@
             android:name=".HomeScreenActivity"
             android:theme="@style/Main_Theme_NoActionBar"
             android:exported="false" />
-        <activity
-            android:name=".Tailors"
-            android:exported="false" />
+
         <activity
             android:name=".Customers"
             android:exported="false"
             android:label="@string/title_activity_customer" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Tailors"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

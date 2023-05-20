@@ -14,10 +14,10 @@
     <EditText
         android:id="@+id/editTextText"
         style="@style/edit_text_login_signup"
+        android:autofillHints="Username or Email Address"
         android:ems="10"
         android:hint="@string/username_or_email"
-        android:inputType="text"
-        android:autofillHints="Username or Email Address"/>
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/textView3"
@@ -27,9 +27,9 @@
     <EditText
         android:id="@+id/editTextLoginTailorPassword"
         style="@style/edit_text_login_signup"
+        android:autofillHints="Password"
         android:ems="10"
         android:hint="@string/password"
-        android:inputType="textPassword"
-        android:autofillHints="Password"/>
+        android:inputType="textPassword" />
 
 </LinearLayout>

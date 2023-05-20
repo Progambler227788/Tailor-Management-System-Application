@@ -9,12 +9,14 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
-        android:layout_height="124dp"
+        android:layout_height="100sp"
+        android:layout_marginTop="2dp"
         android:contentDescription="@string/tailor_image"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tailoring" />
+        app:srcCompat="@drawable/logo" />
 
     <FrameLayout
         android:id="@+id/tailorFragmentFrame"
@@ -22,11 +24,13 @@
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"></FrameLayout>
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -39,37 +43,50 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/LoginTailor"
                 style="@style/button_style"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="40dp"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="10dp"
                 android:text="@string/login"
-                android:textSize="20sp" />
+               />
 
-            <Button
-                android:id="@+id/SignupTailor"
+            <android.widget.Button
+                android:id="@+id/SignUpCustomer"
                 style="@style/button_style"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:text="@string/sign_up_as_customer"
+                />
 
-                android:layout_marginTop="20dp"
-                android:text="@string/signup"
-                android:textSize="20sp" />
+            <android.widget.Button
+                android:id="@+id/SignUpTailor"
+                style="@style/button_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/sign_up_as_tailor"
+                 />
+
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:padding="2dp"
             android:text="@string/forget_your_account" />
@@ -78,7 +95,7 @@
             android:id="@+id/textViewRecoverAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="10dp"
             android:padding="2dp"
             android:text="@string/recover_your_account"
             android:textColor="@color/blue_702" />
