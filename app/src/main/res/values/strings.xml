@@ -83,4 +83,9 @@
     <string name="drawer_header_user_name">Guest</string>
     <string name="drawer_header_shop_name">Tailoring Shop</string>
     <string name="drawer_header_email">guest@tcode.com</string>
+
+    <!-- Bottom Navigation Menu String Resources -->
+    <string name="home_bottom_nav_cust">Customers</string>
+    <string name="home_bottom_nav_order">orders</string>
+    <string name="home_bottom_nav_workers">Workers</string>
 </resources>

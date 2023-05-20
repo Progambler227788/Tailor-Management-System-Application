@@ -1,5 +1,6 @@
 package com.example.tailoringmanagement
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,8 @@ import android.os.Bundle
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
@@ -35,27 +38,49 @@ class HomeScreenActivity : AppCompatActivity() {
             val id = it.itemId
             when (id) {
                 R.id.drawerItemHome -> {
-                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                    launchFragment(FragmentHome())
                 }
                 R.id.drawerItemProfile -> {
-                    Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
+                    launchFragment(FragmentProfile())
                 }
                 R.id.drawerItemMyShop -> {
-                    Toast.makeText(this, "My Shop", Toast.LENGTH_SHORT).show()
+                    launchFragment(FragmentMyShop())
                 }
                 R.id.drawerItemReportBug -> {
-                    Toast.makeText(this, "Report a Bug", Toast.LENGTH_SHORT).show()
+                    launchFragment(FragmentReportBug())
                 }
                 R.id.drawerItemLogout -> {
-                    Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
+                    logoutUserDialog()
                 }
                 else -> {
-                    Toast.makeText(this, "setting", Toast.LENGTH_SHORT).show()
+                    launchFragment(FragmentSettings())
                 }
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             return@setNavigationItemSelectedListener true
         }
+    }
+
+    private fun logoutUserDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.apply {
+            setMessage("Sure to logout?")
+            setTitle("Logout")
+            setNegativeButton("OK") {dialog, which->
+
+            }
+            setPositiveButton("OK") {dialog, which->
+                logout()
+            }
+        }
+    }
+
+    private fun logout()
+    {
+        //Logic Behind Logging out will be written here
+        Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onBackPressed() {
