@@ -5,7 +5,9 @@ import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.tailoringmanagement.databinding.ActivityHomeScreenBinding
@@ -19,6 +21,7 @@ class HomeScreenActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.drawerToolBar.toolBar)
         binding.drawerToolBar.toolBar.setTitle(R.string.app_name)
+        binding.drawerToolBar.toolBar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
 
         val toggle = ActionBarDrawerToggle(
             this, binding.drawerLayout,

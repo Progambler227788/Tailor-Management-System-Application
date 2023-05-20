@@ -19,6 +19,7 @@
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:statusBarColor">@color/blue_500</item>
         <item name="drawerArrowStyle">@style/DrawerIconStyle</item>
+        <item name="actionBarTheme">@style/Theme.AppCompat.DayNight.DarkActionBar</item>
     </style>
 
     <style name="DrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">

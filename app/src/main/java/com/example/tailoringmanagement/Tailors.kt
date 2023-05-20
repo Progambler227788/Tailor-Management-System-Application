@@ -16,6 +16,7 @@ class Tailors : AppCompatActivity()
     private lateinit var binding: ActivityTailorsBinding
     private val loginTailor :  LoginTailor = LoginTailor()
     private val signUpTailor : SignUpTailor = SignUpTailor()
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
