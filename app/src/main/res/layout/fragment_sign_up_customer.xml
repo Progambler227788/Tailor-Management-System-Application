@@ -16,9 +16,8 @@
             />
 
         <EditText
-            android:id="@+id/inputName"
+            android:id="@+id/custName"
             style="@style/edit_text_login_signup"
-            android:layout_width="match_parent"
             android:autofillHints="username or email"
             android:ems="10"
             android:hint="@string/cus_name"
@@ -33,7 +32,7 @@
            />
 
         <EditText
-            android:id="@+id/inputAge"
+            android:id="@+id/custAge"
             style="@style/edit_text_login_signup"
             android:autofillHints="Customer Age"
             android:ems="10"
@@ -49,7 +48,7 @@
            />
 
         <EditText
-            android:id="@+id/inputPhone"
+            android:id="@+id/custPhone"
             style="@style/edit_text_login_signup"
             android:autofillHints="phone"
             android:ems="10"
@@ -65,7 +64,7 @@
              />
 
         <EditText
-            android:id="@+id/inputEmail"
+            android:id="@+id/custEmail"
             style="@style/edit_text_login_signup"
             android:autofillHints="emailAddress"
             android:ems="10"
@@ -81,13 +80,30 @@
             />
 
         <EditText
-            android:id="@+id/inputPassword"
+            android:id="@+id/custPassword"
             style="@style/edit_text_login_signup"
             android:autofillHints="password"
             android:hint="@string/cust_password"
             android:ems="10"
             android:inputType="textPassword"
              />
+
+        <TextView
+            android:id="@+id/confirmPasswordTV"
+            style="@style/text_view_login_signup"
+            android:labelFor="@+id/inputPassword"
+            android:text="@string/confirm_password"
+            />
+
+        <EditText
+            android:id="@+id/custConfirmPassword"
+            style="@style/edit_text_login_signup"
+            android:autofillHints="password"
+            android:hint="@string/cust_retype_password"
+            android:ems="10"
+            android:inputType="textPassword"
+            />
+
 
     </LinearLayout>
 

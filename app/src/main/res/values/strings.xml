@@ -14,7 +14,6 @@
     <string name="forgotten">Forget Username or Password?</string>
     <string name="recover">Recover</string>
     <string name="title_activity_customer">Customer</string>
-    <string name="Guest">Use As Guest</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -26,7 +25,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="signup">Sign Up</string>
     <string name="sign_up_screen">Sign up screen</string>
-    <string name="login">Login</string>
     <string name="login_screen">Login_Screen</string>
     <string name="forgot">Recover Account</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -44,16 +42,15 @@
     <string name="cust_email_address">Your Email address</string>
     <string name="enter_your_password">Enter your password:</string>
     <string name="cust_password">Create Password</string>
+    <string name="confirm_password">Retype Password</string>
+    <string name="cust_retype_password">Confrim Password</string>
 
     <!-- Activity Tailor String Resources -->
     <string name="tailor_image">Image Showing Tailor</string>
-    <string name="forget_your_account">Forget Your Email or Password?</string>
-    <string name="recover_your_account">Recover Your Account.</string>
+
 
     <!-- Fragment Login Tailor String Resources -->
     <string name="enter_username_or_email">Enter Your Username/Email:</string>
-    <string name="username_or_email">Username/Email</string>
-    <string name="password">Password</string>
     <string name="enter_shop">Enter Shop</string>
 
     <!-- Fragment Sign Up Tailor String Resources -->
@@ -88,6 +85,21 @@
     <string name="home_bottom_nav_cust">Customers</string>
     <string name="home_bottom_nav_order">orders</string>
     <string name="home_bottom_nav_workers">Workers</string>
+
+    <!-- StartUp Activity String Resources -->
+    <string name="login_page">Login Page</string>
+    <string name="login">Login</string>
+    <string name="application_logo">Application Logo</string>
+    <string name="username_or_email">Username/Email</string>
+    <string name="password">Password</string>
     <string name="sign_up_as_customer">Sign Up as Customer</string>
     <string name="sign_up_as_tailor">Sign Up as Tailor</string>
+    <string name="forget_your_account">Forget Your Email or Password?</string>
+    <string name="recover_your_account">Recover Your Account.</string>
+    <string name="Guest">Use As Guest</string>
+
+    <!-- SignUp Activity String Resources -->
+    <string name="signup_page">Sign Up Page</string>
+    <string name="sign_up">Sign Up</string>
+
 </resources>

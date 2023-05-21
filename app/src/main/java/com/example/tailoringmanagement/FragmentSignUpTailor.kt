@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import com.example.tailoringmanagement.databinding.FragmentSignUpTailorBinding
 
-
-class SignUpCustomer : Fragment() {
-
-
+class FragmentSignUpTailor : Fragment()
+{
+    private lateinit var binding: FragmentSignUpTailorBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,7 +18,8 @@ class SignUpCustomer : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         requireActivity().window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-        return inflater.inflate(R.layout.fragment_sign_up_customer, container, false)
+        binding = FragmentSignUpTailorBinding.inflate(layoutInflater)
+        return binding.root
     }
 
 }

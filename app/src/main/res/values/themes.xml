@@ -51,14 +51,14 @@
     </style>
 
     <style name="edit_text_login_signup">
-        <item name="android:layout_width">270sp</item>
-        <item name="android:layout_height">48sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginStart">55sp</item>
         <item name="android:layout_marginTop">25sp</item>
         <item name="android:layout_marginEnd">40sp</item>
-        <item name="android:padding">10sp</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:padding">15sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:background">@drawable/styling_borders</item>
         <item name="android:textColor">@color/black</item>
     </style>
