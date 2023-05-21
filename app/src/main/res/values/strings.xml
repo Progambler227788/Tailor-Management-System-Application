@@ -6,15 +6,6 @@
     <string name="action_bar_search">Search</string>
     <string name="action_bar_setting">Setting</string>
 
-    <!-- Activity Main String Resources -->
-    <string name="ask">Are You a</string>
-    <string name="tailor">Tailor</string>
-    <string name="or">Or</string>
-    <string name="customer">Customer</string>
-    <string name="forgotten">Forget Username or Password?</string>
-    <string name="recover">Recover</string>
-    <string name="title_activity_customer">Customer</string>
-
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -44,14 +35,6 @@
     <string name="cust_password">Create Password</string>
     <string name="confirm_password">Retype Password</string>
     <string name="cust_retype_password">Confrim Password</string>
-
-    <!-- Activity Tailor String Resources -->
-    <string name="tailor_image">Image Showing Tailor</string>
-
-
-    <!-- Fragment Login Tailor String Resources -->
-    <string name="enter_username_or_email">Enter Your Username/Email:</string>
-    <string name="enter_shop">Enter Shop</string>
 
     <!-- Fragment Sign Up Tailor String Resources -->
     <string name="retype_password">Retype Password</string>
