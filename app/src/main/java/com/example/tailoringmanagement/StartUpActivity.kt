@@ -30,16 +30,13 @@ class StartUpActivity : AppCompatActivity()
             Toast.makeText(this, "Recovery Not Yet Implemented", Toast.LENGTH_SHORT).show()
         }
         binding.textViewUseAsGuest.setOnClickListener {
-            val intent = Intent(this, HomeScreenActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, HomeScreenActivity::class.java))
         }
     }
 
     private fun signUpUser(userType: String)
     {
-        val intent = Intent(this, SIgnUpActivity::class.java)
-        intent.putExtra("userType", userType)
-        startActivity(intent)
+        startActivity(Intent(this, SIgnUpActivity::class.java).putExtra("userType", userType))
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
