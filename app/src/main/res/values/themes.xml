@@ -44,7 +44,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginStart">55sp</item>
-        <item name="android:layout_marginTop">25sp</item>
+        <item name="android:layout_marginTop">20sp</item>
         <item name="android:layout_marginEnd">40sp</item>
         <item name="android:textColor">@color/blue_702</item>
         <item name="android:textSize">18sp</item>

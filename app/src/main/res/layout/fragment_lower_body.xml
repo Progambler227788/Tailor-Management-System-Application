@@ -1,96 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".lowerbody.lowerbodyfragments.FragmentLowerBody">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".lowerbody.lowerbodyfragments.FragmentLowerBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/length"
             style="@style/text_view_login_signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="136dp"
-            android:text="Enter length:"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@string/enter_length"
+           />
+        <EditText
+            android:id="@+id/inputLength"
+            style="@style/edit_text_login_signup"
+            android:autofillHints="Length of Cloth"
+            android:ems="10"
+            android:hint="@string/length"
+            android:inputType="number"
+            />
 
         <TextView
             android:id="@+id/waist"
             style="@style/text_view_login_signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="248dp"
-            android:text="Enter waist:"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@string/enter_waist"
+          />
+
+        <EditText
+            android:id="@+id/inputWaist"
+            style="@style/edit_text_login_signup"
+            android:autofillHints="Waist of Cloth"
+            android:ems="10"
+            android:hint="@string/waist"
+            android:inputType="number"
+            />
 
         <TextView
-            android:id="@+id/legopenwidth"
+            android:id="@+id/legOpenWidth"
             style="@style/text_view_login_signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="80dp"
-            android:text="Enter leg open width:"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/waist" />
+            android:text="@string/enter_leg_open_width"
+             />
+
+
+
 
         <EditText
-            android:id="@+id/inputlength"
+            android:id="@+id/inputLegOpenWidth"
             style="@style/edit_text_login_signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="124dp"
-            android:layout_marginEnd="16dp"
-            android:autofillHints="Tailor Name"
+            android:autofillHints="Leg Open Width of Cloth"
             android:ems="10"
-            android:hint="Length"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/length"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:hint="@string/leg_open_width"
+            android:inputType="number"
+           />
+    </LinearLayout>
 
-        <EditText
-            android:id="@+id/inputwaist"
-            style="@style/edit_text_login_signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="12dp"
-            android:autofillHints="Tailor Name"
-            android:ems="10"
-            android:hint="Waist"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/waist"
-            app:layout_constraintTop_toBottomOf="@+id/inputlength" />
-
-        <EditText
-            android:id="@+id/inputlegOwidth"
-            style="@style/edit_text_login_signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="8dp"
-            android:autofillHints="Tailor Name"
-            android:ems="10"
-            android:hint="Leg Open Width"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/legopenwidth"
-            app:layout_constraintTop_toBottomOf="@+id/inputwaist" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>

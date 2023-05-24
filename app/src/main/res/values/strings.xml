@@ -84,5 +84,21 @@
     <!-- SignUp Activity String Resources -->
     <string name="signup_page">Sign Up Page</string>
     <string name="sign_up">Sign Up</string>
+    <string name="enter_length">Enter length:</string>
+    <string name="enter_waist">Enter waist:</string>
+    <string name="enter_leg_open_width">Enter leg open width:</string>
+    <string name="length">Length</string>
+    <string name="waist">Waist</string>
+    <string name="leg_open_width">Leg Open Width</string>
+    <string name="enter_thigh_width">Enter thigh width:</string>
+    <string name="thigh_width">Thigh Width</string>
+    <string name="enter_knee_width">Enter knee width:</string>
+    <string name="knee_width">Knee Width</string>
+    <string name="enter_back_rise">Enter back rise:</string>
+    <string name="back_rise">Back Rise</string>
+    <string name="enter_inseam_length">Enter inSeam Length:</string>
+    <string name="in_seam_length">In Seam Length</string>
+    <string name="front_rise_length">Front Rise Length</string>
+    <string name="enter_front_rise_length">Enter front rise length:</string>
 
 </resources>
