@@ -31,7 +31,7 @@
             android:autofillHints="Front Rise Length"
             android:ems="10"
             android:hint="@string/front_rise_length"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             />
 
     </LinearLayout>

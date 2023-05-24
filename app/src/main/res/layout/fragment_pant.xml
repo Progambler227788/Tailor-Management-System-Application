@@ -31,7 +31,7 @@
         android:autofillHints="Thigh Width of Pant"
         android:ems="10"
         android:hint="@string/thigh_width"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         />
     <TextView
         android:id="@+id/kneewidth"
@@ -46,7 +46,7 @@
         android:autofillHints="Knee Width of Pant"
         android:ems="10"
         android:hint="@string/knee_width"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         />
 
     <TextView
@@ -61,7 +61,7 @@
         android:autofillHints="Back Rise of Pant"
         android:ems="10"
         android:hint="@string/back_rise"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         />
     <TextView
         android:id="@+id/inSeamLength"
@@ -75,7 +75,7 @@
         android:autofillHints="In Seam Length of Pant"
         android:ems="10"
         android:hint="@string/in_seam_length"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         />
 </LinearLayout>
 </ScrollView>

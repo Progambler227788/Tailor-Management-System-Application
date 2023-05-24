@@ -18,7 +18,7 @@
             android:autofillHints="Length of Cloth"
             android:ems="10"
             android:hint="@string/length"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             />
 
         <TextView
@@ -33,7 +33,7 @@
             android:autofillHints="Waist of Cloth"
             android:ems="10"
             android:hint="@string/waist"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             />
 
         <TextView
@@ -51,7 +51,7 @@
             android:autofillHints="Leg Open Width of Cloth"
             android:ems="10"
             android:hint="@string/leg_open_width"
-            android:inputType="number"
+            android:inputType="numberDecimal"
            />
     </LinearLayout>
 
