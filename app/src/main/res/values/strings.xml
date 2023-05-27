@@ -134,5 +134,12 @@
     <string name="enter_half_sleeve_width">Enter half sleeve width:</string>
     <string name="half_sleeve_length">Half Sleeve Length</string>
     <string name="enter_half_sleeve_length">Enter half sleeve length:</string>
+    <string name="add_customers">Add Customers</string>
+    <string name="enter_customer_name">Enter Customer Name:</string>
+    <string name="enter_customer_phone_number">Enter Customer Phone Number:</string>
+    <string name="customer_phone_number">Customer Phone Number</string>
+    <string name="enter_customer_id">Enter Customer ID:</string>
+    <string name="identification_number_optional">Identification Number (optional)</string>
+    <string name="customer_name">Customer Name</string>
 
 </resources>

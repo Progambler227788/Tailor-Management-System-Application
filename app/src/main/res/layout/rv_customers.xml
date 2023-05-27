@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvCustomerId"
+            style="@style/text_view_recycle"
+            android:text="Customer ID"
+            />
+    <TextView
+        android:id="@+id/tvCustomerName"
+        style="@style/text_view_recycle"
+        android:text="Customer Name"
+        />
+    <TextView
+        android:id="@+id/tvCustomerPhoneNumber"
+        style="@style/text_view_recycle"
+        android:text="Customer Phone Number"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/btnEdit"
+            style="@style/image_button_style"
+            android:contentDescription="Edit Customers"
+            app:srcCompat="@drawable/edit_icon" />
+        <ImageButton
+            android:id="@+id/btnDelete"
+            style="@style/image_button_style"
+            android:contentDescription="Delete Customers"
+            app:srcCompat="@drawable/delete_icon" />
+        <ImageButton
+            android:id="@+id/btnEditCustomers"
+            style="@style/image_button_style"
+            android:contentDescription="Edit Customers Sizes"
+            app:srcCompat="@drawable/edit_size" />
+    </LinearLayout>
+
+
+</LinearLayout>

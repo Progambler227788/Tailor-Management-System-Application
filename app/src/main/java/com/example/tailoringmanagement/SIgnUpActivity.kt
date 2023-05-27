@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.tailoringmanagement.databinding.ActivitySignUpBinding
 import com.example.tailoringmanagement.lowerbody.lowerbodyfragments.FragmentLowerBody
 import com.example.tailoringmanagement.lowerbody.lowerbodyfragments.FragmentPant
+import com.example.tailoringmanagement.upperbody.upperbodyfragments.FragmentCoat
 
 class SIgnUpActivity : AppCompatActivity()
 {
@@ -21,7 +22,7 @@ class SIgnUpActivity : AppCompatActivity()
         setContentView(binding.root)
         userType = intent.getStringExtra("userType")
         if (userType == "Tailor")
-         replaceFragment(FragmentSignUpTailor())
+         replaceFragment(FragmentCoat())
        //   replaceFragment(FragmentPant())
         else
             replaceFragment(FragmentSignUpCustomer())

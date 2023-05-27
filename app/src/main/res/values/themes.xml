@@ -49,6 +49,16 @@
         <item name="android:textColor">@color/blue_702</item>
         <item name="android:textSize">18sp</item>
     </style>
+    <style name="text_view_recycle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">40sp</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="android:layout_marginEnd">40sp</item>
+        <item name="android:textColor">@color/blue_702</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 
     <style name="edit_text_login_signup">
         <item name="android:layout_width">match_parent</item>
@@ -61,6 +71,12 @@
         <item name="android:textSize">18sp</item>
         <item name="android:background">@drawable/styling_borders</item>
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="image_button_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50sp</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
     <style name="Main_Theme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
