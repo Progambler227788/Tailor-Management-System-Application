@@ -141,5 +141,9 @@
     <string name="enter_customer_id">Enter Customer ID:</string>
     <string name="identification_number_optional">Identification Number (optional)</string>
     <string name="customer_name">Customer Name</string>
+    <string name="customer_id">Customer ID</string>
+    <string name="edit_customers">Edit Customers</string>
+    <string name="delete_customers">Delete Customers</string>
+    <string name="edit_customers_sizes">Edit Customers Sizes</string>
 
 </resources>
