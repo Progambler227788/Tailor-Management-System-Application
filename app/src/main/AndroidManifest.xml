@@ -13,10 +13,13 @@
         android:theme="@style/Main_Theme"
         tools:targetApi="31">
         <activity
-            android:name="com.example.tailoringmanagement.recyclerview.CustomersDetails"
+            android:name=".SizesActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.tailoringmanagement.recyclerview.CustomerRv"
+            android:name=".recyclerview.CustomersDetails"
+            android:exported="false" />
+        <activity
+            android:name=".recyclerview.CustomerRv"
             android:exported="false" />
         <activity
             android:name=".SIgnUpActivity"
