@@ -52,7 +52,9 @@
     <string name="drawer_close">Close Drawer Navigation</string>
 
     <!-- Drawer Menu String Resources -->
-    <string name="drawer_home">Home</string>
+    <string name="drawer_customer">Customers</string>
+    <string name="drawer_order">Orders</string>
+    <string name="drawer_employee">Employees</string>
     <string name="drawer_profile">Profile</string>
     <string name="drawer_my_shop">My Shop</string>
     <string name="drawer_settings">Settings</string>
@@ -84,6 +86,8 @@
     <!-- SignUp Activity String Resources -->
     <string name="signup_page">Sign Up Page</string>
     <string name="sign_up">Sign Up</string>
+
+
     <string name="enter_length">Enter length:</string>
     <string name="enter_waist">Enter waist:</string>
     <string name="enter_leg_open_width">Enter leg open width:</string>

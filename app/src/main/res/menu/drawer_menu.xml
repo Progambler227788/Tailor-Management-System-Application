@@ -3,9 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/drawerItemHome"
+        android:id="@+id/drawerItemCustomers"
         android:icon="@drawable/ic_drawer_home"
-        android:title="@string/drawer_home" />
+        android:title="@string/drawer_customer" />
+    <item
+        android:id="@+id/drawerItemOrders"
+        android:icon="@drawable/ic_drawer_orders"
+        android:title="@string/drawer_order" />
+    <item
+        android:id="@+id/drawerItemEmployees"
+        android:icon="@drawable/ic_drawer_employee"
+        android:title="@string/drawer_employee" />
     <item
         android:id="@+id/drawerItemProfile"
         android:icon="@drawable/ic_drawer_profile"

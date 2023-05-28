@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.tailoringmanagement.databinding.ActivityHomeScreenBinding
 import com.example.tailoringmanagement.recyclerview.CustomerRv
+import com.example.tailoringmanagement.recyclerview.FragmentRVCustomerRecord
 
 class HomeScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeScreenBinding
@@ -32,18 +33,24 @@ class HomeScreenActivity : AppCompatActivity() {
         binding.drawerNavView.setNavigationItemSelectedListener {
 
             when (it.itemId) {
-                R.id.drawerItemHome -> {
-                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                R.id.drawerItemCustomers -> {
+                    binding.drawerToolBar.toolBar.setTitle("Customers")
+                    launchFragment(FragmentRVCustomerRecord())
+                    Toast.makeText(this, "Customers", Toast.LENGTH_SHORT).show()
+                }
+                R.id.drawerItemOrders -> {
+                    Toast.makeText(this, "Orders", Toast.LENGTH_SHORT).show()
+                }
+                R.id.drawerItemEmployees -> {
+                    Toast.makeText(this, "Employees", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemProfile -> {
                     Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemMyShop -> {
-                    startActivity(Intent(this,CustomerRv::class.java))
-                 //   Toast.makeText(this, "My Shop", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "My Shop", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemReportBug -> {
-
                     Toast.makeText(this, "Report a Bug", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemLogout -> {
