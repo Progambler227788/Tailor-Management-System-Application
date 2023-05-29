@@ -146,6 +146,8 @@
     <string name="identification_number_optional">Identification Number (optional)</string>
     <string name="customer_name">Customer Name</string>
     <string name="customer_id">Customer ID</string>
+    <string name="btn_Add">Add</string>
+    <string name="btn_cancel">Cancel</string>
     <string name="edit_customers">Edit Customers</string>
     <string name="delete_customers">Delete Customers</string>
     <string name="edit_customers_sizes">Edit Customers Sizes</string>

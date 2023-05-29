@@ -1,5 +1,4 @@
 package com.example.tailoringmanagement
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -8,8 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.tailoringmanagement.databinding.ActivityHomeScreenBinding
-import com.example.tailoringmanagement.recyclerview.CustomerRv
-import com.example.tailoringmanagement.recyclerview.FragmentRVCustomerRecord
+import com.example.tailoringmanagement.customerPageForTailors.FragmentRVCustomerRecord
 
 class HomeScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeScreenBinding
@@ -19,7 +17,7 @@ class HomeScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.drawerToolBar.toolBar)
-        binding.drawerToolBar.toolBar.setTitle(R.string.app_name)
+        //binding.drawerToolBar.toolBar.setTitle(R.string.app_name)
         binding.drawerToolBar.toolBar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
 
         val toggle = ActionBarDrawerToggle(
@@ -34,8 +32,7 @@ class HomeScreenActivity : AppCompatActivity() {
 
             when (it.itemId) {
                 R.id.drawerItemCustomers -> {
-                    binding.drawerToolBar.toolBar.setTitle("Customers")
-                    launchFragment(FragmentRVCustomerRecord())
+                    launchFragment("Customers", FragmentRVCustomerRecord())
                     Toast.makeText(this, "Customers", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemOrders -> {
@@ -45,24 +42,34 @@ class HomeScreenActivity : AppCompatActivity() {
                     Toast.makeText(this, "Employees", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemProfile -> {
+                    launchFragment("Profile", FragmentProfile())
                     Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemMyShop -> {
+                    launchFragment("My Shop", FragmentMyShop())
                     Toast.makeText(this, "My Shop", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemReportBug -> {
+                    launchFragment("Report a Bug", FragmentReportBug())
                     Toast.makeText(this, "Report a Bug", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemLogout -> {
                     Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
                 }
                 else -> {
+                    launchFragment("Settings", FragmentSettings())
                     Toast.makeText(this, "setting", Toast.LENGTH_SHORT).show()
                 }
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             return@setNavigationItemSelectedListener true
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        launchFragment("Customers", FragmentRVCustomerRecord())
+
     }
 
     override fun onBackPressed() {
@@ -73,7 +80,8 @@ class HomeScreenActivity : AppCompatActivity() {
             super.onBackPressed()
     }
 
-    private fun launchFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().add(R.id.frameLayoutContainer, fragment).commit()
+    private fun launchFragment(toolBarTitle: String, fragment: Fragment) {
+        binding.drawerToolBar.toolBar.setTitle(toolBarTitle)
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayoutContainer, fragment).commit()
     }
 }

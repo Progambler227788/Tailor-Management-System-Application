@@ -16,10 +16,10 @@
             android:name=".SizesActivity"
             android:exported="false" />
         <activity
-            android:name=".recyclerview.CustomersDetails"
+            android:name=".customerPageForTailors.CustomersDetails"
             android:exported="false" />
         <activity
-            android:name=".recyclerview.CustomerRv"
+            android:name=".customerPageForTailors.CustomerRv"
             android:exported="false" />
         <activity
             android:name=".SIgnUpActivity"

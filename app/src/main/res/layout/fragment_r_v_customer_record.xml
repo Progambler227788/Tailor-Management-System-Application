@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".recyclerview.FragmentRVCustomerRecord"
+    tools:context=".customerPageForTailors.FragmentRVCustomerRecord"
     android:id="@+id/rv"
     android:layout_marginTop="20dp"
     android:layout_marginBottom="20dp">

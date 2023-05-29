@@ -1,4 +1,4 @@
-package com.example.tailoringmanagement.recyclerview
+package com.example.tailoringmanagement.customerPageForTailors
 
 import android.content.Intent
 import android.os.Bundle
@@ -32,8 +32,8 @@ class FragmentRVCustomerRecord : Fragment() {
         binding.recyclerViewCustomers.adapter = customerAdapter
 
         binding.btnAddNewCustomer.setOnClickListener {
-            startActivity(Intent(requireActivity(), CustomersDetails::class.java))
-
+            val dialog = DialogNewCustDetails()
+            dialog.show(requireActivity().supportFragmentManager, "Add New Cust")
         }
 
         notifyUser()

@@ -1,4 +1,4 @@
-package com.example.tailoringmanagement.recyclerview
+package com.example.tailoringmanagement.customerPageForTailors
 
 import android.content.Context
 import android.view.LayoutInflater
