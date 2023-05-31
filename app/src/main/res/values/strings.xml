@@ -152,4 +152,7 @@
     <string name="delete_customers">Delete Customers</string>
     <string name="edit_customers_sizes">Edit Customers Sizes</string>
 
+    <!-- Apparel Selector Activity String Resources -->
+    <string name="delete_size_record">Delete</string>
+    <string name="save_size_record">Save</string>
 </resources>

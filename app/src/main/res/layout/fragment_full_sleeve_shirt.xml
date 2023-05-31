@@ -11,7 +11,7 @@
         >
 
         <include
-            layout="@layout/fragment_full_sleeve"
+            layout="@layout/content_full_sleeve"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

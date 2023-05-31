@@ -6,8 +6,6 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.tailoringmanagement.databinding.ActivitySignUpBinding
-import com.example.tailoringmanagement.lowerbody.lowerbodyfragments.FragmentLowerBody
-import com.example.tailoringmanagement.lowerbody.lowerbodyfragments.FragmentPant
 import com.example.tailoringmanagement.upperbody.upperbodyfragments.FragmentCoat
 
 class SIgnUpActivity : AppCompatActivity()
