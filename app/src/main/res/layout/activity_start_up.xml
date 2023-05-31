@@ -84,10 +84,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:gravity="center"
         android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLoginUser">
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginUser"
+        app:layout_constraintVertical_bias="0.638">
 
         <android.widget.Button
             android:id="@+id/btnSignUpTailor"
@@ -108,43 +112,33 @@
             android:paddingStart="40dp"
             android:paddingEnd="40dp"
             android:text="@string/sign_up_as_customer" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="@string/forget_your_account" />
+
+        <TextView
+            android:id="@+id/textViewUseAsGuest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="@string/Guest"
+            android:textColor="@color/blue_702" />
+
+        <TextView
+            android:id="@+id/textViewRecoverAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="2dp"
+            android:text="@string/recover_your_account"
+            android:textColor="@color/blue_702" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:padding="2dp"
-        android:text="@string/forget_your_account"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/textViewRecoverAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:padding="2dp"
-        android:text="@string/recover_your_account"
-        android:textColor="@color/blue_702"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textViewUseAsGuest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="2dp"
-        android:text="@string/Guest"
-        android:textColor="@color/blue_702"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRecoverAccount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
