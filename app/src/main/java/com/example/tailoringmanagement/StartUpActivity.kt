@@ -7,21 +7,24 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.example.tailoringmanagement.databinding.ActivityStartUpBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class StartUpActivity : AppCompatActivity()
 {
     private lateinit var binding: ActivityStartUpBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityStartUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.btnLoginUser.setOnClickListener {
-            Toast.makeText(this, "Login Not Yet Implemented", Toast.LENGTH_SHORT).show()
+        binding.btnSignUp.setOnClickListener {
+            signUpUser()
         }
-        binding.btnSignUpTailor.setOnClickListener {
-            signUpUser("Tailor")
+        binding.btnLoginUser.setOnClickListener {
+              loginUser()
         }
         binding.textViewRecoverAccount.setOnClickListener {
             Toast.makeText(this, "Recovery Not Yet Implemented", Toast.LENGTH_SHORT).show()
@@ -31,9 +34,40 @@ class StartUpActivity : AppCompatActivity()
         }
     }
 
-    private fun signUpUser(userType: String)
+    private fun signUpUser()
     {
-        startActivity(Intent(this, SIgnUpActivity::class.java).putExtra("userType", userType))
+        startActivity(Intent(this, SIgnUpActivity::class.java))
+    }
+    private fun loginUser(){
+        val email = binding.loginUser.text.toString()
+        val password = binding.loginPassword.text.toString()
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password).addOnCompleteListener {
+            task ->
+            if(task.isSuccessful){
+             val database = FirebaseDatabase.getInstance().reference.child("Users")
+             val key = task.result.user!!.uid
+             database.child(key).addListenerForSingleValueEvent(object : ValueEventListener{
+                 // functions to retrieve data
+             override fun onDataChange(snapshot: DataSnapshot) {
+                       val userType = snapshot.child("userType").value.toString()
+                     Toast.makeText(this@StartUpActivity,"Tailor Logged In",Toast.LENGTH_SHORT).show()
+                        if(userType=="Tailor"){
+                          startActivity(Intent(this@StartUpActivity,HomeScreenActivity::class.java))
+                        }
+                        else {
+                            Toast.makeText(this@StartUpActivity,"Customer Logged In",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+             override fun onCancelled(error: DatabaseError) {
+                        Toast.makeText(this@StartUpActivity,"Got error :$error",Toast.LENGTH_SHORT).show()
+                    }
+                })
+            }
+            else {
+                Toast.makeText(this@StartUpActivity,"Login denied. Invalid Credentials",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -9,14 +9,12 @@ import androidx.fragment.app.Fragment
 import com.example.tailoringmanagement.databinding.ActivitySignUpBinding
 import com.google.android.material.snackbar.Snackbar.*
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 @Suppress("UNREACHABLE_CODE", "DEPRECATION")
 class SIgnUpActivity : AppCompatActivity(), FragmentInteractionListener
 {
     private lateinit var binding: ActivitySignUpBinding
-    private var userType: String? = null
     private lateinit var firebase: FirebaseAuth
 
     private lateinit var email : String
@@ -24,8 +22,8 @@ class SIgnUpActivity : AppCompatActivity(), FragmentInteractionListener
     private lateinit var age : String
     private lateinit var phone : String
     private lateinit var name : String
-    private lateinit var shopName : String
     private lateinit var confirmPass : String
+    private lateinit var userType : String
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?)
@@ -34,32 +32,27 @@ class SIgnUpActivity : AppCompatActivity(), FragmentInteractionListener
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebase = FirebaseAuth.getInstance()
-        userType = intent.getStringExtra("userType")
-        if (userType == "Tailor")
-         replaceFragment(FragmentSignUpTailor())
-       //   replaceFragment(FragmentPant())
-        else
-            replaceFragment(FragmentSignUpCustomer())
+
+        replaceFragment(FragmentSignUpForUser())
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        binding.textViewSignPage.text = "Sign Up ${this.userType}"
+        binding.textViewSignPage.text = "Sign Up"
         binding.btnSignUpUser.setOnClickListener {
-            if (userType == "Tailor") {
+
                 // In your Activity
-                val fragment = supportFragmentManager.findFragmentById(R.id.frameLayoutSignUp) as? FragmentSignUpTailor
-                fragment?.sendDataToActivity()
+            val fragment = supportFragmentManager.findFragmentById(R.id.frameLayoutSignUp) as? FragmentSignUpForUser
+            fragment?.sendDataToActivity()
+            val id = fragment?.getSelectedRadioButtonId()
+            // by default type is tailor
+            if(id==R.id.rBCustomer)
+                userType="Customer"
                 if(validation()) {
-                    signUp(email, password, userType)
+                    signUp(email, password)
                 }
                 else
                     make(findViewById(android.R.id.content), "Fill Fields Properly", LENGTH_SHORT).show()
                 // fragment?.clearData()
-            }
-
-             else {
-                Toast.makeText(this, "Customer Sign Up", Toast.LENGTH_SHORT).show()
-            }
         }
     }
 
@@ -77,13 +70,13 @@ class SIgnUpActivity : AppCompatActivity(), FragmentInteractionListener
         name: String,
         age: String,
         phone: String,
-        shop: String
+        userType : String
     ) {
        this.email = email
        this.password = password
        this.confirmPass = confirm
        this.name= name
-       this.shopName = shop
+       this.userType = userType
        this.age = age
        this.phone = phone
     }
@@ -101,26 +94,22 @@ class SIgnUpActivity : AppCompatActivity(), FragmentInteractionListener
     }
     private fun validation() : Boolean {
         return ((name.isNotBlank() && email.isNotBlank() && password.isNotBlank() && confirmPass.isNotBlank()
-            && age.isNotBlank() && shopName.isNotBlank() && phone.isNotBlank() )
+            && age.isNotBlank()  && phone.isNotBlank() )
                 && (password==confirmPass))
     }
-    private fun signUp(email: String, password: String, check : String?) {
+    private fun signUp(email: String, password: String) {
         firebase.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     // Signup successful, you can retrieve the user from `task.result.user`
 
                     // Save user details to Realtime Database
-                    var database : DatabaseReference? = null
-                    if(check=="Tailor")
-                        database = FirebaseDatabase.getInstance().getReference("Tailors")
-                    else {
-                        // to be implemented for customers
-                    }
 
-                    val key = database?.push()?.key!!
+                    val database = FirebaseDatabase.getInstance().getReference("Users")
 
-                    val details = TailorModel(name,age.toInt(),phone,shopName)
+                    val key = task.result.user!!.uid
+
+                    val details = UserModel(key,email,password,name,age.toInt(),phone,userType)
 
                     database.child(key).setValue(details)
                         .addOnSuccessListener {

@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
-        android:id="@+id/editTextLoginUserName"
+        android:id="@+id/loginUser"
         style="@style/edit_text_login_signup"
         android:layout_width="match_parent"
         android:layout_marginStart="60sp"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewLoginPage" />
 
     <EditText
-        android:id="@+id/editTextLoginPassword"
+        android:id="@+id/loginPassword"
         style="@style/edit_text_login_signup"
         android:layout_width="match_parent"
         android:layout_marginStart="60sp"
@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.585"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLoginUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/loginUser" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -89,7 +89,7 @@
             android:text="@string/login" />
 
         <android.widget.Button
-            android:id="@+id/btnSignUpTailor"
+            android:id="@+id/btnSignUp"
             style="@style/button_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

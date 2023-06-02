@@ -4,9 +4,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+
 
         <TextView
             android:id="@+id/nameTV"
@@ -16,7 +18,7 @@
             />
 
         <EditText
-            android:id="@+id/custName"
+            android:id="@+id/signUpName"
             style="@style/edit_text_login_signup"
             android:autofillHints="username or email"
             android:ems="10"
@@ -32,7 +34,7 @@
            />
 
         <EditText
-            android:id="@+id/custAge"
+            android:id="@+id/signUpAge"
             style="@style/edit_text_login_signup"
             android:autofillHints="Customer Age"
             android:ems="10"
@@ -48,7 +50,7 @@
            />
 
         <EditText
-            android:id="@+id/custPhone"
+            android:id="@+id/signUpPhone"
             style="@style/edit_text_login_signup"
             android:autofillHints="phone"
             android:ems="10"
@@ -64,7 +66,7 @@
              />
 
         <EditText
-            android:id="@+id/custEmail"
+            android:id="@+id/signUpEmail"
             style="@style/edit_text_login_signup"
             android:autofillHints="emailAddress"
             android:ems="10"
@@ -80,7 +82,7 @@
             />
 
         <EditText
-            android:id="@+id/custPassword"
+            android:id="@+id/signUpPassword"
             style="@style/edit_text_login_signup"
             android:autofillHints="password"
             android:hint="@string/cust_password"
@@ -96,15 +98,38 @@
             />
 
         <EditText
-            android:id="@+id/custConfirmPassword"
+            android:id="@+id/signUpConfirmPassword"
             style="@style/edit_text_login_signup"
             android:autofillHints="password"
             android:hint="@string/cust_retype_password"
             android:ems="10"
             android:inputType="textPassword"
             />
+        <TextView
+            android:id="@+id/tvOption"
+            style="@style/text_view_login_signup"
+            android:layout_width="wrap_content"
+            android:text="@string/choose_one_from_below_options" />
 
 
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <RadioButton
+                android:id="@+id/rBTailor"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/tailor" />
+
+            <RadioButton
+                android:id="@+id/rBCustomer"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/customer" />
+        </RadioGroup>
     </LinearLayout>
 
 </ScrollView>

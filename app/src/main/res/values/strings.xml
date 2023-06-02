@@ -183,4 +183,7 @@
     <string name="profile_fragment">Profile Fragment</string>
     <string name="report_bug_fragment">Report Bug Fragment</string>
     <string name="settings_fragment">Settings Fragment</string>
+    <string name="choose_one_from_below_options">Choose One from below options:</string>
+    <string name="tailor">Tailor</string>
+    <string name="customer">Customer</string>
 </resources>

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 
 
-class FragmentSignUpCustomer : Fragment() {
+class Useless : Fragment() {
 
 
 
@@ -18,7 +18,8 @@ class FragmentSignUpCustomer : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         requireActivity().window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-        return inflater.inflate(R.layout.fragment_sign_up_customer, container, false)
+        return inflater.inflate(R.layout.fragment_sign_up_for_user, container, false)
     }
+
 
 }
