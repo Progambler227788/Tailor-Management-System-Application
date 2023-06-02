@@ -50,8 +50,9 @@ class StartUpActivity : AppCompatActivity()
                  // functions to retrieve data
              override fun onDataChange(snapshot: DataSnapshot) {
                        val userType = snapshot.child("userType").value.toString()
-                     Toast.makeText(this@StartUpActivity,"Tailor Logged In",Toast.LENGTH_SHORT).show()
+
                         if(userType=="Tailor"){
+                            Toast.makeText(this@StartUpActivity,"Tailor Logged In",Toast.LENGTH_SHORT).show()
                           startActivity(Intent(this@StartUpActivity,HomeScreenActivity::class.java))
                         }
                         else {
