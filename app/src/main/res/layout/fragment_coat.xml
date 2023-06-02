@@ -17,7 +17,7 @@
         <TextView
             android:id="@+id/individualShoulder"
             style="@style/text_view_login_signup"
-            android:text="Enter individual shoulder:"
+            android:text="@string/enter_individual_shoulder"
             />
 
         <EditText
@@ -25,13 +25,13 @@
             style="@style/edit_text_login_signup"
             android:autofillHints="Individual Shoulder"
             android:ems="10"
-            android:hint="Individual Shoulder"
+            android:hint="@string/individual_shoulder"
             android:inputType="numberDecimal"
             />
         <TextView
             android:id="@+id/firstButtonPos"
             style="@style/text_view_login_signup"
-            android:text="Enter fist button position:"
+            android:text="@string/enter_fist_button_position"
             />
 
         <EditText
@@ -39,7 +39,7 @@
             style="@style/edit_text_login_signup"
             android:autofillHints="First Button Position"
             android:ems="10"
-            android:hint="First Button Position"
+            android:hint="@string/first_button_position"
             android:inputType="numberDecimal"
             />
 
@@ -47,7 +47,7 @@
         <TextView
             android:id="@+id/halfBack"
             style="@style/text_view_login_signup"
-            android:text="Enter half back:"
+            android:text="@string/enter_half_back"
             />
 
         <EditText
@@ -55,7 +55,7 @@
             style="@style/edit_text_login_signup"
             android:autofillHints="Half Back"
             android:ems="10"
-            android:hint="Half Back"
+            android:hint="@string/half_back"
             android:inputType="numberDecimal"
             />
     </LinearLayout>

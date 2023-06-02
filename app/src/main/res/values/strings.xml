@@ -173,4 +173,14 @@
     <!-- Apparel Selector Activity String Resources -->
     <string name="delete_size_record">Delete</string>
     <string name="save_size_record">Save</string>
+    <string name="enter_individual_shoulder">Enter individual shoulder:</string>
+    <string name="individual_shoulder">Individual Shoulder</string>
+    <string name="enter_fist_button_position">Enter fist button position:</string>
+    <string name="first_button_position">First Button Position</string>
+    <string name="enter_half_back">Enter half back:</string>
+    <string name="half_back">Half Back</string>
+    <string name="my_shop_fragment">My Shop Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="report_bug_fragment">Report Bug Fragment</string>
+    <string name="settings_fragment">Settings Fragment</string>
 </resources>

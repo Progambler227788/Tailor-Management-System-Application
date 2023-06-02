@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher_tailor_app"
+        android:icon="@mipmap/ic_tailor_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_tailor_app_round"
+        android:roundIcon="@mipmap/ic_tailor_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Main_Theme"
         tools:targetApi="31" >
@@ -21,12 +21,7 @@
         <activity
             android:name=".SizesActivity"
             android:exported="false" />
-        <activity
-            android:name=".customerPageForTailors.CustomersDetails"
-            android:exported="false" />
-        <activity
-            android:name=".customerPageForTailors.CustomerRv"
-            android:exported="false" />
+
         <activity
             android:name=".SIgnUpActivity"
             android:exported="false" />

@@ -6,6 +6,6 @@
         android:startColor="@color/blue_900"
         android:endColor="@color/blue_701"
         android:type="linear" />
-        <corners android:radius="50dp" />
+        <corners android:radius="10dp" />
 
 </shape>

@@ -12,15 +12,12 @@ import com.example.tailoringmanagement.databinding.FragmentNewCustDetailsBinding
 
 class DialogNewCustDetails : DialogFragment() {
 
-    private lateinit var binding: FragmentNewCustDetailsBinding
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireActivity())
         val inflater = requireActivity().layoutInflater
         val dialogView = inflater.inflate(R.layout.fragment_new_cust_details, null)
         val btnCancel = dialogView.findViewById<Button>(R.id.btnCancelAddingCustomer)
         val btnAdd = dialogView.findViewById<Button>(R.id.btnSaveNewCustomer)
-        binding = FragmentNewCustDetailsBinding.inflate(layoutInflater)
         btnCancel.setOnClickListener {
             dismiss()
         }

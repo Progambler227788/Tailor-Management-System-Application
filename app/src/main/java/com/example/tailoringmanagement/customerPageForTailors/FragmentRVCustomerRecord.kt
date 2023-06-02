@@ -33,7 +33,7 @@ class FragmentRVCustomerRecord : Fragment() {
 
         binding.btnAddNewCustomer.setOnClickListener {
             val dialog = DialogNewCustDetails()
-            dialog.show(requireActivity().supportFragmentManager, "Add New Cust")
+            dialog.show(requireActivity().supportFragmentManager, "Add New Customer")
         }
 
         notifyUser()

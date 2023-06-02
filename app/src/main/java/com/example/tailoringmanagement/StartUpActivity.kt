@@ -23,9 +23,6 @@ class StartUpActivity : AppCompatActivity()
         binding.btnSignUpTailor.setOnClickListener {
             signUpUser("Tailor")
         }
-        binding.btnSignUpCustomer.setOnClickListener {
-            signUpUser("Customer")
-        }
         binding.textViewRecoverAccount.setOnClickListener {
             Toast.makeText(this, "Recovery Not Yet Implemented", Toast.LENGTH_SHORT).show()
         }
