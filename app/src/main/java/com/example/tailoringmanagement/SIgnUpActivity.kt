@@ -45,8 +45,9 @@ class SIgnUpActivity : AppCompatActivity(), FragmentInteractionListener
             fragment?.sendDataToActivity()
             val id = fragment?.getSelectedRadioButtonId()
             // by default type is tailor
-            if(id==R.id.rBCustomer)
-                userType="Customer"
+            if(id==R.id.rBCustomer) {
+                userType = "Customer"
+            }
                 if(validation()) {
                     signUp(email, password)
                 }
