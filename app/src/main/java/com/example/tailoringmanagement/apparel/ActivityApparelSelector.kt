@@ -1,30 +1,46 @@
-package com.example.tailoringmanagement
+package com.example.tailoringmanagement.apparel
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.ArrayAdapter
+import com.example.tailoringmanagement.ActivityEditCustomerSizes
+import com.example.tailoringmanagement.R
 import com.example.tailoringmanagement.databinding.ActivityApparelSelectorBinding
 
 class ActivityApparelSelector : AppCompatActivity()
 {
     private lateinit var binding: ActivityApparelSelectorBinding
+    private lateinit var apparelArray: ArrayList<Apparel>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityApparelSelectorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar!!.setTitle("Manage Sizes")
+        supportActionBar!!.title = "Manage Sizes"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        val apparels = arrayOf("Shalwar", "Pants", "Trouser", "Qameez", "Full Sleeve Shirt",
+        val imageIds = intArrayOf(
+            R.drawable.shalwar, R.drawable.pants, R.drawable.trouser, R.drawable.tunic,
+            R.drawable.full_sleeve_shirt, R.drawable.half_sleeve_shirt, R.drawable.coat,
+            R.drawable.waistcoat
+        )
+        val apparelName = arrayOf("Shalwar", "Pants", "Trouser", "Qameez", "Full Sleeve Shirt",
             "Half Sleeve Shirt", "Coat", "Waist Coat")
-        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, apparels)
-        binding.apparelListView.adapter = arrayAdapter
+
+        apparelArray = ArrayList()
+
+        for (i in apparelName.indices) {
+            val apparel = Apparel(apparelName[i], imageIds[i])
+            apparelArray.add(apparel)
+        }
+
         val intent = Intent(this, ActivityEditCustomerSizes::class.java)
-        binding.apparelListView.setOnItemClickListener { adapterView, view, position, id ->
+
+        binding.apparelListView.isClickable = true
+        binding.apparelListView.adapter = ApparelAdapter(this,apparelArray)
+        binding.apparelListView.setOnItemClickListener { _, _, position, _ ->
             when (position) {
                 0 -> {
                     intent.putExtra("apparel", "Shalwar")
@@ -54,7 +70,6 @@ class ActivityApparelSelector : AppCompatActivity()
             }
         }
 
-        
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

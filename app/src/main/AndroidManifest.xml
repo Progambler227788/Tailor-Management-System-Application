@@ -16,7 +16,7 @@
             android:name=".ActivityEditCustomerSizes"
             android:exported="false" />
         <activity
-            android:name=".ActivityApparelSelector"
+            android:name=".apparel.ActivityApparelSelector"
             android:exported="false" />
         <activity
             android:name=".SizesActivity"

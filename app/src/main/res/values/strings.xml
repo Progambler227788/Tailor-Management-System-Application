@@ -186,4 +186,8 @@
     <string name="choose_one_from_below_options">Choose One from below options:</string>
     <string name="tailor">Tailor</string>
     <string name="customer">Customer</string>
+
+    <!-- Apparel Item XML String Resources -->
+    <string name="apparel">Apparel</string>
+    <string name="apparel_image">Apparel Image</string>
 </resources>

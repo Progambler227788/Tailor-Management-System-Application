@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tailoringmanagement.ActivityApparelSelector
+import com.example.tailoringmanagement.apparel.ActivityApparelSelector
 import com.example.tailoringmanagement.databinding.RvCustomersBinding
 
 class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, var context : Context) : RecyclerView.Adapter<RvAdapterCustomer.MyViewHolder> () {
