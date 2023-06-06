@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.tailoringmanagement.R
-import com.example.tailoringmanagement.databinding.FragmentNewCustDetailsBinding
+import com.example.tailoringmanagement.localDB.DBHelper
 
 class DialogNewCustDetails : DialogFragment() {
 
@@ -29,7 +29,9 @@ class DialogNewCustDetails : DialogFragment() {
             val name = tvName.text?.toString() ?: ""
             val number = tvPhone.text?.toString() ?: ""
             if(id!="" && name!="" && number!="") {
-                Toast.makeText(requireActivity(), "Login Not Yet Implemented", Toast.LENGTH_SHORT).show()
+                val db = DBHelper(requireContext(), null)
+                db.addCustomer(id.toInt(), name, number)
+                Toast.makeText(requireContext(), "Customer Added", Toast.LENGTH_SHORT).show()
                 dismiss()
             }
             else {

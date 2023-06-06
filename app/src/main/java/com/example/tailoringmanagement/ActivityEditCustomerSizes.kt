@@ -37,7 +37,7 @@ class ActivityEditCustomerSizes : AppCompatActivity()
         binding.btnSaveSizeRecord.setOnClickListener {
             Toast.makeText(this, "Not Yet Implemented", Toast.LENGTH_SHORT).show()
         }
-        binding.btnDeleteSizeRecond.setOnClickListener {
+        binding.btnDeleteSizeRecord.setOnClickListener {
             showDialog()
         }
     }

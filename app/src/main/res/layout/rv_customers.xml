@@ -56,11 +56,12 @@
             style="@style/image_button_style"
             android:contentDescription="@string/delete_customers"
             app:srcCompat="@drawable/delete_icon" />
+
         <ImageButton
             android:id="@+id/btnEditCustomers"
             style="@style/image_button_style"
             android:contentDescription="@string/edit_customers_sizes"
-            app:srcCompat="@drawable/size_guide" />
+            app:srcCompat="@drawable/tape_measure_icon" />
     </LinearLayout>
 
 

@@ -21,7 +21,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:orientation="horizontal"
@@ -31,13 +31,15 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/btnDeleteSizeRecond"
+            android:id="@+id/btnDeleteSizeRecord"
             style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_weight="1"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
             android:text="@string/delete_size_record" />
 
         <Button
@@ -48,6 +50,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_weight="1"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
             android:text="@string/save_size_record" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

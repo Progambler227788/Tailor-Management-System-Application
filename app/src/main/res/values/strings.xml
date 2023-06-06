@@ -155,6 +155,12 @@
     <string name="half_sleeve_length">Half Sleeve Length</string>
     <string name="enter_half_sleeve_length">Enter half sleeve length:</string>
 
+    <!-- Waist Coat String Resources -->
+    <string name="enter_individual_shoulder">Enter individual shoulder:</string>
+    <string name="individual_shoulder">Individual Shoulder</string>
+    <string name="enter_first_button_position">Enter fist button position:</string>
+    <string name="first_button_position">First Button Position</string>
+
     <!-- Dialog New Cust Details String Resources -->
     <string name="add_customers">Add Customers</string>
     <string name="enter_customer_name">Enter Customer Name:</string>
@@ -173,10 +179,7 @@
     <!-- Apparel Selector Activity String Resources -->
     <string name="delete_size_record">Delete</string>
     <string name="save_size_record">Save</string>
-    <string name="enter_individual_shoulder">Enter individual shoulder:</string>
-    <string name="individual_shoulder">Individual Shoulder</string>
-    <string name="enter_fist_button_position">Enter fist button position:</string>
-    <string name="first_button_position">First Button Position</string>
+
     <string name="enter_half_back">Enter half back:</string>
     <string name="half_back">Half Back</string>
     <string name="my_shop_fragment">My Shop Fragment</string>

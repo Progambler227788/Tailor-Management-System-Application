@@ -31,7 +31,7 @@
         <TextView
             android:id="@+id/firstButtonPos"
             style="@style/text_view_login_signup"
-            android:text="@string/enter_fist_button_position"
+            android:text="@string/enter_first_button_position"
             />
 
         <EditText
