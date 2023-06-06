@@ -32,8 +32,8 @@ class FragmentRVCustomerRecord : Fragment() {
 
         binding.recyclerViewCustomers.layoutManager = LinearLayoutManager(requireActivity())
         binding.recyclerViewCustomers.setHasFixedSize(true)
-        //binding.recyclerViewCustomers.adapter = customerAdapter
-        displayCustomers()
+//        binding.recyclerViewCustomers.adapter = customerAdapter
+//        displayCustomers()
 
         binding.btnAddNewCustomer.setOnClickListener {
             val dialog = DialogNewCustDetails()
@@ -44,13 +44,26 @@ class FragmentRVCustomerRecord : Fragment() {
         return binding.root
     }
 
-    fun displayCustomers() {
-        var cursor = db.getAllCustomers()
-        cursor.moveToFirst()
-        customersList = ArrayList<RvCustomersData>()
-        customersList.add(RvCustomersData(cursor.getInt(0), cursor.getString(1), cursor.getString(2)))
-        while (cursor!!.moveToNext()) {
-            customersList.add(RvCustomersData(cursor.getInt(0), cursor.getString(1), cursor.getString(2)))
+    private fun displayCustomers() {
+        val cursor = db.getAllCustomers()
+
+        cursor!!.moveToFirst()
+        customersList = ArrayList()
+        customersList.add(
+            RvCustomersData(
+                cursor.getInt(0),
+                cursor.getString(1),
+                cursor.getString(2)
+            )
+        )
+        while (cursor.moveToNext()) {
+            customersList.add(
+                RvCustomersData(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2)
+                )
+            )
         }
         customerAdapter = RvAdapterCustomer(customersList, requireActivity())
         binding.recyclerViewCustomers.adapter = customerAdapter

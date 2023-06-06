@@ -1,6 +1,7 @@
 package com.example.tailoringmanagement
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.content.ContextCompat
@@ -27,12 +28,22 @@ class HomeScreenActivity : AppCompatActivity() {
 
         toggle.syncState()
         binding.drawerLayout.addDrawerListener(toggle)
+        val name = intent.getStringExtra("name")
+        val email= intent.getStringExtra("email")
+//        Toast.makeText(this,"$name",Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this,"$email",Toast.LENGTH_SHORT).show()
+        val headerview = binding.drawerNavView.getHeaderView(0)
+        val nameTV = headerview.findViewById<TextView>(R.id.drawerHeaderUserName)
+        val emailTV = headerview.findViewById<TextView>(R.id.drawerHeaderEmail)
+        nameTV.text = name
+        emailTV.text = email
+
 
         binding.drawerNavView.setNavigationItemSelectedListener {
 
             when (it.itemId) {
                 R.id.drawerItemCustomers -> {
-                    launchFragment("Customers", FragmentRVCustomerRecord())
+               //     launchFragment("Customers", FragmentRVCustomerRecord())
                     Toast.makeText(this, "Customers", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemOrders -> {
@@ -81,7 +92,7 @@ class HomeScreenActivity : AppCompatActivity() {
     }
 
     private fun launchFragment(toolBarTitle: String, fragment: Fragment) {
-        binding.drawerToolBar.toolBar.setTitle(toolBarTitle)
+        binding.drawerToolBar.toolBar.title = (toolBarTitle)
         supportFragmentManager.beginTransaction().replace(R.id.frameLayoutContainer, fragment).commit()
     }
 }

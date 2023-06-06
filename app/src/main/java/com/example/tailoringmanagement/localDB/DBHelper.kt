@@ -47,7 +47,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
         onCreate(db)
     }
 
-    fun getAllCustomers(): Cursor {
+    fun getAllCustomers(): Cursor? {
         val db = this.readableDatabase
         return db.rawQuery("SELECT * FROM $TABLE_CUSTOMER", null)
     }

@@ -7,7 +7,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.tailoringmanagement.databinding.ActivitySignUpBinding
-import com.google.android.material.snackbar.Snackbar.*
+//import com.google.android.material.snackbar.Snackbar.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -48,11 +48,12 @@ class SIgnUpActivity : AppCompatActivity(), FragmentInteractionListener
             if(id==R.id.rBCustomer) {
                 userType = "Customer"
             }
-                if(validation()) {
-                    signUp(email, password)
-                }
-                else
-                    make(findViewById(android.R.id.content), "Fill Fields Properly", LENGTH_SHORT).show()
+            val validation = validation()
+            if(validation=="Validation successful.") {
+                signUp(email, password)
+            }
+             //   else
+            Toast.makeText(this, validation, Toast.LENGTH_SHORT).show()
                 // fragment?.clearData()
         }
     }
@@ -93,10 +94,68 @@ class SIgnUpActivity : AppCompatActivity(), FragmentInteractionListener
             }
         }
     }
-    private fun validation() : Boolean {
-        return ((name.isNotBlank() && email.isNotBlank() && password.isNotBlank() && confirmPass.isNotBlank()
-            && age.isNotBlank()  && phone.isNotBlank() )
-                && (password==confirmPass))
+    private fun validation(): String {
+        val name = name.trim()
+        val email = email.trim()
+        val password = password.trim()
+        val confirmPass = confirmPass.trim()
+        val age = age.trim()
+        val phone = phone.trim()
+
+        if (name.isBlank()) {
+            return "Name field is blank."
+        }
+
+        if (age.isBlank()) {
+            return "Age field is blank."
+        }
+
+        if (phone.isBlank()) {
+            return "Phone field is blank."
+        }
+
+        if (email.isBlank()) {
+            return "Email field is blank."
+        }
+
+        if (password.isBlank()) {
+            return "Password field is blank."
+        }
+
+        if (confirmPass.isBlank()) {
+            return "Confirm Password field is blank."
+        }
+
+
+
+        if (password != confirmPass) {
+            return "Password and Confirm Password do not match."
+        }
+        if (password.length < 6) {
+            return "Password length should be at least 6 characters. Current Length is ${password.length}"
+        }
+        var hasCapitalLetter = false
+        var hasSmallLetter = false
+        var hasSpecialCharacter = false
+        var hasNumber = false
+
+        for (char in password) {
+            when {
+                char.isUpperCase() -> hasCapitalLetter = true
+                char.isLowerCase() -> hasSmallLetter = true
+                char.isDigit() -> hasNumber = true
+                char.isLetterOrDigit().not() -> hasSpecialCharacter = true
+            }
+        }
+
+        if (!(hasCapitalLetter && hasSmallLetter && hasSpecialCharacter && hasNumber)) {
+            return "Password must include at least one capital letter, one small letter, one special character, and one number."
+        }
+
+        // Add additional validation rules if needed
+
+        // Return a success message if all conditions are met
+        return "Validation successful."
     }
     private fun signUp(email: String, password: String) {
         firebase.createUserWithEmailAndPassword(email, password)
