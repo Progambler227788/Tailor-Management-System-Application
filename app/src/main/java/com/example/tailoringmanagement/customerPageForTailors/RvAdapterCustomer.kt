@@ -1,7 +1,6 @@
 package com.example.tailoringmanagement.customerPageForTailors
 
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,7 +9,7 @@ import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tailoringmanagement.EditCustomerDetails
+import com.example.tailoringmanagement.EditCustomerInfo
 import com.example.tailoringmanagement.apparel.ActivityApparelSelector
 import com.example.tailoringmanagement.databinding.RvCustomersBinding
 import com.example.tailoringmanagement.localDB.DBHelper
@@ -56,7 +55,7 @@ class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, 
         holder.binding.btnEdit.setOnClickListener {
             val position = holder.bindingAdapterPosition
             val customer = customerList[position]
-            val intent = Intent(context, EditCustomerDetails::class.java)
+            val intent = Intent(context, EditCustomerInfo::class.java)
 
             intent.putExtra("id", "" + customer.id)
             intent.putExtra("name", "" + customer.name)
@@ -80,7 +79,4 @@ class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, 
         return removedPosition
     }
 
-    fun showDialog() {
-
-    }
 }

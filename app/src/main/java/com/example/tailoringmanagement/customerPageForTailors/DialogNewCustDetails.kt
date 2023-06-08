@@ -28,7 +28,7 @@ class DialogNewCustDetails : DialogFragment() {
             dismiss()
         }
         btnAdd.setOnClickListener {
-            val tvId = dialogView.findViewById<TextView>(R.id.inputNewCustomerID)
+            val tvId = dialogView.findViewById<TextView>(R.id.inputCustomerID)
             val tvName = dialogView.findViewById<TextView>(R.id.inputNewCustomerName)
             val tvPhone = dialogView.findViewById<TextView>(R.id.inputNewCustomerPhoneNumber)
             val id = tvId.text?.toString() ?: ""

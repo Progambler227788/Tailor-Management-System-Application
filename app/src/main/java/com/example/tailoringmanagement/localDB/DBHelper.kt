@@ -53,6 +53,14 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
         return db.rawQuery("SELECT * FROM $TABLE_CUSTOMER", null)
     }
 
+    fun updateCustomerInfo(id: Int, columnToChange: String, updatedValue: String){
+        val db = this.writableDatabase
+        val result = db.execSQL("UPDATE $TABLE_CUSTOMER " +
+                "SET $columnToChange='$updatedValue' " +
+                "WHERE $COLUMN_CID=$id")
+        db.close()
+    }
+
     companion object {
         private const val DATABASE_NAME = "CustomerDirectory"
         private const val DATABASE_VERSION = 1
