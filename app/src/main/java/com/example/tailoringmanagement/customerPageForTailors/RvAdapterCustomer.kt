@@ -1,5 +1,7 @@
 package com.example.tailoringmanagement.customerPageForTailors
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,8 +10,10 @@ import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tailoringmanagement.EditCustomerDetails
 import com.example.tailoringmanagement.apparel.ActivityApparelSelector
 import com.example.tailoringmanagement.databinding.RvCustomersBinding
+import com.example.tailoringmanagement.localDB.DBHelper
 
 class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, var context : Context) : RecyclerView.Adapter<RvAdapterCustomer.MyViewHolder> () {
     private var removedPosition : Int ? = null
@@ -29,14 +33,38 @@ class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, 
         holder.binding.tvCustomerId.text = customerList[position].id.toString()
         holder.binding.tvCustomerName.text = customerList[position].name
         holder.binding.tvCustomerPhoneNumber.text = customerList[position].phoneNumber
+
         holder.binding.btnDelete.setOnClickListener {
             val removedPosition = holder.bindingAdapterPosition
-            customerList.removeAt(removedPosition)
-            notifyItemRemoved(removedPosition)
+
+            val builder = AlertDialog.Builder(context)
+            builder.setMessage("Sure to delete customer?\n All sizes will be deleted.")
+                .setTitle("Delete Customer")
+                .setPositiveButton("Yes") { _, _ ->
+                    Toast.makeText(context, "Customer Deleted!", Toast.LENGTH_SHORT).show()
+                    val customer = customerList[removedPosition]
+                    customerList.removeAt(removedPosition)
+                    notifyItemRemoved(removedPosition)
+                    val db = DBHelper(context, null)
+                    db.deleteCustomer(customer.id)
+                }
+                .setNegativeButton("No", null)
+            val dialog = builder.create()
+            dialog.show()
         }
+
         holder.binding.btnEdit.setOnClickListener {
-            Toast.makeText(context, "Not Yet Implemented", Toast.LENGTH_SHORT).show()
+            val position = holder.bindingAdapterPosition
+            val customer = customerList[position]
+            val intent = Intent(context, EditCustomerDetails::class.java)
+
+            intent.putExtra("id", "" + customer.id)
+            intent.putExtra("name", "" + customer.name)
+            intent.putExtra("ph", "" + customer.phoneNumber)
+
+            context.startActivity(intent)
         }
+
         holder.binding.btnEditCustomers.setOnClickListener {
             val intent = Intent(context, ActivityApparelSelector::class.java)
             context.startActivity(intent)
@@ -50,5 +78,9 @@ class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, 
     }
     private fun getRemoveItemPosition() : Int? {
         return removedPosition
+    }
+
+    fun showDialog() {
+
     }
 }

@@ -34,7 +34,6 @@ class FragmentRVCustomerRecord : Fragment() {
             dialog.show(requireActivity().supportFragmentManager, "Add New Customer")
             displayCustomers()
         }
-        notifyUser()
         return binding.root
     }
 
@@ -52,19 +51,6 @@ class FragmentRVCustomerRecord : Fragment() {
         }
         customerAdapter = RvAdapterCustomer(customersList, requireActivity())
         binding.recyclerViewCustomers.adapter = customerAdapter
-    }
-
-
-    private fun notifyUser() {
-        //    Toast.makeText(this,"Inside",Toast.LENGTH_SHORT).show()
-//        val id = intent?.getStringExtra("id") ?: ""
-//        val name = intent?.getStringExtra("name") ?: ""
-//        val phoneNumber = intent?.getStringExtra("phone-number") ?: ""
-//        if (id != "" && name != "" && phoneNumber != "") {
-//            //    Toast.makeText(this,"Inside",Toast.LENGTH_SHORT).show()
-//            customersList.add(RvCustomersData(id.toInt(), name, phoneNumber))
-//            customerAdapter.notifyItemInserted(customersList.size - 1)
-//        }
     }
 
 }
