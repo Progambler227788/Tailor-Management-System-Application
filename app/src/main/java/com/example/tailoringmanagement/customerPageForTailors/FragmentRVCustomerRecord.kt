@@ -1,77 +1,47 @@
 package com.example.tailoringmanagement.customerPageForTailors
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.tailoringmanagement.R
 import com.example.tailoringmanagement.databinding.FragmentRVCustomerRecordBinding
 import com.example.tailoringmanagement.localDB.DBHelper
 
-class FragmentRVCustomerRecord : Fragment(){
+class FragmentRVCustomerRecord : Fragment() {
     private lateinit var binding: FragmentRVCustomerRecordBinding
     private lateinit var db: DBHelper
     private lateinit var customerAdapter : RvAdapterCustomer
     private lateinit var customersList : ArrayList<RvCustomersData>
-
-//    override fun onCustomerAdded() {
-//        Toast.makeText(context,"Called",Toast.LENGTH_SHORT).show()
-//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-//        transaction.detach(this)
-//        transaction.attach(this)
-//        transaction.commit()
-//
-//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentRVCustomerRecordBinding.inflate(layoutInflater, container, false)
-//        customersList = ArrayList()
-//        customersList.add(RvCustomersData(1, "name", "phoneNumber"))
-//        customersList.add(RvCustomersData(2, "name", "phoneNumber"))
-//        customersList.add(RvCustomersData(3, "name", "phoneNumber"))
-//        customersList.add(RvCustomersData(4, "name", "phoneNumber"))
-//        customersList.add(RvCustomersData(5, "name", "phoneNumber"))
-//        customerAdapter= RvAdapterCustomer(customersList,requireActivity())
 
         db = DBHelper(requireActivity(), null)
 
         binding.recyclerViewCustomers.layoutManager = LinearLayoutManager(requireActivity())
         binding.recyclerViewCustomers.setHasFixedSize(true)
-      //  binding.recyclerViewCustomers.adapter = customerAdapter
         displayCustomers()
 
         binding.btnAddNewCustomer.setOnClickListener {
             val dialog = DialogNewCustDetails()
             dialog.show(requireActivity().supportFragmentManager, "Add New Customer")
-          //  restartFragment()
+            displayCustomers()
         }
-
         notifyUser()
         return binding.root
     }
-//    fun restartFragment() {
-//
-//        // Restart using restart fragment
-//        Toast.makeText(context,"Called",Toast.LENGTH_SHORT).show()
-//        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-//        transaction.detach(this)
-//        transaction.attach(this)
-//        transaction.commit()
-//
-//    }
-
 
     private fun displayCustomers() {
         val cursor = db.getAllCustomers()
-        customersList = ArrayList()
-
-        if(cursor!!.moveToFirst()) {
-            customersList = ArrayList()
+        customersList = ArrayList<RvCustomersData>()
+        while (cursor!!.moveToNext()) {
             customersList.add(
                 RvCustomersData(
                     cursor.getInt(0),
@@ -79,24 +49,11 @@ class FragmentRVCustomerRecord : Fragment(){
                     cursor.getString(2)
                 )
             )
-            while (cursor.moveToNext()) {
-                customersList.add(
-                    RvCustomersData(
-                        cursor.getInt(0),
-                        cursor.getString(1),
-                        cursor.getString(2)
-                    )
-                )
-            }
-        }
-
-
-        else {
-            Toast.makeText(requireContext(),"No data currently", Toast.LENGTH_SHORT).show()
         }
         customerAdapter = RvAdapterCustomer(customersList, requireActivity())
         binding.recyclerViewCustomers.adapter = customerAdapter
     }
+
 
     private fun notifyUser() {
         //    Toast.makeText(this,"Inside",Toast.LENGTH_SHORT).show()
@@ -109,4 +66,5 @@ class FragmentRVCustomerRecord : Fragment(){
 //            customerAdapter.notifyItemInserted(customersList.size - 1)
 //        }
     }
+
 }

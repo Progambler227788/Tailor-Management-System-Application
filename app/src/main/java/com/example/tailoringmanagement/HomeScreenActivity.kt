@@ -76,9 +76,6 @@ class HomeScreenActivity : AppCompatActivity() {
             return@setNavigationItemSelectedListener true
         }
     }
-  /*  fun restartActivity() {
-        recreate()
-    } */
 
     override fun onStart() {
         super.onStart()
@@ -96,6 +93,7 @@ class HomeScreenActivity : AppCompatActivity() {
 
     private fun launchFragment(toolBarTitle: String, fragment: Fragment) {
         binding.drawerToolBar.toolBar.title = (toolBarTitle)
-        supportFragmentManager.beginTransaction().replace(R.id.frameLayoutContainer, fragment).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayoutContainer, fragment, "currentFragment").commit()
     }
+
 }

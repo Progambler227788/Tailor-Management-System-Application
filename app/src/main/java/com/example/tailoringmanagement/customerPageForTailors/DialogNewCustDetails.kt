@@ -2,7 +2,6 @@ package com.example.tailoringmanagement.customerPageForTailors
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -15,14 +14,6 @@ import com.example.tailoringmanagement.localDB.DBHelper
 
 
 class DialogNewCustDetails : DialogFragment() {
-   // private var listener: OnCustomerAddedInterface? = null
-//    verride fun onAttach(context: Context) {
-//        super.onAttach(context)
-//        if (context is OnCustomerAddedInterface) {
-//            listener = context
-//        }
-//    } o
-
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireActivity())
@@ -47,10 +38,8 @@ class DialogNewCustDetails : DialogFragment() {
                 val db = DBHelper(requireContext(), null)
                 db.addCustomer(id.toInt(), name, number)
                 Toast.makeText(requireContext(), "Customer Added", Toast.LENGTH_SHORT).show()
-             //   requireActivity().restartActivity()
-                restartActivity()
-             //   listener?.onCustomerAdded()
-
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.frameLayoutContainer, FragmentRVCustomerRecord()).commit()
                 dismiss()
             }
             else {
@@ -60,16 +49,4 @@ class DialogNewCustDetails : DialogFragment() {
         builder.setView(dialogView).setMessage("Add New Customer")
         return builder.create()
     }
-   fun restartActivity() {
-        val intent = Intent(requireActivity(), HomeScreenActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        requireActivity().startActivity(intent)
-        requireActivity().finish()
-    }
-
-//    fun onCustomerAdded() {
-//        val fragmentRVCustomerRecord = targetFragment as? FragmentRVCustomerRecord
-//        fragmentRVCustomerRecord?.restartFragment()
-//    }
-
 }

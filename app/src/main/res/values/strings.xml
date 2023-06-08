@@ -193,4 +193,7 @@
     <!-- Apparel Item XML String Resources -->
     <string name="apparel">Apparel</string>
     <string name="apparel_image">Apparel Image</string>
+
+    <!-- No Customer Yet XML String Resources -->
+    <string name="no_customer_yet">Add Customers To Display Here...</string>
 </resources>
