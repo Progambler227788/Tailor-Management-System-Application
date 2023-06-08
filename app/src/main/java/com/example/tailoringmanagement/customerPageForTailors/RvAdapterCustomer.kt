@@ -15,7 +15,7 @@ class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, 
     private var removedPosition : Int ? = null
     inner class MyViewHolder(var binding : RvCustomersBinding) : RecyclerView.ViewHolder(binding.root)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = RvCustomersBinding.inflate(LayoutInflater.from(context),parent,false)
+        val binding = RvCustomersBinding.inflate(LayoutInflater.from(context),null,false)
 
         return MyViewHolder(binding)
     }

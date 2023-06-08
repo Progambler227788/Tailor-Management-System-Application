@@ -43,7 +43,7 @@ class HomeScreenActivity : AppCompatActivity() {
 
             when (it.itemId) {
                 R.id.drawerItemCustomers -> {
-               //     launchFragment("Customers", FragmentRVCustomerRecord())
+                    launchFragment("Customers", FragmentRVCustomerRecord())
                     Toast.makeText(this, "Customers", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemOrders -> {
@@ -76,6 +76,9 @@ class HomeScreenActivity : AppCompatActivity() {
             return@setNavigationItemSelectedListener true
         }
     }
+  /*  fun restartActivity() {
+        recreate()
+    } */
 
     override fun onStart() {
         super.onStart()

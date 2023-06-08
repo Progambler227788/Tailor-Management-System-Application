@@ -40,6 +40,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
         val db = this.writableDatabase
         db.execSQL("DELETE FROM $TABLE_CUSTOMER WHERE $COLUMN_CID" +
                 "=" + "$id")
+        db.close()
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

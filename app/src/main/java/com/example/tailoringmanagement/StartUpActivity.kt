@@ -30,6 +30,7 @@ class StartUpActivity : AppCompatActivity()
         binding = ActivityStartUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         sharedPreferences = getSharedPreferences("Login",Context.MODE_PRIVATE)
+        // Login is file name
         val checkUserLoggedIn = sharedPreferences.getString("userType",null)
 
         if (checkUserLoggedIn != null) {
@@ -107,7 +108,7 @@ class StartUpActivity : AppCompatActivity()
              override fun onDataChange(snapshot: DataSnapshot) {
                        val userType = snapshot.child("userType").value.toString()
                        val name = snapshot.child("name").value.toString()
-                     Toast.makeText(this@StartUpActivity,"$name",Toast.LENGTH_SHORT).show()
+                     Toast.makeText(this@StartUpActivity,name,Toast.LENGTH_SHORT).show()
                        val editor: SharedPreferences.Editor = sharedPreferences.edit()
                      editor.putString("userType", userType)
                      editor.putString("email", email)
