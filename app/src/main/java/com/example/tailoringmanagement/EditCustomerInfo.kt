@@ -3,6 +3,7 @@ package com.example.tailoringmanagement
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import com.example.tailoringmanagement.databinding.ActivityEditCustomerInfoBinding
@@ -45,10 +46,9 @@ class EditCustomerInfo : AppCompatActivity() {
         }
 
         binding.btnSaveCustomer.setOnClickListener {
-            if (checkIfThereIsChange())
-                onBackPressedDispatcher.onBackPressed()
-            else {
+            if (checkIfThereIsChange()){
                 val db = DBHelper(this, null)
+                Log.i("Here", "I am hare")
                 db.updateCustomerInfo(id!!.toInt(), DBHelper.COLUMN_PHONE, ""+binding.inputCustomerPhoneNumber.text)
                 db.updateCustomerInfo(id!!.toInt(), DBHelper.COLUMN_NAME, ""+binding.inputCustomerName.text)
 
@@ -60,8 +60,22 @@ class EditCustomerInfo : AppCompatActivity() {
 //                {
 //                    db.updateCustomerInfo(id!!.toInt(), DBHelper.COLUMN_PHONE, ""+binding.inputCustomerPhoneNumber.text)
 //                }
-                onBackPressedDispatcher.onBackPressed()
             }
+            onBackPressedDispatcher.onBackPressed()
+        }
+
+        binding.btnDeleteCustomer.setOnClickListener {
+            AlertDialog.Builder(this).setMessage("Sure to delete customer?\n All sizes will be deleted.")
+                .setTitle("Delete Customer")
+                .setPositiveButton("Yes") { _, _ ->
+                    Toast.makeText(this, "Customer Deleted!", Toast.LENGTH_SHORT).show()
+                    val db = DBHelper(this, null)
+                    db.deleteCustomer(id!!.toInt())
+                    onBackPressedDispatcher.onBackPressed()
+                }
+                .setNegativeButton("No", null)
+                .create()
+                .show()
         }
     }
 
@@ -81,8 +95,8 @@ class EditCustomerInfo : AppCompatActivity() {
     }
 
     private fun checkIfThereIsChange(): Boolean {
-        return name != ""+binding.inputCustomerName.text &&
-                ph != ""+binding.inputCustomerPhoneNumber.text
+        return (name != ""+binding.inputCustomerName.text) ||
+                (ph != ""+binding.inputCustomerPhoneNumber.text)
     }
 
     private fun showCancelAlert(){
@@ -95,9 +109,5 @@ class EditCustomerInfo : AppCompatActivity() {
             .create()
             .show()
     }
-
-    private fun updateCustomerData()
-    {
-
-    }
+    
 }

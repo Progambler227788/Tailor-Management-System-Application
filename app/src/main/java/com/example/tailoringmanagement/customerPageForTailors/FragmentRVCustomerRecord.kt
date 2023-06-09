@@ -1,5 +1,6 @@
 package com.example.tailoringmanagement.customerPageForTailors
 
+import android.graphics.drawable.GradientDrawable.Orientation
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -25,7 +26,9 @@ class FragmentRVCustomerRecord : Fragment() {
 
         db = DBHelper(requireActivity(), null)
 
-        binding.recyclerViewCustomers.layoutManager = LinearLayoutManager(requireActivity())
+        val layoutManager = LinearLayoutManager(context)
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+        binding.recyclerViewCustomers.layoutManager = layoutManager
         binding.recyclerViewCustomers.setHasFixedSize(true)
         displayCustomers()
 

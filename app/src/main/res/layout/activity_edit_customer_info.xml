@@ -61,21 +61,33 @@
             style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:text="@string/btn_cancel" />
+
+        <Button
+            android:id="@+id/btnDeleteCustomer"
+            style="@style/button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/delete_size_record" />
 
         <Button
             android:id="@+id/btnSaveCustomer"
             style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
-            android:text="@string/btn_Add" />
+            android:text="@string/save_size_record" />
     </LinearLayout>
 
 </LinearLayout>
