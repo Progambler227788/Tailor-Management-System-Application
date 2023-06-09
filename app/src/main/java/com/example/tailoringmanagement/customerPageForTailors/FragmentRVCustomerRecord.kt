@@ -1,11 +1,13 @@
 package com.example.tailoringmanagement.customerPageForTailors
 
+import android.graphics.Rect
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.tailoringmanagement.databinding.FragmentRVCustomerRecordBinding
 import com.example.tailoringmanagement.localDB.DBHelper
 
@@ -27,6 +29,10 @@ class FragmentRVCustomerRecord : Fragment() {
         layoutManager.orientation = LinearLayoutManager.VERTICAL
         binding.recyclerViewCustomers.layoutManager = layoutManager
         binding.recyclerViewCustomers.setHasFixedSize(true)
+
+        val itemDecoration = ItemSpacingDecoration(10, 10, 20, 20)
+        binding.recyclerViewCustomers.addItemDecoration(itemDecoration)
+
         displayCustomers()
 
         binding.btnAddNewCustomer.setOnClickListener {
