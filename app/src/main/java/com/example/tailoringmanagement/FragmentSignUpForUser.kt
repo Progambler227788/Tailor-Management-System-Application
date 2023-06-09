@@ -19,7 +19,6 @@ interface FragmentInteractionListener {
         phone: String,
         userType : String
     )
-  //  fun clearData()
 }
 
 class FragmentSignUpForUser : Fragment() {

@@ -76,7 +76,7 @@ class ActivityApparelSelector : AppCompatActivity()
         return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressedDispatcher.onBackPressed()
-                return true
+                 true
             } else -> {
                 return super.onOptionsItemSelected(item)
             }
