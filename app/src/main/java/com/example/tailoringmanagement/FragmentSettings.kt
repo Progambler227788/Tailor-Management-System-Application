@@ -14,7 +14,7 @@ class FragmentSettings : Fragment()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSettingsBinding.inflate(layoutInflater)
         return binding.root
     }

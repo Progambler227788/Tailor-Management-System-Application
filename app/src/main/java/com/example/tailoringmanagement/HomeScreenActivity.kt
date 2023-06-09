@@ -87,8 +87,7 @@ class HomeScreenActivity : AppCompatActivity() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START))
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         else
-            @Suppress("DEPRECATION")
-            super.onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
     }
 
     private fun launchFragment(toolBarTitle: String, fragment: Fragment) {

@@ -1,14 +1,11 @@
 package com.example.tailoringmanagement.customerPageForTailors
 
-import android.graphics.drawable.GradientDrawable.Orientation
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.tailoringmanagement.R
 import com.example.tailoringmanagement.databinding.FragmentRVCustomerRecordBinding
 import com.example.tailoringmanagement.localDB.DBHelper
 
@@ -42,7 +39,7 @@ class FragmentRVCustomerRecord : Fragment() {
 
     private fun displayCustomers() {
         val cursor = db.getAllCustomers()
-        customersList = ArrayList<RvCustomersData>()
+        customersList = ArrayList()
         while (cursor!!.moveToNext()) {
             customersList.add(
                 RvCustomersData(

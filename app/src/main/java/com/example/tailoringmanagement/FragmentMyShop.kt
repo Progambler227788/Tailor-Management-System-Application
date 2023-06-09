@@ -14,7 +14,7 @@ class FragmentMyShop : Fragment()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMyShopBinding.inflate(layoutInflater)
         return binding.root
     }

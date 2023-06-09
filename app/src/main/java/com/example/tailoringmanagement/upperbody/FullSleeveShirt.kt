@@ -13,6 +13,4 @@ class FullSleeveShirt (
     cuff: Float,
     var shirtBottomDesign: String,
     var strapDes: String
-) : FullSleeve(frontLen, backLen, chest, waist, seat, shoulderWidth, armHole, sleeveLen, bicep, cuff) {
-    // No additional code is required in the class body
-}
+) : FullSleeve(frontLen, backLen, chest, waist, seat, shoulderWidth, armHole, sleeveLen, bicep, cuff)

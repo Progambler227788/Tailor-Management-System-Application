@@ -45,7 +45,7 @@ class ActivityEditCustomerSizes : AppCompatActivity()
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                onBackPressed()
+                onBackPressedDispatcher.onBackPressed()
                 return true
             } else -> {
                 return super.onOptionsItemSelected(item)
@@ -55,7 +55,7 @@ class ActivityEditCustomerSizes : AppCompatActivity()
 
     private fun replaceFragment(title: String, fragment: Fragment)
     {
-        supportActionBar!!.setTitle(title)
+        supportActionBar!!.title = title
         supportFragmentManager.beginTransaction().replace(R.id.frameApparelViewer, fragment).commit()
     }
 

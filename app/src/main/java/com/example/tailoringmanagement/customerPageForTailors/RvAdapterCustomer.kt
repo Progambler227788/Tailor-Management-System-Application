@@ -15,7 +15,6 @@ import com.example.tailoringmanagement.databinding.RvCustomersBinding
 import com.example.tailoringmanagement.localDB.DBHelper
 
 class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, var context : Context) : RecyclerView.Adapter<RvAdapterCustomer.MyViewHolder> () {
-    private var removedPosition : Int ? = null
     inner class MyViewHolder(var binding : RvCustomersBinding) : RecyclerView.ViewHolder(binding.root)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = RvCustomersBinding.inflate(LayoutInflater.from(context),null,false)
@@ -53,8 +52,8 @@ class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, 
         }
 
         holder.binding.btnEdit.setOnClickListener {
-            val position = holder.bindingAdapterPosition
-            val customer = customerList[position]
+            val editPosition = holder.bindingAdapterPosition
+            val customer = customerList[editPosition]
             val intent = Intent(context, EditCustomerInfo::class.java)
 
             intent.putExtra("id", "" + customer.id)
@@ -75,8 +74,4 @@ class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, 
         animation.duration = 1340
         view.startAnimation(animation)
     }
-    private fun getRemoveItemPosition() : Int? {
-        return removedPosition
-    }
-
 }

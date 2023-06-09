@@ -75,7 +75,7 @@ class ActivityApparelSelector : AppCompatActivity()
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                onBackPressed()
+                onBackPressedDispatcher.onBackPressed()
                 return true
             } else -> {
                 return super.onOptionsItemSelected(item)

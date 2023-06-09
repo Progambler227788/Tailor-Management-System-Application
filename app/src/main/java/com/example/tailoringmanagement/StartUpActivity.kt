@@ -16,7 +16,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import android.content.Context
 import android.content.SharedPreferences
-//import com.google.android.material.snackbar.Snackbar.*
 
 
 class StartUpActivity : AppCompatActivity()
@@ -168,7 +167,7 @@ class StartUpActivity : AppCompatActivity()
                 Toast.makeText(this, "Settings Not Yet Implemented", Toast.LENGTH_SHORT).show()
                 return true
             } else -> {
-                super.onBackPressed()
+                onBackPressedDispatcher.onBackPressed()
                 return true
             }
         }

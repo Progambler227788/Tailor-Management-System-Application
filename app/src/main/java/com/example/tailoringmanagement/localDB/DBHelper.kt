@@ -55,7 +55,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
 
     fun updateCustomerInfo(id: Int, columnToChange: String, updatedValue: String){
         val db = this.writableDatabase
-        val result = db.execSQL("UPDATE $TABLE_CUSTOMER " +
+        db.execSQL("UPDATE $TABLE_CUSTOMER " +
                 "SET $columnToChange='$updatedValue' " +
                 "WHERE $COLUMN_CID=$id")
         db.close()

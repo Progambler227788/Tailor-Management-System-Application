@@ -11,6 +11,4 @@ open class HalfSleeve (
     armHole: Float,
     var halfSleeveLen: Float,
     var halfSleeveWidth: Float,
-) : UpperBody(frontLen, backLen, chest, waist, seat, shoulderWidth, armHole) {
-    // No additional code is required in the class body
-}
+) : UpperBody(frontLen, backLen, chest, waist, seat, shoulderWidth, armHole)

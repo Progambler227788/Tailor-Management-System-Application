@@ -14,6 +14,4 @@ class LongTunic(
     var strapLen: Float,
     var hemlineWidth: Float,
     var hemlineDesign: String
-) : FullSleeve(frontLen, backLen, chest, waist, seat, shoulderWidth, armHole, sleeveLen, bicep, cuff) {
-    // No additional code is required in the class body
-}
+) : FullSleeve(frontLen, backLen, chest, waist, seat, shoulderWidth, armHole, sleeveLen, bicep, cuff)

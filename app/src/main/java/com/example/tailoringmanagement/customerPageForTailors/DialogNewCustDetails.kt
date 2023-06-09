@@ -2,13 +2,11 @@ package com.example.tailoringmanagement.customerPageForTailors
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.example.tailoringmanagement.HomeScreenActivity
 import com.example.tailoringmanagement.R
 import com.example.tailoringmanagement.localDB.DBHelper
 
@@ -28,7 +26,7 @@ class DialogNewCustDetails : DialogFragment() {
             dismiss()
         }
         btnAdd.setOnClickListener {
-            val tvId = dialogView.findViewById<TextView>(R.id.inputCustomerID)
+            val tvId = dialogView.findViewById<TextView>(R.id.inputNewCustomerID)
             val tvName = dialogView.findViewById<TextView>(R.id.inputNewCustomerName)
             val tvPhone = dialogView.findViewById<TextView>(R.id.inputNewCustomerPhoneNumber)
             val id = tvId.text?.toString() ?: ""

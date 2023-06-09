@@ -10,6 +10,4 @@ class HalfSleeveShirt(
     armHole: Float,
     var shirtBottomDesign: String,
     var strapDes: String
-) : UpperBody(frontLen, backLen, chest, waist, seat, shoulderWidth, armHole) {
-    // No additional code is required in the class body
-}
+) : UpperBody(frontLen, backLen, chest, waist, seat, shoulderWidth, armHole)

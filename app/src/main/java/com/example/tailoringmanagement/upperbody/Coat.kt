@@ -14,6 +14,4 @@ class Coat(
     var individualShoulder: Float,
     var firstButtonPos: Float,
     var halfBack: Float
-) : FullSleeve(frontLen, backLen, chest, waist, seat, shoulderWidth, armHole, sleeveLen, bicep, cuff) {
-    // No additional code is required in the class body
-}
+) : FullSleeve(frontLen, backLen, chest, waist, seat, shoulderWidth, armHole, sleeveLen, bicep, cuff)
