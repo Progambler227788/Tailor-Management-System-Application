@@ -58,10 +58,6 @@ class HomeScreenActivity : AppCompatActivity() {
                     launchFragment("Profile", FragmentProfile())
                     Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                 }
-                R.id.drawerItemMyShop -> {
-                    launchFragment("My Shop", FragmentMyShop())
-                    Toast.makeText(this, "My Shop", Toast.LENGTH_SHORT).show()
-                }
                 R.id.drawerItemReportBug -> {
                     launchFragment("Report a Bug", FragmentReportBug())
                     Toast.makeText(this, "Report a Bug", Toast.LENGTH_SHORT).show()

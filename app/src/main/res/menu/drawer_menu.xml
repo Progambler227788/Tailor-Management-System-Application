@@ -19,10 +19,6 @@
         android:icon="@drawable/ic_drawer_profile"
         android:title="@string/drawer_profile" />
     <item
-        android:id="@+id/drawerItemMyShop"
-        android:icon="@drawable/ic_drawer_my_shop"
-        android:title="@string/drawer_my_shop" />
-    <item
         android:id="@+id/drawerItemSettings"
         android:icon="@drawable/ic_drawer_settings"
         android:title="@string/drawer_settings" />
