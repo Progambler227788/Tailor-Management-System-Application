@@ -18,12 +18,12 @@
         android:layout_marginEnd="10dp">
 
         <TextView
-            android:id="@+id/tvEmpID"
+            android:id="@+id/tvOrderID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
-            android:text="@string/emp_id"
+            android:text="@string/order_id"
             android:textColor="@color/blue_702"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,18 +34,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/emp_name"
+            android:text="@string/customer_id"
             android:textColor="@color/blue_702"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/tvEmpID"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmpID" />
+            app:layout_constraintStart_toStartOf="@+id/tvOrderID"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderID" />
 
         <TextView
             android:id="@+id/tvEmployeeId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/emp_num_suits"
+            android:text="@string/emp_id"
             android:textColor="@color/blue_702"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/tvCustomerIdOrder"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/emp_phone"
+            android:text="@string/deliver_date"
             android:textColor="@color/blue_702"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -77,18 +77,6 @@
             app:srcCompat="@drawable/edit_icon" />
 
         <ImageButton
-            android:id="@+id/btnDeleteEmp"
-            style="@style/image_button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:contentDescription="@string/delete_employee"
-            android:padding="12dp"
-            app:layout_constraintBottom_toBottomOf="@+id/btnEditEmpDetails"
-            app:layout_constraintEnd_toStartOf="@+id/btnEditEmpDetails"
-            app:srcCompat="@drawable/delete_icon" />
-
-        <ImageButton
             android:id="@+id/btnIncrementSuit"
             style="@style/image_button_style"
             android:layout_width="wrap_content"
@@ -99,20 +87,7 @@
             android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnEditEmpDetails"
-            app:srcCompat="@drawable/baseline_plus_one_24" />
-
-        <ImageButton
-            android:id="@+id/btnEmpPayment"
-            style="@style/image_button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:contentDescription="@string/emp_payments"
-            android:padding="12dp"
-            app:layout_constraintBottom_toBottomOf="@+id/btnIncrementSuit"
-            app:layout_constraintEnd_toEndOf="@+id/btnDeleteEmp"
-            app:layout_constraintEnd_toStartOf="@+id/btnIncrementSuit"
-            app:srcCompat="@drawable/baseline_attach_money_24" />
+            app:srcCompat="@drawable/delete_icon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

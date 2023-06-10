@@ -169,7 +169,7 @@
     <string name="customer_name">Customer Name</string>
     <string name="enter_customer_phone_number">Enter Customer Phone Number:</string>
     <string name="customer_phone_number">Customer Phone Number</string>
-    <string name="customer_id">Customer ID</string>
+    <string name="customer_id">Customer ID : %d</string>
     <string name="btn_Add">Add</string>
     <string name="btn_cancel">Cancel</string>
     <string name="edit_customers">Edit Customers</string>
@@ -218,4 +218,10 @@
     <string name="employee_name">Employee Name</string>
     <string name="enter_emp_phone_number">Enter Employee Phone Number:</string>
     <string name="employee_phone_number">Employee Phone Number</string>
+
+    <!-- Dialog Order Layout String Resources -->
+
+
+    <string name="deliver_date">Deliver Date</string>
+    <string name="order_id">Order ID: %d</string>
 </resources>
