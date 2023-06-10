@@ -16,8 +16,6 @@ class DialogNewCustDetails : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireActivity())
 
-
-
         val inflater = requireActivity().layoutInflater
         val dialogView = inflater.inflate(R.layout.fragment_new_cust_details, null)
         val btnCancel = dialogView.findViewById<Button>(R.id.btnCancelAddingCustomer)

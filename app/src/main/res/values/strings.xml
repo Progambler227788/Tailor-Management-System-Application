@@ -163,12 +163,12 @@
 
     <!-- Dialog New Cust Details String Resources -->
     <string name="add_customers">Add Customers</string>
-    <string name="enter_customer_name">Enter Customer Name:</string>
-    <string name="enter_customer_phone_number">Enter Customer Phone Number:</string>
-    <string name="customer_phone_number">Customer Phone Number</string>
     <string name="enter_customer_id">Enter Customer ID:</string>
     <string name="identification_number_optional">Identification Number (optional)</string>
+    <string name="enter_customer_name">Enter Customer Name:</string>
     <string name="customer_name">Customer Name</string>
+    <string name="enter_customer_phone_number">Enter Customer Phone Number:</string>
+    <string name="customer_phone_number">Customer Phone Number</string>
     <string name="customer_id">Customer ID</string>
     <string name="btn_Add">Add</string>
     <string name="btn_cancel">Cancel</string>
@@ -196,4 +196,26 @@
 
     <!-- No Customer Yet XML String Resources -->
     <string name="no_customer_yet">Add Customers To Display Here...</string>
+
+    <!-- Fragment Recycler View Employee Record String Resources -->
+    <string name="add_employee">Add Employee</string>
+
+    <!-- Fragment Recycler View Employee Record String Resources -->
+    <string name="emp_id">Employee ID: %d</string>
+    <string name="emp_name">Employee Name</string>
+    <string name="emp_num_suits">No. of Suits: %d</string>
+    <string name="emp_phone">tel: %s</string>
+    <string name="edit_employee">Edit Employee Details</string>
+    <string name="delete_employee">Delete Employee</string>
+    <string name="increment_suit">Increment Number Of Suits</string>
+    <string name="emp_payments">Employee Payments</string>
+
+    <!-- Dialog Add New Employee String Resources -->
+    <string name="add_emp">Add Employee</string>
+    <string name="enter_emp_id">Enter Employee ID:</string>
+    <string name="employee_id">Identification Number</string>
+    <string name="enter_emp_name">Enter Employee Name:</string>
+    <string name="employee_name">Employee Name</string>
+    <string name="enter_emp_phone_number">Enter Employee Phone Number:</string>
+    <string name="employee_phone_number">Employee Phone Number</string>
 </resources>

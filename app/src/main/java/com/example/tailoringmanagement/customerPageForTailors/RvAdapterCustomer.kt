@@ -15,10 +15,10 @@ import com.example.tailoringmanagement.apparel.ActivityApparelSelector
 import com.example.tailoringmanagement.databinding.RvCustomersBinding
 import com.example.tailoringmanagement.localDB.DBHelper
 
-class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, var context : Context) : RecyclerView.Adapter<RvAdapterCustomer.MyViewHolder> () {
+class RvAdapterCustomer(private  var customerList : ArrayList<RvCustomersData>, var context: Context) : RecyclerView.Adapter<RvAdapterCustomer.MyViewHolder> () {
     inner class MyViewHolder(var binding : RvCustomersBinding) : RecyclerView.ViewHolder(binding.root)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = RvCustomersBinding.inflate(LayoutInflater.from(context),null,false)
+        val binding = RvCustomersBinding.inflate(LayoutInflater.from(context), parent,false)
 
         return MyViewHolder(binding)
     }

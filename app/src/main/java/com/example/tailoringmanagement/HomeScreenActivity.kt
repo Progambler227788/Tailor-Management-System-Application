@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.tailoringmanagement.databinding.ActivityHomeScreenBinding
 import com.example.tailoringmanagement.customerPageForTailors.FragmentRVCustomerRecord
+import com.example.tailoringmanagement.employeePageForTailors.FragmentRVEmployeeRecord
 
 class HomeScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeScreenBinding
@@ -50,6 +51,7 @@ class HomeScreenActivity : AppCompatActivity() {
                     Toast.makeText(this, "Orders", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemEmployees -> {
+                    launchFragment("Employees", FragmentRVEmployeeRecord())
                     Toast.makeText(this, "Employees", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemProfile -> {
@@ -91,7 +93,7 @@ class HomeScreenActivity : AppCompatActivity() {
     }
 
     private fun launchFragment(toolBarTitle: String, fragment: Fragment) {
-        binding.drawerToolBar.toolBar.title = (toolBarTitle)
+        binding.drawerToolBar.toolBar.title = toolBarTitle
         supportFragmentManager.beginTransaction().replace(R.id.frameLayoutContainer, fragment, "currentFragment").commit()
     }
 

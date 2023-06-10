@@ -82,14 +82,13 @@ class EditCustomerInfo : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                if (checkIfThereIsChange())
-                {
+                if (checkIfThereIsChange()) {
                     showCancelAlert()
                 }else
                     onBackPressedDispatcher.onBackPressed()
-                return true
+                true
             } else -> {
-                return super.onOptionsItemSelected(item)
+                super.onOptionsItemSelected(item)
             }
         }
     }

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".employeePageForTailors.EditEmployeeDetails">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNewEmployeeId"
+                style="@style/text_view_login_signup"
+                android:text="@string/enter_emp_id" />
+
+            <EditText
+                android:id="@+id/inputNewEmployeeID"
+                style="@style/edit_text_login_signup"
+                android:autofillHints="Customer ID (optional) "
+                android:ems="10"
+                android:hint="@string/employee_id"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/tvNewEmployeeName"
+                style="@style/text_view_login_signup"
+                android:text="@string/enter_emp_name" />
+
+            <EditText
+                android:id="@+id/inputNewEmployeeName"
+                style="@style/edit_text_login_signup"
+                android:autofillHints="Customer Name"
+                android:ems="10"
+                android:hint="@string/employee_name"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/tvNewEmployeePhoneNumber"
+                style="@style/text_view_login_signup"
+                android:text="@string/enter_emp_phone_number" />
+
+            <EditText
+                android:id="@+id/inputNewEmployeePhoneNumber"
+                style="@style/edit_text_login_signup"
+                android:autofillHints="Customer Phone Number"
+                android:ems="10"
+                android:hint="@string/employee_phone_number"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/text_view_login_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/edit_text_login_signup"
+                android:ems="10"
+                android:text="TextView"
+                android:inputType="number"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnCancelAddingEmployee"
+            style="@style/button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/btn_cancel" />
+
+        <Button
+            android:id="@+id/button"
+            style="@style/button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/delete_size_record" />
+
+        <Button
+            android:id="@+id/btnSaveNewEmployee"
+            style="@style/button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/save_size_record" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

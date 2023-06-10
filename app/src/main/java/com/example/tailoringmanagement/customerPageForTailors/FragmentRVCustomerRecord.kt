@@ -25,13 +25,11 @@ class FragmentRVCustomerRecord : Fragment() {
 
         db = DBHelper(requireActivity(), null)
 
-        val layoutManager = LinearLayoutManager(context)
-        layoutManager.orientation = LinearLayoutManager.VERTICAL
-        binding.recyclerViewCustomers.layoutManager = layoutManager
+        binding.recyclerViewCustomers.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewCustomers.setHasFixedSize(true)
 
-        val itemDecoration = ItemSpacingDecoration(10, 10, 20, 20)
-        binding.recyclerViewCustomers.addItemDecoration(itemDecoration)
+        //val itemDecoration = ItemSpacingDecoration(10, 10, 20, 20)
+        //binding.recyclerViewCustomers.addItemDecoration(itemDecoration)
 
         displayCustomers()
 

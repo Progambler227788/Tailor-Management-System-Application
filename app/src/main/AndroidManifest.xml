@@ -13,6 +13,9 @@
         android:theme="@style/Main_Theme"
         tools:targetApi="31">
         <activity
+            android:name=".EditEmployeeDetails"
+            android:exported="false" />
+        <activity
             android:name=".EditCustomerInfo"
             android:exported="false" />
         <activity
