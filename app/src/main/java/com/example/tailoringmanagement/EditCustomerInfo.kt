@@ -31,9 +31,7 @@ class EditCustomerInfo : AppCompatActivity() {
 
         binding.inputCustomerID.setText(id)
         binding.inputCustomerID.isEnabled = false
-        binding.inputCustomerID.setOnClickListener {
-            Toast.makeText(this, "ID Can Not Be Changed!", Toast.LENGTH_SHORT).show()
-        }
+
         binding.inputCustomerName.setText(name)
         binding.inputCustomerPhoneNumber.setText(ph)
 
@@ -48,27 +46,17 @@ class EditCustomerInfo : AppCompatActivity() {
         binding.btnSaveCustomer.setOnClickListener {
             if (checkIfThereIsChange()){
                 val db = DBHelper(this, null)
-                Log.i("Here", "I am hare")
                 db.updateCustomerInfo(id!!.toInt(), DBHelper.COLUMN_PHONE, ""+binding.inputCustomerPhoneNumber.text)
                 db.updateCustomerInfo(id!!.toInt(), DBHelper.COLUMN_NAME, ""+binding.inputCustomerName.text)
-
-//                if (name != ""+binding.inputCustomerName.text)
-//                {
-//                    db.updateCustomerInfo(id!!.toInt(), DBHelper.COLUMN_NAME, ""+binding.inputCustomerName.text)
-//                }
-//                if (ph != ""+binding.inputCustomerPhoneNumber.text)
-//                {
-//                    db.updateCustomerInfo(id!!.toInt(), DBHelper.COLUMN_PHONE, ""+binding.inputCustomerPhoneNumber.text)
-//                }
             }
             onBackPressedDispatcher.onBackPressed()
         }
 
         binding.btnDeleteCustomer.setOnClickListener {
             AlertDialog.Builder(this).setMessage("Sure to delete customer?\n All sizes will be deleted.")
-                .setTitle("Delete Customer")
+                .setTitle("Delete Employee")
                 .setPositiveButton("Yes") { _, _ ->
-                    Toast.makeText(this, "Customer Deleted!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Employee Deleted!", Toast.LENGTH_SHORT).show()
                     val db = DBHelper(this, null)
                     db.deleteCustomer(id!!.toInt())
                     onBackPressedDispatcher.onBackPressed()

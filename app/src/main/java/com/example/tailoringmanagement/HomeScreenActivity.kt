@@ -13,13 +13,16 @@ import com.example.tailoringmanagement.employeePageForTailors.FragmentRVEmployee
 
 class HomeScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeScreenBinding
+    private var currentFragment: String = "Customers"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityHomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.drawerToolBar.toolBar)
-        //binding.drawerToolBar.toolBar.setTitle(R.string.app_name)
+        binding.drawerToolBar.toolBar.title = "Customers"
         binding.drawerToolBar.toolBar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
 
         val toggle = ActionBarDrawerToggle(
@@ -73,12 +76,13 @@ class HomeScreenActivity : AppCompatActivity() {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             return@setNavigationItemSelectedListener true
         }
-    }
 
-    override fun onStart() {
-        super.onStart()
-        launchFragment("Customers", FragmentRVCustomerRecord())
+        if (savedInstanceState != null)
+        {
 
+        } else {
+            launchFragment(currentFragment, FragmentRVCustomerRecord())
+        }
     }
 
     override fun onBackPressed() {
@@ -88,8 +92,14 @@ class HomeScreenActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("fragment", currentFragment)
+    }
+
     private fun launchFragment(toolBarTitle: String, fragment: Fragment) {
         binding.drawerToolBar.toolBar.title = toolBarTitle
+        currentFragment = toolBarTitle
         supportFragmentManager.beginTransaction().replace(R.id.frameLayoutContainer, fragment, "currentFragment").commit()
     }
 

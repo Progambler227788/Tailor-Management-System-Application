@@ -13,7 +13,10 @@
         android:theme="@style/Main_Theme"
         tools:targetApi="31">
         <activity
-            android:name=".EditEmployeeDetails"
+            android:name=".employeePageForTailors.EmployeePayment"
+            android:exported="false" />
+        <activity
+            android:name=".employeePageForTailors.EditEmployeeDetails"
             android:exported="false" />
         <activity
             android:name=".EditCustomerInfo"

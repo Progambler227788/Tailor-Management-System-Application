@@ -21,56 +21,57 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvNewEmployeeId"
+                android:id="@+id/tvEmployeeId"
                 style="@style/text_view_login_signup"
-                android:text="@string/enter_emp_id" />
+                android:text="@string/emp_id2" />
 
             <EditText
-                android:id="@+id/inputNewEmployeeID"
+                android:id="@+id/inputEmployeeID"
                 style="@style/edit_text_login_signup"
-                android:autofillHints="Customer ID (optional) "
+                android:autofillHints="Employee ID"
                 android:ems="10"
                 android:hint="@string/employee_id"
                 android:inputType="number" />
 
             <TextView
-                android:id="@+id/tvNewEmployeeName"
+                android:id="@+id/tvEmployeeName"
                 style="@style/text_view_login_signup"
                 android:text="@string/enter_emp_name" />
 
             <EditText
-                android:id="@+id/inputNewEmployeeName"
+                android:id="@+id/inputEmployeeName"
                 style="@style/edit_text_login_signup"
-                android:autofillHints="Customer Name"
+                android:autofillHints="Employee Name"
                 android:ems="10"
                 android:hint="@string/employee_name"
                 android:inputType="text" />
 
             <TextView
-                android:id="@+id/tvNewEmployeePhoneNumber"
+                android:id="@+id/tvEmployeePhoneNumber"
                 style="@style/text_view_login_signup"
                 android:text="@string/enter_emp_phone_number" />
 
             <EditText
-                android:id="@+id/inputNewEmployeePhoneNumber"
+                android:id="@+id/inputEmployeePhoneNumber"
                 style="@style/edit_text_login_signup"
-                android:autofillHints="Customer Phone Number"
+                android:autofillHints="Employee Phone Number"
                 android:ems="10"
                 android:hint="@string/employee_phone_number"
                 android:inputType="phone" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvNumSuits"
                 style="@style/text_view_login_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="@string/enter_num_suit" />
 
-            <TextView
-                android:id="@+id/textView4"
+            <EditText
+                android:id="@+id/inputNumSuits"
                 style="@style/edit_text_login_signup"
+                android:autofillHints="Employee Number of Suits"
                 android:ems="10"
-                android:text="TextView"
+                android:hint="@string/num_suits"
                 android:inputType="number"/>
 
         </LinearLayout>
@@ -88,7 +89,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/btnCancelAddingEmployee"
+            android:id="@+id/btnCancelEditingEmployee"
             style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,7 +98,7 @@
             android:text="@string/btn_cancel" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnDeleteEmployee"
             style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,7 +109,7 @@
             android:text="@string/delete_size_record" />
 
         <Button
-            android:id="@+id/btnSaveNewEmployee"
+            android:id="@+id/btnSaveEmployee"
             style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -36,7 +36,7 @@ class EmpDBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
         val result = db.insert("$TABLE_EMPLOYEE", null, values)
         db.close()
 
-        return result == (-1).toLong()
+        return result != -1L
     }
 
     fun deleteEmployee(id: Int) {

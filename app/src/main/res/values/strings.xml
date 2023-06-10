@@ -219,9 +219,19 @@
     <string name="enter_emp_phone_number">Enter Employee Phone Number:</string>
     <string name="employee_phone_number">Employee Phone Number</string>
 
+    <!-- Activity Edit Employee Details String Resources -->
+    <string name="enter_num_suit">Enter Number of Suits: </string>
+    <string name="num_suits">Number of Suits</string>
+    <string name="emp_id2">Employee ID</string>
+
     <!-- Dialog Order Layout String Resources -->
-
-
     <string name="deliver_date">Deliver Date</string>
     <string name="order_id">Order ID: %d</string>
+
+    <!-- Activity Employee Payment String Resources -->
+    <string name="num_suit">Number of Suits:</string>
+    <string name="enter_per_suit_wage">Enter Per Suit Wage: </string>
+    <string name="per_suit_wage">Per Suit Wage</string>
+    <string name="pay">Pay</string>
+    <string name="zero">0</string>
 </resources>

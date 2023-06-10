@@ -34,9 +34,9 @@ class DialogNewEmpDetails : DialogFragment() {
             if(id!="" && name!="" && number!="") {
                 val db = EmpDBHelper(requireContext(), null)
                 if (db.addEmployee(id.toInt(), name, "0", number))
-                    Toast.makeText(requireContext(), "Customer Added", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Employee Added", Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(requireContext(), "Customer Already Exist", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Employee Already Exist", Toast.LENGTH_SHORT).show()
                 requireActivity().supportFragmentManager.beginTransaction()
                     .replace(R.id.frameLayoutContainer, FragmentRVEmployeeRecord()).commit()
                 dismiss()

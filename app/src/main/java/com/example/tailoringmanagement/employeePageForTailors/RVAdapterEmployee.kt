@@ -38,7 +38,7 @@ class RVAdapterEmployee(private  var employeeList : ArrayList<RVEmployeeData>, v
             val removedPosition = holder.bindingAdapterPosition
 
             AlertDialog.Builder(context)
-                .setMessage("Sure to delete customer?\n All sizes will be deleted.")
+                .setMessage("Sure to Delete Employee?\nAll Records Will be Deleted.")
                 .setTitle("Delete Customer")
                 .setPositiveButton("Yes") { _, _ ->
                     Toast.makeText(context, "Customer Deleted!", Toast.LENGTH_SHORT).show()
@@ -57,15 +57,19 @@ class RVAdapterEmployee(private  var employeeList : ArrayList<RVEmployeeData>, v
             val updatePos = holder.bindingAdapterPosition
             val emp = employeeList[updatePos]
             val intent = Intent(context, EditEmployeeDetails::class.java)
-            intent.putExtra("id", emp.id)
+            intent.putExtra("id", emp.id.toString())
             intent.putExtra("name", emp.name)
-            intent.putExtra("nsuits", emp.numSuit)
+            intent.putExtra("nsuits", emp.numSuit.toString())
             intent.putExtra("phone", emp.phone)
             context.startActivity(intent)
         }
 
         holder.binding.btnEmpPayment.setOnClickListener {
-
+            val selectedPos = holder.bindingAdapterPosition
+            val intent = Intent(context, EmployeePayment::class.java)
+            intent.putExtra("id", employeeList[selectedPos].id.toString())
+            intent.putExtra("nsuits", employeeList[selectedPos].numSuit.toString())
+            context.startActivity(intent)
         }
 
         holder.binding.btnIncrementSuit.setOnClickListener {
