@@ -1,8 +1,9 @@
 package com.example.tailoringmanagement.orderPageForTailors
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
-import android.content.Intent
+//import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,13 +28,14 @@ class RvAdapterOrder(private  var orderList : ArrayList<RVOrderData>, var contex
         return orderList.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: RvAdapterOrder.MyViewHolder, position: Int) {
         animation(holder.itemView)
         holder.binding.tvOrderID.text = context.getString(R.string.order_id, orderList[position].oid)
         holder.binding.tvEmployeeId.text = context.getString(R.string.emp_id, orderList[position].eid)
         holder.binding.tvCustomerIdOrder.text = context.getString(R.string.customer_id, orderList[position].cid)
         holder.binding.tvPayment.text = context.getString(R.string.payment_order, orderList[position].payment)
-        holder.binding.tvDeliverDate.text =  orderList[position].date
+        holder.binding.tvDeliverDate.text =  "Order Date: " + orderList[position].date
 
 
         holder.binding.btnDeleteOrder.setOnClickListener {

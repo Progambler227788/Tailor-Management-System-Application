@@ -14,6 +14,8 @@ import com.example.tailoringmanagement.localDB.DBHelper
 import com.example.tailoringmanagement.localDB.EmpDBHelper
 import com.example.tailoringmanagement.localDB.OrderDBHelper
 import java.util.*
+//import java.math.BigDecimal
+//import java.math.RoundingMode
 
 class DialogNewOrderDetails : DialogFragment() {
     private lateinit var db: EmpDBHelper
@@ -112,6 +114,8 @@ class DialogNewOrderDetails : DialogFragment() {
             val oid   =  tvOId.text?.toString() ?: ""
             val price =  tvOPrice.text?.toString() ?: ""
 
+          //  price = truncateDecimalPlaces(price)
+
             val date = tvDate.text?.toString() ?: ""
 
 
@@ -135,6 +139,15 @@ class DialogNewOrderDetails : DialogFragment() {
         builder.setView(dialogView).setMessage("Add New Order")
         return builder.create()
     }
+//   private fun truncateDecimalPlaces(input: String): String {
+//        val decimalSeparatorIndex = input.indexOf('.')
+//        return if (decimalSeparatorIndex != -1 && decimalSeparatorIndex + 5 < input.length) {
+//            input.substring(0, decimalSeparatorIndex + 5)
+//        } else {
+//            input
+//        }
+//    }
+
     fun getEmployeesIds() : List<Int> {
         val cursor = db.getAllEmployees()
         val empIds = mutableListOf<Int>()

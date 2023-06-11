@@ -195,7 +195,7 @@
     <string name="apparel_image">Apparel Image</string>
 
     <!-- No Customer Yet XML String Resources -->
-    <string name="no_customer_yet">Add Customers To Display Here...</string>
+    <string name="no_customer_yet">Add Customers To Display Here…</string>
 
     <!-- Fragment Recycler View Employee Record String Resources -->
     <string name="add_employee">Add Employee</string>
@@ -234,7 +234,7 @@
     <!-- Dialog Order Layout String Resources -->
     <string name="deliver_date">Deliver Date</string>
     <string name="order_id">Order ID: %d</string>
-    <string name="payment_order">Payment : %f</string>
+    <string name="payment_order">Payment : %.2f</string>
 
     <string name="edit_order_details">Edit Order Details:</string>
     <string name="mark_as_complete">Mark as complete</string>

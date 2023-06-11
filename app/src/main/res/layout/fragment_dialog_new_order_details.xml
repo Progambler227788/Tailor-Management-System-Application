@@ -56,7 +56,7 @@
         android:hint="@string/assign_payment"
         android:autofillHints="Employee ID"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="numberDecimal" />
 
     <TextView
         android:id="@+id/tvDeliverDate"
