@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.tailoringmanagement.databinding.ActivityHomeScreenBinding
 import com.example.tailoringmanagement.customerPageForTailors.FragmentRVCustomerRecord
 import com.example.tailoringmanagement.employeePageForTailors.FragmentRVEmployeeRecord
+import com.example.tailoringmanagement.orderPageForTailors.FragmentRVOrderRecord
 
 class HomeScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeScreenBinding
@@ -51,6 +52,7 @@ class HomeScreenActivity : AppCompatActivity() {
                     Toast.makeText(this, "Customers", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemOrders -> {
+                    launchFragment("Orders", FragmentRVOrderRecord())
                     Toast.makeText(this, "Orders", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemEmployees -> {
@@ -79,12 +81,13 @@ class HomeScreenActivity : AppCompatActivity() {
 
         if (savedInstanceState != null)
         {
-
+              // to do nothing
         } else {
             launchFragment(currentFragment, FragmentRVCustomerRecord())
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START))
             binding.drawerLayout.closeDrawer(GravityCompat.START)

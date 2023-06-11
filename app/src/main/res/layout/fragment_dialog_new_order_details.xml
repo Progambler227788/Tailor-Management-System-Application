@@ -31,7 +31,8 @@
     <!-- Customer ID Picker -->
     <NumberPicker
         android:id="@+id/npCustomerID"
-        style="@style/picker_view" />
+        style="@style/picker_view"
+        android:clickable="false" />
 
     <TextView
         android:id="@+id/tvEmployeeID"
@@ -41,7 +42,8 @@
     <!-- Employee ID Picker -->
     <NumberPicker
         android:id="@+id/npEmployeeID"
-        style="@style/picker_view" />
+        style="@style/picker_view"
+        />
 
     <TextView
         android:id="@+id/tvOrderPrice"
