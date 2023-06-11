@@ -59,6 +59,13 @@
         <item name="android:textColor">@color/blue_702</item>
         <item name="android:textSize">18sp</item>
     </style>
+    <style name="picker_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/blue_702</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 
     <style name="edit_text_login_signup">
         <item name="android:layout_width">300dp</item>

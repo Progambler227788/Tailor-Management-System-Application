@@ -26,14 +26,14 @@ class EmpDBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
     fun addEmployee(id: Int, name: String, suits: String, phone: String): Boolean{
         val values = ContentValues()
 
-        values.put("$COLUMN_EID", id)
-        values.put("$COLUMN_NAME", name)
-        values.put("$COLUMN_NO_SUITS", suits)
-        values.put("$COLUMN_PHONE", phone)
+        values.put(COLUMN_EID, id)
+        values.put(COLUMN_NAME, name)
+        values.put(COLUMN_NO_SUITS, suits)
+        values.put(COLUMN_PHONE, phone)
 
         val db = this.writableDatabase
 
-        val result = db.insert("$TABLE_EMPLOYEE", null, values)
+        val result = db.insert(TABLE_EMPLOYEE, null, values)
         db.close()
 
         return result != -1L

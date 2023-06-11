@@ -224,14 +224,29 @@
     <string name="num_suits">Number of Suits</string>
     <string name="emp_id2">Employee ID</string>
 
-    <!-- Dialog Order Layout String Resources -->
-    <string name="deliver_date">Deliver Date</string>
-    <string name="order_id">Order ID: %d</string>
-
     <!-- Activity Employee Payment String Resources -->
     <string name="num_suit">Number of Suits:</string>
     <string name="enter_per_suit_wage">Enter Per Suit Wage: </string>
     <string name="per_suit_wage">Per Suit Wage</string>
     <string name="pay">Pay</string>
     <string name="zero">0</string>
+
+    <!-- Dialog Order Layout String Resources -->
+    <string name="deliver_date">Deliver Date</string>
+    <string name="order_id">Order ID: %d</string>
+    <string name="payment_order">Payment : %f</string>
+
+    <string name="edit_order_details">Edit Order Details:</string>
+    <string name="mark_as_complete">Mark as complete</string>
+    <string name="delete_orders">Delete Orders</string>
+    <string name="enter_order_id">Enter Order ID:</string>
+    <string name="enter_order_price">Enter Order Price:</string>
+    <string name="assign_order_id">Assign Order ID:</string>
+    <string name="assign_employee_id">Assign Employee ID</string>
+    <string name="assign_payment">Assign Payment for Order</string>
+    <string name="pick_customer_id">Pick Customer ID</string>
+    <string name="pick_employee_id">Pick Employee ID</string>
+    <string name="pick_date">Pick Date</string>
+
+    <string name="pick_order_deliver_date">Pick Order Deliver Date</string>
 </resources>

@@ -39,9 +39,9 @@ class RVAdapterEmployee(private  var employeeList : ArrayList<RVEmployeeData>, v
 
             AlertDialog.Builder(context)
                 .setMessage("Sure to Delete Employee?\nAll Records Will be Deleted.")
-                .setTitle("Delete Customer")
+                .setTitle("Delete Employee")
                 .setPositiveButton("Yes") { _, _ ->
-                    Toast.makeText(context, "Customer Deleted!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Employee Deleted!", Toast.LENGTH_SHORT).show()
                     val customer = employeeList[removedPosition]
                     employeeList.removeAt(removedPosition)
                     notifyItemRemoved(removedPosition)
