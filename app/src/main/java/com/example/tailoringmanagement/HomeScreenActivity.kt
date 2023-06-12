@@ -1,6 +1,7 @@
 package com.example.tailoringmanagement
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -95,9 +96,22 @@ class HomeScreenActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        if (intent.getBooleanExtra("restartFragmentOrder", false)) {
+            // Recreate the fragment here
+            Log.i("OnResume","Called")
+            launchFragment("Orders", FragmentRVOrderRecord())
+            intent.removeExtra("restartFragmentOrder")
+        }
+
+    }
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString("fragment", currentFragment)
+
     }
 
     private fun launchFragment(toolBarTitle: String, fragment: Fragment) {

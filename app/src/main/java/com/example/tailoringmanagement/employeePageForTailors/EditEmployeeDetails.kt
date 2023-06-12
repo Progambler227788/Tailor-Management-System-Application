@@ -3,11 +3,9 @@ package com.example.tailoringmanagement.employeePageForTailors
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import com.example.tailoringmanagement.databinding.ActivityEditEmployeeDetailsBinding
-import com.example.tailoringmanagement.localDB.DBHelper
 import com.example.tailoringmanagement.localDB.EmpDBHelper
 
 class EditEmployeeDetails : AppCompatActivity() {

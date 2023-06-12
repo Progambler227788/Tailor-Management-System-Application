@@ -1,6 +1,7 @@
 package com.example.tailoringmanagement.orderPageForTailors
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,7 @@ class FragmentRVOrderRecord : Fragment()
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
+        Log.i("Fragment","Called")
         binding = FragmentRVOrderRecordBinding.inflate(layoutInflater, container, false)
 
         db = OrderDBHelper(requireActivity(), null)

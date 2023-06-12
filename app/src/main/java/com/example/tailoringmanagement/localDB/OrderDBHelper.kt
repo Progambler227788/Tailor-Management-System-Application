@@ -59,7 +59,7 @@ class OrderDBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
         val db = this.writableDatabase
         db.execSQL("UPDATE $TABLE_ORDER " +
                 "SET $columnToChange='$updatedValue' " +
-                "WHERE $COLUMN_EID=$id")
+                "WHERE $COLUMN_OID=$id")
         db.close()
     }
 

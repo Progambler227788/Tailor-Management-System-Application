@@ -173,6 +173,7 @@ class SIgnUpActivity : AppCompatActivity(), FragmentInteractionListener
                     database.child(key).setValue(details)
                         .addOnSuccessListener {
                             // Tailor details saved successfully
+
                             Toast.makeText(
                                 this,
                                 " Successfully Signed Up",

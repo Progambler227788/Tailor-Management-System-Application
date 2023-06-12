@@ -10,26 +10,22 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.tailoringmanagement.R
-import com.example.tailoringmanagement.localDB.DBHelper
-import com.example.tailoringmanagement.localDB.EmpDBHelper
 import com.example.tailoringmanagement.localDB.OrderDBHelper
 import java.util.*
 //import java.math.BigDecimal
 //import java.math.RoundingMode
 
 class DialogNewOrderDetails : DialogFragment() {
-    private lateinit var db: EmpDBHelper
-    private lateinit var cdb: DBHelper
     private lateinit var empIds: List<Int>
     private lateinit var cusIds: List<Int>
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireActivity())
 
-        db = EmpDBHelper(requireActivity(), null)
-        cdb = DBHelper(requireActivity(), null)
-        empIds = getEmployeesIds()
-        cusIds = getCustomerIds()
+//        db = EmpDBHelper(requireActivity(), null)
+//        cdb = DBHelper(requireActivity(), null)
+        empIds = GetData().getEmployeesIds(requireContext())
+        cusIds = GetData().getCustomerIds(requireContext())
 
         val inflater = requireActivity().layoutInflater
         val dialogView = inflater.inflate(R.layout.fragment_dialog_new_order_details, null)
@@ -148,27 +144,29 @@ class DialogNewOrderDetails : DialogFragment() {
 //        }
 //    }
 
-    fun getEmployeesIds() : List<Int> {
-        val cursor = db.getAllEmployees()
-        val empIds = mutableListOf<Int>()
-
-        while (cursor!!.moveToNext()) {
-            empIds .add(
-                    cursor.getInt(0),
-
-            )
-        }
-        return empIds
-    }
-    fun getCustomerIds() : List<Int> {
-        val cursor = cdb.getAllCustomers()
-        val cusIds = mutableListOf<Int>()
-
-        while (cursor!!.moveToNext()) {
-            cusIds  .add(
-                cursor.getInt(0),
-                )
-        }
-        return  cusIds
-    }
+//    fun getEmployeesIds(activity : Activity) : List<Int> {
+//        db = EmpDBHelper(activity, null)
+//        val cursor = db.getAllEmployees()
+//        val empIds = mutableListOf<Int>()
+//
+//        while (cursor!!.moveToNext()) {
+//            empIds .add(
+//                    cursor.getInt(0),
+//
+//            )
+//        }
+//        return empIds
+//    }
+//    fun getCustomerIds(activity : Activity) : List<Int> {
+//        cdb = DBHelper(activity, null)
+//        val cursor = cdb.getAllCustomers()
+//        val cusIds = mutableListOf<Int>()
+//
+//        while (cursor!!.moveToNext()) {
+//            cusIds  .add(
+//                cursor.getInt(0),
+//                )
+//        }
+//        return  cusIds
+//    }
 }

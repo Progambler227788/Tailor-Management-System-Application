@@ -24,6 +24,12 @@
         <activity
             android:name=".ActivityEditCustomerSizes"
             android:exported="false" />
+
+        <activity
+            android:name="com.example.tailoringmanagement.orderPageForTailors.EditOrderDetails"
+            android:label="Edit Order Details"
+            android:exported="false" />
+
         <activity
             android:name=".apparel.ActivityApparelSelector"
             android:exported="false" />
