@@ -1,13 +1,11 @@
 package com.example.tailoringmanagement.customerPageForTailors
 
-import android.graphics.Rect
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.tailoringmanagement.databinding.FragmentRVCustomerRecordBinding
 import com.example.tailoringmanagement.localDB.DBHelper
 
@@ -31,7 +29,7 @@ class FragmentRVCustomerRecord : Fragment() {
         //val itemDecoration = ItemSpacingDecoration(10, 10, 20, 20)
         //binding.recyclerViewCustomers.addItemDecoration(itemDecoration)
 
-        displayCustomers()
+       // displayCustomers()
 
         binding.btnAddNewCustomer.setOnClickListener {
             val dialog = DialogNewCustDetails()
@@ -39,6 +37,11 @@ class FragmentRVCustomerRecord : Fragment() {
             displayCustomers()
         }
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        displayCustomers()
     }
 
     private fun displayCustomers() {

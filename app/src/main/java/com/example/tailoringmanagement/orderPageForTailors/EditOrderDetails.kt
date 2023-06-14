@@ -7,10 +7,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
-import com.example.tailoringmanagement.RestartActivity
 import com.example.tailoringmanagement.databinding.ActivityEditOrderDetailsBinding
 import com.example.tailoringmanagement.localDB.OrderDBHelper
 import java.util.*
+
 
 class EditOrderDetails : AppCompatActivity() {
 
@@ -24,6 +24,7 @@ class EditOrderDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditOrderDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         supportActionBar!!.title = "Edit Orders"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -149,8 +150,9 @@ class EditOrderDetails : AppCompatActivity() {
                 )
 
             }
-            RestartActivity().restartAct(this)
-           // onBackPressedDispatcher.onBackPressed()
+            Log.i("Called","Here")
+
+           onBackPressedDispatcher.onBackPressed()
         }
 
         binding.btnDeleteOrder.setOnClickListener {
@@ -161,7 +163,7 @@ class EditOrderDetails : AppCompatActivity() {
                     Toast.makeText(this, "Order Deleted!", Toast.LENGTH_SHORT).show()
                     val db = OrderDBHelper(this, null)
                     db.deleteOrder(oid!!.toInt())
-                    RestartActivity().restartAct(this)
+                   // RestartActivity().restartAct(this)
                     onBackPressedDispatcher.onBackPressed()
 
                 }
@@ -216,4 +218,5 @@ class EditOrderDetails : AppCompatActivity() {
                 .create()
                 .show()
         }
+
 }

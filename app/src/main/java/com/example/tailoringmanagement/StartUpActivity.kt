@@ -38,9 +38,10 @@ class StartUpActivity : AppCompatActivity()
             // User is already logged in, navigate to the respective home screen
             if (checkUserLoggedIn == "Tailor") {
                 moveToHome()
-            } else if (checkUserLoggedIn== "Customer") {
-                Toast.makeText(this,"Customer Logged In",Toast.LENGTH_SHORT).show()
-            }
+           }
+//            else if (checkUserLoggedIn== "Customer") {
+//                Toast.makeText(this,"Customer Logged In",Toast.LENGTH_SHORT).show()
+//            }
             finish() // Finish the current activity to prevent going back to the login screen
         }
         binding.btnSignUp.setOnClickListener {
@@ -57,7 +58,9 @@ class StartUpActivity : AppCompatActivity()
             Toast.makeText(this, "Recovery Not Yet Implemented", Toast.LENGTH_SHORT).show()
         }
         binding.textViewUseAsGuest.setOnClickListener {
-            startActivity(Intent(this, HomeScreenActivity::class.java))
+            userName ="guest"
+            userEmail = "guest@gmail.com"
+            moveToHome()
         }
     }
     private fun moveToHome(){
@@ -165,7 +168,7 @@ class StartUpActivity : AppCompatActivity()
         return when (item.itemId) {
             R.id.app_bar_setting -> {
                 Toast.makeText(this, "Settings Not Yet Implemented", Toast.LENGTH_SHORT).show()
-                return true
+                true
             } else -> {
                 onBackPressedDispatcher.onBackPressed()
                 return true

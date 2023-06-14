@@ -1,4 +1,7 @@
 package com.example.tailoringmanagement
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +19,8 @@ import com.example.tailoringmanagement.orderPageForTailors.FragmentRVOrderRecord
 class HomeScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeScreenBinding
     private var currentFragment: String = "Customers"
+    private var name : String? = null
+    private var email : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +39,8 @@ class HomeScreenActivity : AppCompatActivity() {
 
         toggle.syncState()
         binding.drawerLayout.addDrawerListener(toggle)
-        val name = intent.getStringExtra("name")
-        val email= intent.getStringExtra("email")
+        name = intent.getStringExtra("name")
+        email= intent.getStringExtra("email")
 //        Toast.makeText(this,"$name",Toast.LENGTH_SHORT).show()
 //        Toast.makeText(this,"$email",Toast.LENGTH_SHORT).show()
         val headerview = binding.drawerNavView.getHeaderView(0)
@@ -69,7 +74,13 @@ class HomeScreenActivity : AppCompatActivity() {
                     Toast.makeText(this, "Report a Bug", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemLogout -> {
-                    Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Logout user : $name", Toast.LENGTH_SHORT).show()
+                    val sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE)
+                    val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                    editor.putString("userType", null)
+                    editor.apply()
+                    startActivity(Intent(this,StartUpActivity::class.java))
+                    finish()
                 }
                 else -> {
                     launchFragment("Settings", FragmentSettings())

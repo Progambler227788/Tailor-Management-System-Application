@@ -1,41 +1,39 @@
 package com.example.tailoringmanagement.orderPageForTailors
 
 import android.os.Bundle
-import android.util.Log
+
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.tailoringmanagement.R
-import com.example.tailoringmanagement.customerPageForTailors.DialogNewCustDetails
-import com.example.tailoringmanagement.customerPageForTailors.RvAdapterCustomer
-import com.example.tailoringmanagement.customerPageForTailors.RvCustomersData
-import com.example.tailoringmanagement.databinding.FragmentRVEmployeeRecordBinding
 import com.example.tailoringmanagement.databinding.FragmentRVOrderRecordBinding
-import com.example.tailoringmanagement.localDB.EmpDBHelper
 import com.example.tailoringmanagement.localDB.OrderDBHelper
 
 class FragmentRVOrderRecord : Fragment()
 {
     private lateinit var binding: FragmentRVOrderRecordBinding
     private lateinit var db: OrderDBHelper
-    private lateinit var orderAdpapter: RvAdapterOrder
-    private lateinit var empList: ArrayList<RVOrderData>
+    private lateinit var orderAdapter: RvAdapterOrder
+    private lateinit var orderList: ArrayList<RVOrderData>
+
+    override fun onResume() {
+        super.onResume()
+        displayOrders()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        Log.i("Fragment","Called")
         binding = FragmentRVOrderRecordBinding.inflate(layoutInflater, container, false)
 
         db = OrderDBHelper(requireActivity(), null)
         binding.recyclerViewOrder.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewOrder.setHasFixedSize(true)
-
         displayOrders()
+
 
         binding.btnAddNewOrder.setOnClickListener {
             val dialog = DialogNewOrderDetails()
@@ -45,11 +43,11 @@ class FragmentRVOrderRecord : Fragment()
         return binding.root
     }
 
-    fun displayOrders() {
+    private fun displayOrders() {
         val cursor = db.getAllOrders()
-        empList = ArrayList()
+        orderList = ArrayList()
         while (cursor!!.moveToNext()) {
-            empList.add(
+            orderList.add(
                 RVOrderData(
                     cursor.getInt(0),
                     cursor.getInt(1),
@@ -59,8 +57,8 @@ class FragmentRVOrderRecord : Fragment()
                 )
             )
         }
-        orderAdpapter = RvAdapterOrder(empList, requireActivity())
-        binding.recyclerViewOrder.adapter = orderAdpapter
+        orderAdapter = RvAdapterOrder(orderList, requireActivity())
+        binding.recyclerViewOrder.adapter = orderAdapter
     }
 
 }

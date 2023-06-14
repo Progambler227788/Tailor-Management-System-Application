@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -111,5 +112,11 @@ class RvAdapterOrder(private  var orderList : ArrayList<RVOrderData>, var contex
         val animation = AlphaAnimation(0.0f,1.0f)
         animation.duration = 1340
         view.startAnimation(animation)
+    }
+    fun updateOrders(newOrders: ArrayList<RVOrderData>) {
+        orderList.clear()
+        orderList.addAll(newOrders)
+        notifyDataSetChanged()
+        Log.i("Called","updating")
     }
 }

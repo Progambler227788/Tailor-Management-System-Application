@@ -31,7 +31,7 @@ class FragmentRVEmployeeRecord : Fragment()
         binding.recyclerViewEmployee.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewEmployee.setHasFixedSize(true)
 
-        displayEmployee()
+      //  displayEmployee()
 
         binding.btnAddNewEmp.setOnClickListener {
             val dialog = DialogNewEmpDetails()
@@ -40,6 +40,11 @@ class FragmentRVEmployeeRecord : Fragment()
         }
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        displayEmployee()
     }
 
     fun displayEmployee() {
