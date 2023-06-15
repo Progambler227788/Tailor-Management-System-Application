@@ -84,13 +84,17 @@ class OrderDBHelper(context: Context) :
 
         val read = this.readableDatabase
         // accessing oid using any random column like eid,cid
-        val cursor = read.rawQuery("Select $COLUMN_OID from $TABLE_ORDER where $columnToUpdate=?",
+        val cursor = read.rawQuery(
+            "SELECT $COLUMN_OID FROM $TABLE_ORDER WHERE $columnToUpdate=?",
             arrayOf(id.toString())
         )
 
-        val firebaseOId: Int = cursor.getInt(cursor.getColumnIndex(COLUMN_OID))
-        syncUpdateOrderToFirebase(firebaseOId,columnToChange,updatedValue)
-        cursor.close()
+        if (cursor != null && cursor.moveToFirst() && cursor.count>0) {
+            val firebaseOId: Int = cursor.getInt(cursor.getColumnIndex(COLUMN_OID))
+            syncUpdateOrderToFirebase(firebaseOId, columnToChange, updatedValue)
+        }
+
+        cursor?.close()
         read.close()
     }
     private fun syncOrderToFirebase(oid: Int, cid: Int, eid: Int, payment: Float, date: String) {

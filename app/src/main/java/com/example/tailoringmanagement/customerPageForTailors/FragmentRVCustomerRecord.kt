@@ -1,6 +1,7 @@
 package com.example.tailoringmanagement.customerPageForTailors
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -56,6 +57,7 @@ class FragmentRVCustomerRecord : Fragment() {
                 )
             )
         }
+      //  Log.i("display",customersList[0].name)
         customerAdapter = RvAdapterCustomer(customersList, requireActivity())
         binding.recyclerViewCustomers.adapter = customerAdapter
     }

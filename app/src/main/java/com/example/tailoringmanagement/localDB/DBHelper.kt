@@ -5,8 +5,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 
 class DBHelper(context: Context) :
@@ -62,6 +61,51 @@ class DBHelper(context: Context) :
         val db = this.readableDatabase
         return db.rawQuery("SELECT * FROM $TABLE_CUSTOMER", null)
     }
+//    fun getAllCustomers(): Cursor? {
+//    val db = this.writableDatabase
+//
+//    if (isInternetAvailable()) {
+//        // Internet is available, retrieve data from Firebase and store in SQLite database
+//
+//        // Clear the existing data in the table
+//        db.delete(TABLE_CUSTOMER, null, null)
+//
+//        // Retrieve data from Firebase
+//        customerReference.addValueEventListener(object : ValueEventListener {
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                // Iterate through the Firebase snapshot and insert data into the SQLite database
+//                for (customerSnapshot in snapshot.children) {
+//                    val id = customerSnapshot.child(COLUMN_CID).getValue(Int::class.java)
+//                    val name = customerSnapshot.child(COLUMN_NAME).getValue(String::class.java)
+//                    val phone = customerSnapshot.child(COLUMN_PHONE).getValue(String::class.java)
+//
+//                    // Insert data into the SQLite database
+//                    val values = ContentValues()
+//                    values.put(COLUMN_CID, id)
+//                    values.put(COLUMN_NAME, name)
+//                    values.put(COLUMN_PHONE, phone)
+//                    Log.i("Called","Inserted")
+//                    db.insert(TABLE_CUSTOMER, null, values)
+//                }
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                // Handle onCancelled event
+//            }
+//        })
+//
+//    }
+//
+//    // Retrieve data from the local SQLite database
+//    return this.readableDatabase.rawQuery("SELECT * FROM $TABLE_CUSTOMER", null)
+//}
+//
+//    private fun isInternetAvailable(): Boolean {
+//        val connectivityManager = contextValue.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+//        val network = connectivityManager.activeNetwork
+//        val capabilities = connectivityManager.getNetworkCapabilities(network)
+//        return capabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) == true
+//    }
 
     fun updateCustomerInfo(id: Int, columnToChange: String, updatedValue: String?) {
         val db = this.writableDatabase
