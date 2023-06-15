@@ -76,6 +76,7 @@ class EmpDBHelper(context: Context) :
 
     private fun syncToFirebase(id: Int, name: String, noOfSuits: String, phone: String) {
         val employeeData = HashMap<String, Any?>()
+        employeeData[COLUMN_EID] = id
         employeeData[COLUMN_NAME] = name
         employeeData[COLUMN_NO_SUITS] = noOfSuits
         employeeData[COLUMN_PHONE] = phone

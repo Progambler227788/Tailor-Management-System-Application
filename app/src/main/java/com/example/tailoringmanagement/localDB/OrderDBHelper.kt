@@ -99,6 +99,7 @@ class OrderDBHelper(context: Context) :
     }
     private fun syncOrderToFirebase(oid: Int, cid: Int, eid: Int, payment: Float, date: String) {
         val orderData = HashMap<String, Any?>()
+        orderData[COLUMN_OID] = oid
         orderData[COLUMN_CID] = cid
         orderData[COLUMN_EID] = eid
         orderData[COLUMN_PRICE] = payment
