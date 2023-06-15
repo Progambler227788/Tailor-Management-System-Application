@@ -45,7 +45,7 @@ class RVAdapterEmployee(private  var employeeList : ArrayList<RVEmployeeData>, v
                     val customer = employeeList[removedPosition]
                     employeeList.removeAt(removedPosition)
                     notifyItemRemoved(removedPosition)
-                    val db = EmpDBHelper(context, null)
+                    val db = EmpDBHelper(context)
                     db.deleteEmployee(customer.id)
                 }
                 .setNegativeButton("No", null)
@@ -76,7 +76,7 @@ class RVAdapterEmployee(private  var employeeList : ArrayList<RVEmployeeData>, v
             val updatePos = holder.bindingAdapterPosition
             employeeList[updatePos].numSuit = (employeeList[updatePos].numSuit + 1)
             notifyItemChanged(updatePos)
-            val db = EmpDBHelper(context, null)
+            val db = EmpDBHelper(context)
             db.updateEmployeeInfo(employeeList[updatePos].id, EmpDBHelper.COLUMN_NO_SUITS, employeeList[updatePos].numSuit.toString())
         }
 

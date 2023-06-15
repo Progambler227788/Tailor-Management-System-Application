@@ -31,7 +31,7 @@ class DialogNewCustDetails : DialogFragment() {
             val name = tvName.text?.toString() ?: ""
             val number = tvPhone.text?.toString() ?: ""
             if(id!="" && name!="" && number!="") {
-                val db = DBHelper(requireContext(), null)
+                val db = DBHelper(requireContext())
                 db.addCustomer(id.toInt(), name, number)
                 Toast.makeText(requireContext(), "Customer Added", Toast.LENGTH_SHORT).show()
                 requireActivity().supportFragmentManager.beginTransaction()

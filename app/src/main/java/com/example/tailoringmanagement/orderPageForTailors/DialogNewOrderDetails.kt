@@ -45,6 +45,7 @@ class DialogNewOrderDetails : DialogFragment() {
        }
         else {
             Toast.makeText(requireContext(),"Add Employees Please",Toast.LENGTH_SHORT).show()
+           dismiss()
         }
         if(cusIds.isNotEmpty()) {
             tvOCid.minValue = 0
@@ -118,7 +119,7 @@ class DialogNewOrderDetails : DialogFragment() {
 
 
             if(oid!="" && cid!="" && eid!="" && price!="" && date!="Pick Order Deliver Date") {
-                val db = OrderDBHelper(requireContext(), null)
+                val db = OrderDBHelper(requireContext())
                 if (db.addOrder(oid.toInt(),cid.toInt(),eid.toInt(),price.toFloat(),date))
                     Toast.makeText(requireContext(), "Order Added", Toast.LENGTH_SHORT).show()
                 else

@@ -1,5 +1,6 @@
 package com.example.tailoringmanagement.employeePageForTailors
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -13,6 +14,7 @@ class EmployeePayment : AppCompatActivity()
     private var nsuits: String? = null
     private var id: String? = null
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEmployeePaymentBinding.inflate(layoutInflater)
@@ -35,7 +37,7 @@ class EmployeePayment : AppCompatActivity()
         }
 
         binding.btnPayEmployee.setOnClickListener {
-            val db = EmpDBHelper(this, null)
+            val db = EmpDBHelper(this)
             db.updateEmployeeInfo(id!!.toInt(), EmpDBHelper.COLUMN_NO_SUITS, "0")
             onBackPressedDispatcher.onBackPressed()
         }

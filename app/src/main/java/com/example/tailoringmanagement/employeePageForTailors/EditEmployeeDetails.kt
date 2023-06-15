@@ -44,7 +44,7 @@ class EditEmployeeDetails : AppCompatActivity() {
 
         binding.btnSaveEmployee.setOnClickListener {
             if (checkIfThereIsChange()){
-                val db = EmpDBHelper(this, null)
+                val db = EmpDBHelper(this)
                 db.updateEmployeeInfo(id!!.toInt(), EmpDBHelper.COLUMN_PHONE, ""+binding.inputEmployeePhoneNumber.text)
                 db.updateEmployeeInfo(id!!.toInt(), EmpDBHelper.COLUMN_NAME, ""+binding.inputEmployeeName.text)
                 db.updateEmployeeInfo(id!!.toInt(), EmpDBHelper.COLUMN_NO_SUITS, ""+binding.inputNumSuits.text)
@@ -57,7 +57,7 @@ class EditEmployeeDetails : AppCompatActivity() {
                 .setTitle("Delete Customer")
                 .setPositiveButton("Yes") { _, _ ->
                     Toast.makeText(this, "Customer Deleted!", Toast.LENGTH_SHORT).show()
-                    val db = EmpDBHelper(this, null)
+                    val db = EmpDBHelper(this)
                     db.deleteEmployee(id!!.toInt())
                     onBackPressedDispatcher.onBackPressed()
                 }

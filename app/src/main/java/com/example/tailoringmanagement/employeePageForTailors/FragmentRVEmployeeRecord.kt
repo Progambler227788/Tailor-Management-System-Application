@@ -6,10 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.tailoringmanagement.R
-import com.example.tailoringmanagement.customerPageForTailors.DialogNewCustDetails
-import com.example.tailoringmanagement.customerPageForTailors.RvAdapterCustomer
-import com.example.tailoringmanagement.customerPageForTailors.RvCustomersData
 import com.example.tailoringmanagement.databinding.FragmentRVEmployeeRecordBinding
 import com.example.tailoringmanagement.localDB.EmpDBHelper
 
@@ -27,7 +23,7 @@ class FragmentRVEmployeeRecord : Fragment()
         // Inflate the layout for this fragment
         binding = FragmentRVEmployeeRecordBinding.inflate(layoutInflater, container, false)
 
-        db = EmpDBHelper(requireActivity(), null)
+        db = EmpDBHelper(requireActivity())
         binding.recyclerViewEmployee.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewEmployee.setHasFixedSize(true)
 
@@ -47,7 +43,7 @@ class FragmentRVEmployeeRecord : Fragment()
         displayEmployee()
     }
 
-    fun displayEmployee() {
+    private fun displayEmployee() {
         val cursor = db.getAllEmployees()
         empList = ArrayList()
         while (cursor!!.moveToNext()) {

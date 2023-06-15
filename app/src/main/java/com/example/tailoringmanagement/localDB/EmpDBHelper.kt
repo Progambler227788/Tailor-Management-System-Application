@@ -5,17 +5,22 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
-class EmpDBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
-    SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION)
-{
+class EmpDBHelper(context: Context) :
+    SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+    private val contextValue = context
+    private val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+    private val employeeReference: DatabaseReference = database.getReference(TABLE_EMPLOYEE)
+
     override fun onCreate(db: SQLiteDatabase?) {
-        val query1 = "CREATE TABLE $TABLE_EMPLOYEE (" +
+        val query = "CREATE TABLE $TABLE_EMPLOYEE (" +
                 "$COLUMN_EID INTEGER PRIMARY KEY, " +
                 "$COLUMN_NAME TEXT, " +
                 "$COLUMN_NO_SUITS TEXT, " +
                 "$COLUMN_PHONE TEXT);"
-        db?.execSQL(query1)
+        db?.execSQL(query)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -23,7 +28,7 @@ class EmpDBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
         onCreate(db)
     }
 
-    fun addEmployee(id: Int, name: String, suits: String, phone: String): Boolean{
+    fun addEmployee(id: Int, name: String, suits: String, phone: String): Boolean {
         val values = ContentValues()
 
         values.put(COLUMN_EID, id)
@@ -35,15 +40,18 @@ class EmpDBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
 
         val result = db.insert(TABLE_EMPLOYEE, null, values)
         db.close()
+        syncToFirebase(id,name,suits,phone)
 
         return result != -1L
     }
 
     fun deleteEmployee(id: Int) {
         val db = this.writableDatabase
-        db.execSQL("DELETE FROM $TABLE_EMPLOYEE WHERE $COLUMN_EID" +
-                "=" + "$id")
+        db.delete(TABLE_EMPLOYEE, "$COLUMN_EID = ?", arrayOf(id.toString()))
+        val orderDB = OrderDBHelper(contextValue)
+        orderDB.updateOrdersInfo(id, COLUMN_EID, null, COLUMN_EID)
         db.close()
+        employeeReference.child(id.toString()).removeValue()
     }
 
     fun getAllEmployees(): Cursor? {
@@ -51,12 +59,28 @@ class EmpDBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
         return db.rawQuery("SELECT * FROM $TABLE_EMPLOYEE", null)
     }
 
-    fun updateEmployeeInfo(id: Int, columnToChange: String, updatedValue: String){
+    fun updateEmployeeInfo(id: Int, columnToChange: String, updatedValue: String) {
         val db = this.writableDatabase
-        db.execSQL("UPDATE $TABLE_EMPLOYEE " +
-                "SET $columnToChange='$updatedValue' " +
-                "WHERE $COLUMN_EID=$id")
+        val values = ContentValues()
+        values.put(columnToChange, updatedValue)
+        db.update(TABLE_EMPLOYEE, values, "$COLUMN_EID = ?", arrayOf(id.toString()))
         db.close()
+        updateFirebase(id,columnToChange,updatedValue)
+    }
+    private fun updateFirebase(id: Int, columnToChange: String, updatedValue: String?) {
+        val employeeData = HashMap<String, Any?>()
+        employeeData[columnToChange] = updatedValue
+
+        employeeReference.child(id.toString()).updateChildren(employeeData)
+    }
+
+    private fun syncToFirebase(id: Int, name: String, noOfSuits: String, phone: String) {
+        val employeeData = HashMap<String, Any?>()
+        employeeData[COLUMN_NAME] = name
+        employeeData[COLUMN_NO_SUITS] = noOfSuits
+        employeeData[COLUMN_PHONE] = phone
+
+        employeeReference.child(id.toString()).setValue(employeeData)
     }
 
     companion object {

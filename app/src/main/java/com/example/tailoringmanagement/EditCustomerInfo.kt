@@ -3,7 +3,6 @@ package com.example.tailoringmanagement
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import com.example.tailoringmanagement.databinding.ActivityEditCustomerInfoBinding
@@ -45,7 +44,7 @@ class EditCustomerInfo : AppCompatActivity() {
 
         binding.btnSaveCustomer.setOnClickListener {
             if (checkIfThereIsChange()){
-                val db = DBHelper(this, null)
+                val db = DBHelper(this)
                 db.updateCustomerInfo(id!!.toInt(), DBHelper.COLUMN_PHONE, ""+binding.inputCustomerPhoneNumber.text)
                 db.updateCustomerInfo(id!!.toInt(), DBHelper.COLUMN_NAME, ""+binding.inputCustomerName.text)
             }
@@ -57,7 +56,7 @@ class EditCustomerInfo : AppCompatActivity() {
                 .setTitle("Delete Employee")
                 .setPositiveButton("Yes") { _, _ ->
                     Toast.makeText(this, "Employee Deleted!", Toast.LENGTH_SHORT).show()
-                    val db = DBHelper(this, null)
+                    val db = DBHelper(this)
                     db.deleteCustomer(id!!.toInt())
                     onBackPressedDispatcher.onBackPressed()
                 }

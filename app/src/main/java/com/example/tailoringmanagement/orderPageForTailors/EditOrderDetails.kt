@@ -83,10 +83,12 @@ class EditOrderDetails : AppCompatActivity() {
         if (customerIds.isNotEmpty()) {
             val cidIndex = customerIds.indexOf(cid.toString())
 
-            if (cidIndex != 0) {
-                val temp = customerIds[0] // Store the value at index 0
-                customerIds[0] = customerIds[cidIndex] // Replace the value at index 0 with the value of cid
-                customerIds[cidIndex] = temp // Replace the value at cidIndex with the original value at index 0
+            if (cidIndex >= 0 && cidIndex < customerIds.size) {
+                if (cidIndex != 0) {
+                    val temp = customerIds[0] // Store the value at index 0
+                    customerIds[0] = customerIds[cidIndex] // Replace the value at index 0 with the value of cid
+                    customerIds[cidIndex] = temp // Replace the value at cidIndex with the original value at index 0
+                }
             }
 
             binding.npEditCustomerID.minValue = 0
@@ -95,11 +97,14 @@ class EditOrderDetails : AppCompatActivity() {
 
         if (employeeIds.isNotEmpty()) {
             val eidIndex = employeeIds.indexOf(eid.toString())
-
-            if (eidIndex != 0) {
-                val temp = employeeIds[0] // Store the value at index 0
-                employeeIds[0] = employeeIds[eidIndex] // Replace the value at index 0 with the value of eid
-                employeeIds[eidIndex] = temp // Replace the value at eidIndex with the original value at index 0
+            if (eidIndex >= 0 && eidIndex < employeeIds.size) {
+                if (eidIndex != 0) {
+                    val temp = employeeIds[0] // Store the value at index 0
+                    employeeIds[0] =
+                        employeeIds[eidIndex] // Replace the value at index 0 with the value of eid
+                    employeeIds[eidIndex] =
+                        temp // Replace the value at eidIndex with the original value at index 0
+                }
             }
 
             binding.npEditEmployeeID.minValue = 0
@@ -127,7 +132,7 @@ class EditOrderDetails : AppCompatActivity() {
         binding.btnSaveOrder.setOnClickListener {
             if (checkIfThereIsChange()) {
                 Log.i("Called","Here")
-                val db = OrderDBHelper(this, null)
+                val db = OrderDBHelper(this)
                 db.updateOrdersInfo(
                     oid!!.toInt(),
                     OrderDBHelper.COLUMN_CID,
@@ -161,7 +166,7 @@ class EditOrderDetails : AppCompatActivity() {
                 .setTitle("Delete Order")
                 .setPositiveButton("Yes") { _, _ ->
                     Toast.makeText(this, "Order Deleted!", Toast.LENGTH_SHORT).show()
-                    val db = OrderDBHelper(this, null)
+                    val db = OrderDBHelper(this)
                     db.deleteOrder(oid!!.toInt())
                    // RestartActivity().restartAct(this)
                     onBackPressedDispatcher.onBackPressed()

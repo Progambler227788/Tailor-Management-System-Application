@@ -21,7 +21,7 @@ class FragmentRVCustomerRecord : Fragment() {
     ): View {
         binding = FragmentRVCustomerRecordBinding.inflate(layoutInflater, container, false)
 
-        db = DBHelper(requireActivity(), null)
+        db = DBHelper(requireActivity())
 
         binding.recyclerViewCustomers.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewCustomers.setHasFixedSize(true)

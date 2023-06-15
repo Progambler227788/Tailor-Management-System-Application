@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,10 +35,17 @@ class RvAdapterOrder(private  var orderList : ArrayList<RVOrderData>, var contex
         animation(holder.itemView)
         holder.binding.tvOrderID.text =
             context.getString(R.string.order_id, orderList[position].oid)
+        if(orderList[position].eid == "Deleted Employee")
+            holder.binding.tvEmployeeId.text = "Deleted Employee"
+        else
         holder.binding.tvEmployeeId.text =
-            context.getString(R.string.emp_id, orderList[position].eid)
+            context.getString(R.string.emp_id, orderList[position].eid?.toInt())
+
+        if(orderList[position].cid == "Deleted Customer")
+            holder.binding.tvCustomerIdOrder.text = "Deleted Customer"
+        else
         holder.binding.tvCustomerIdOrder.text =
-            context.getString(R.string.customer_id, orderList[position].cid)
+            context.getString(R.string.customer_id, orderList[position].cid?.toInt())
         holder.binding.tvPayment.text =
             context.getString(R.string.payment_order, orderList[position].payment)
         holder.binding.tvDeliverDate.text = "Order Date: " + orderList[position].date
@@ -56,7 +62,7 @@ class RvAdapterOrder(private  var orderList : ArrayList<RVOrderData>, var contex
                     val order = orderList[removedPosition]
                     orderList.removeAt(removedPosition)
                     notifyItemRemoved(removedPosition)
-                    val db = OrderDBHelper(context, null)
+                    val db = OrderDBHelper(context)
                     db.deleteOrder(order.oid)
                 }
                 .setNegativeButton("No", null)
@@ -113,10 +119,5 @@ class RvAdapterOrder(private  var orderList : ArrayList<RVOrderData>, var contex
         animation.duration = 1340
         view.startAnimation(animation)
     }
-    fun updateOrders(newOrders: ArrayList<RVOrderData>) {
-        orderList.clear()
-        orderList.addAll(newOrders)
-        notifyDataSetChanged()
-        Log.i("Called","updating")
-    }
+
 }

@@ -29,7 +29,7 @@ class FragmentRVOrderRecord : Fragment()
         // Inflate the layout for this fragment
         binding = FragmentRVOrderRecordBinding.inflate(layoutInflater, container, false)
 
-        db = OrderDBHelper(requireActivity(), null)
+        db = OrderDBHelper(requireActivity())
         binding.recyclerViewOrder.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewOrder.setHasFixedSize(true)
         displayOrders()
@@ -47,11 +47,16 @@ class FragmentRVOrderRecord : Fragment()
         val cursor = db.getAllOrders()
         orderList = ArrayList()
         while (cursor!!.moveToNext()) {
+            val employeeId = cursor.getInt(2)
+            val employeeIdDisplay = if(cursor.isNull(2)) "Deleted Employee" else employeeId
+
+            val customerId = cursor.getInt(1)
+            val customerIdDisplay = if(cursor.isNull(1)) "Deleted Customer" else customerId
             orderList.add(
                 RVOrderData(
                     cursor.getInt(0),
-                    cursor.getInt(1),
-                    cursor.getInt(2),
+                    customerIdDisplay.toString(),
+                    employeeIdDisplay.toString(),
                     cursor.getFloat(3),
                     cursor.getString(4),
                 )

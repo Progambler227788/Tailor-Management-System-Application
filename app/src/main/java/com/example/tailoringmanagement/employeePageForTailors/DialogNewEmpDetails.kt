@@ -32,7 +32,7 @@ class DialogNewEmpDetails : DialogFragment() {
             val name = tvName.text?.toString() ?: ""
             val number = tvPhone.text?.toString() ?: ""
             if(id!="" && name!="" && number!="") {
-                val db = EmpDBHelper(requireContext(), null)
+                val db = EmpDBHelper(requireContext())
                 if (db.addEmployee(id.toInt(), name, "0", number))
                     Toast.makeText(requireContext(), "Employee Added", Toast.LENGTH_SHORT).show()
                 else
