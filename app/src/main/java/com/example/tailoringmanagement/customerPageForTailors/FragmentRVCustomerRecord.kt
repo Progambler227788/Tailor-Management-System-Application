@@ -26,10 +26,7 @@ class FragmentRVCustomerRecord : Fragment() {
     ): View {
         binding = FragmentRVCustomerRecordBinding.inflate(layoutInflater, container, false)
 
-        db = DBHelper(requireActivity())
 
-        binding.recyclerViewCustomers.layoutManager = LinearLayoutManager(context)
-        binding.recyclerViewCustomers.setHasFixedSize(true)
 
         //val itemDecoration = ItemSpacingDecoration(10, 10, 20, 20)
         //binding.recyclerViewCustomers.addItemDecoration(itemDecoration)

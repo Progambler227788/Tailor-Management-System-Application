@@ -1,21 +1,21 @@
-package com.example.tailoringmanagement
+package com.example.tailoringmanagement.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.tailoringmanagement.databinding.FragmentSettingsBinding
+import com.example.tailoringmanagement.databinding.FragmentProfileBinding
 
-class FragmentSettings : Fragment()
+class FragmentProfile : Fragment()
 {
-    private lateinit var binding: FragmentSettingsBinding
+    private lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSettingsBinding.inflate(layoutInflater)
+        binding = FragmentProfileBinding.inflate(layoutInflater)
         return binding.root
     }
 

@@ -1,4 +1,4 @@
-package com.example.tailoringmanagement
+package com.example.tailoringmanagement.activities
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.tailoringmanagement.fragments.FragmentInteractionListener
+import com.example.tailoringmanagement.fragments.FragmentSignUpForUser
+import com.example.tailoringmanagement.R
+import com.example.tailoringmanagement.UserModel
 import com.example.tailoringmanagement.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -44,7 +48,7 @@ class SIgnUpActivity : AppCompatActivity(), FragmentInteractionListener
             fragment?.sendDataToActivity()
             val id = fragment?.getSelectedRadioButtonId()
             // by default type is tailor
-            if(id==R.id.rBCustomer) {
+            if(id== R.id.rBCustomer) {
                 userType = "Customer"
             }
             val validation = validation()

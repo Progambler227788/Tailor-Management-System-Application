@@ -1,4 +1,4 @@
-package com.example.tailoringmanagement
+package com.example.tailoringmanagement.fragments
 
 import android.content.Context
 import android.os.Bundle

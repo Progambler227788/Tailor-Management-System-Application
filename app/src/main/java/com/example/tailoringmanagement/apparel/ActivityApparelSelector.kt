@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import com.example.tailoringmanagement.ActivityEditCustomerSizes
+import com.example.tailoringmanagement.activities.ActivityEditCustomerSizes
 import com.example.tailoringmanagement.R
 import com.example.tailoringmanagement.databinding.ActivityApparelSelectorBinding
 

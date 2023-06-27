@@ -1,9 +1,7 @@
-package com.example.tailoringmanagement
+package com.example.tailoringmanagement.activities
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import androidx.core.content.ContextCompat.startActivity
 
 class RestartActivity {
     fun restartAct(context : Context) {

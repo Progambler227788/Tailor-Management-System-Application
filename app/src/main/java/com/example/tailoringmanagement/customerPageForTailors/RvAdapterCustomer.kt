@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tailoringmanagement.EditCustomerInfo
+import com.example.tailoringmanagement.activities.EditCustomerInfo
 import com.example.tailoringmanagement.apparel.ActivityApparelSelector
 import com.example.tailoringmanagement.databinding.RvCustomersBinding
 import com.example.tailoringmanagement.localDB.DBHelper

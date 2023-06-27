@@ -1,4 +1,4 @@
-package com.example.tailoringmanagement
+package com.example.tailoringmanagement.activities
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -11,6 +11,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import com.example.tailoringmanagement.fragments.FragmentProfile
+import com.example.tailoringmanagement.fragments.FragmentReportBug
+import com.example.tailoringmanagement.fragments.FragmentSettings
+import com.example.tailoringmanagement.R
 import com.example.tailoringmanagement.databinding.ActivityHomeScreenBinding
 import com.example.tailoringmanagement.customerPageForTailors.FragmentRVCustomerRecord
 import com.example.tailoringmanagement.employeePageForTailors.FragmentRVEmployeeRecord
@@ -79,7 +83,7 @@ class HomeScreenActivity : AppCompatActivity() {
                     val editor: SharedPreferences.Editor = sharedPreferences.edit()
                     editor.putString("userType", null)
                     editor.apply()
-                    startActivity(Intent(this,StartUpActivity::class.java))
+                    startActivity(Intent(this, StartUpActivity::class.java))
                     finish()
                 }
                 else -> {

@@ -1,4 +1,4 @@
-package com.example.tailoringmanagement
+package com.example.tailoringmanagement.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.tailoringmanagement.R
 
 
 class StartUpActivity : AppCompatActivity()

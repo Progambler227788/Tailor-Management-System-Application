@@ -1,4 +1,4 @@
-package com.example.tailoringmanagement
+package com.example.tailoringmanagement.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

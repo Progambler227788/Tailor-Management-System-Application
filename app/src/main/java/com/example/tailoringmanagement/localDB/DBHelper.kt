@@ -5,11 +5,6 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.util.Log
-import com.example.tailoringmanagement.customerPageForTailors.RvAdapterCustomer
-import com.example.tailoringmanagement.customerPageForTailors.RvCustomersData
 import com.google.firebase.database.*
 
 
@@ -77,6 +72,7 @@ class DBHelper(context: Context) :
         // Sync data with Firebase
         updateFirebaseData(id, columnToChange, updatedValue)
     }
+
     private fun syncToFirebase(id: Int, name: String?, phone: String?) {
         val customerData = HashMap<String, Any?>()
         customerData[COLUMN_CID] = id

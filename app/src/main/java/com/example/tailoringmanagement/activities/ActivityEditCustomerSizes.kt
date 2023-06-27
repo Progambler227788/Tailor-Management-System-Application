@@ -1,4 +1,4 @@
-package com.example.tailoringmanagement
+package com.example.tailoringmanagement.activities
 
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.tailoringmanagement.R
 import com.example.tailoringmanagement.databinding.ActivityEditCustomerSizesBinding
 import com.example.tailoringmanagement.lowerbody.lowerbodyfragments.FragmentPant
 import com.example.tailoringmanagement.lowerbody.lowerbodyfragments.FragmentShalwar
