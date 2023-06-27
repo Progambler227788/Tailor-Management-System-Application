@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tailoringmanagement.databinding.ActivityChattingBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.ktx.Firebase
 
 class ChattingActivity : AppCompatActivity() {
 
@@ -36,7 +35,7 @@ class ChattingActivity : AppCompatActivity() {
         supportActionBar!!.title = name
         messageList = ArrayList()
         senderArea = id + senderId
-        receiverArea = id + senderId
+        receiverArea = senderId + id
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = RvAdapterMessaging(messageList,this)
@@ -66,6 +65,9 @@ class ChattingActivity : AppCompatActivity() {
             val messageObj = Message(message,senderId)
             db.child("Chats").child(senderArea!!).child("messages").push().
                     setValue(messageObj).addOnSuccessListener {
+                        // now for receiver
+                db.child("Chats").child(receiverArea!!).child("messages").push().
+                setValue(messageObj)
 
             }
             binding.messageBox.text.clear()
