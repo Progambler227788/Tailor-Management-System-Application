@@ -15,6 +15,7 @@
         <activity
             android:name=".employeePageForTailors.EmployeePayment"
             android:exported="false" />
+
         <activity
             android:name=".employeePageForTailors.EditEmployeeDetails"
             android:exported="false" />
@@ -35,6 +36,9 @@
             android:exported="false" />
         <activity
             android:name=".activities.SizesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ChattingActivity"
             android:exported="false" />
         <activity
             android:name=".activities.SIgnUpActivity"

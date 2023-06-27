@@ -15,9 +15,10 @@ import com.example.tailoringmanagement.fragments.FragmentProfile
 import com.example.tailoringmanagement.fragments.FragmentReportBug
 import com.example.tailoringmanagement.fragments.FragmentSettings
 import com.example.tailoringmanagement.R
-import com.example.tailoringmanagement.databinding.ActivityHomeScreenBinding
 import com.example.tailoringmanagement.customerPageForTailors.FragmentRVCustomerRecord
+import com.example.tailoringmanagement.databinding.ActivityHomeScreenBinding
 import com.example.tailoringmanagement.employeePageForTailors.FragmentRVEmployeeRecord
+import com.example.tailoringmanagement.fragments.FragmentChatting
 import com.example.tailoringmanagement.orderPageForTailors.FragmentRVOrderRecord
 
 class HomeScreenActivity : AppCompatActivity() {
@@ -68,6 +69,10 @@ class HomeScreenActivity : AppCompatActivity() {
                 R.id.drawerItemEmployees -> {
                     launchFragment("Employees", FragmentRVEmployeeRecord())
                     Toast.makeText(this, "Employees", Toast.LENGTH_SHORT).show()
+                }
+                R.id.drawerItemChatting -> {
+                    launchFragment("Chatting Users", FragmentChatting())
+                    Toast.makeText(this, "Chatting", Toast.LENGTH_SHORT).show()
                 }
                 R.id.drawerItemProfile -> {
                     launchFragment("Profile", FragmentProfile())

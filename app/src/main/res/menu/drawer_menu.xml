@@ -15,6 +15,10 @@
         android:icon="@drawable/ic_drawer_employee"
         android:title="@string/drawer_employee" />
     <item
+        android:id="@+id/drawerItemChatting"
+        android:icon="@drawable/ic_drawer_employee"
+        android:title="Chatting" />
+    <item
         android:id="@+id/drawerItemProfile"
         android:icon="@drawable/ic_drawer_profile"
         android:title="@string/drawer_profile" />
